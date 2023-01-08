@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-struct PlusButton: View {
+public struct PlusButton: View {
     
     let size: Double
     let color: Color
