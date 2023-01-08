@@ -10,8 +10,8 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct PlusButton: View {
     
-    let size: Double
-    let color: Color
+    public let size: Double
+    private let color: Color
     let action: () -> Void
     
     public var body: some View {
