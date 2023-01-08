@@ -21,7 +21,8 @@ public struct PlusButton: View {
             ZStack {
                 Circle()
                     .frame(width: size)
-                    .foregroundColor(color)
+                    .foregroundStyle(color)
+                    #warning("⬆️ Figure out if we can put gradient in here ⬆️")
                 
                 Image(systemName: "plus")
                     .resizable()
