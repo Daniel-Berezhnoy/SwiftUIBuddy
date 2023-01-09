@@ -19,7 +19,6 @@ public struct Spacers: View {
     
     /// A stack of Spacers.
     /// Just specify the amount of Spacers you want.
-    ///  Doesn't accept negative values.
     public init(_ numberOfSpacers: UInt) {
         self.numberOfSpacers = numberOfSpacers
     }

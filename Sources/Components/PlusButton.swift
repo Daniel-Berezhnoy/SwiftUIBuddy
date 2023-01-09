@@ -33,6 +33,8 @@ public struct PlusButton: View {
         }
     }
     
+    /// A round-shaped Plus Button.
+    /// Specify size, color and put the action on the closure
     public init(size: Double, color: Color, action: @escaping () -> Void) {
         self.size = size
         self.color = color
