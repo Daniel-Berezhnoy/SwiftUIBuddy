@@ -22,7 +22,6 @@ public struct PlusButton: View {
                 Circle()
                     .frame(width: size)
                     .foregroundStyle(color)
-                    #warning("⬆️ Figure out if we can put gradient in here ⬆️")
                 
                 Image(systemName: "plus")
                     .resizable()
@@ -42,9 +41,9 @@ public struct PlusButton: View {
 }
 
 @available(iOS 15.0, *)
-struct SwiftUIView_Previews: PreviewProvider {
+struct PlusButton_Previews: PreviewProvider {
     static var previews: some View {
-        PlusButton(size: 100, color: .orange) {
+        PlusButton(size: 100, color: .cyan) {
             print("Plus Button is tapped")
         }
     }
