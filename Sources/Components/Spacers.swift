@@ -9,11 +9,9 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 public struct Spacers: View {
-    var numberOfSpacers: Int
+    var numberOfSpacers: UInt
     
     public var body: some View {
-        
-        #warning("Don't let the user pass in the negative amount of Spacers")
         ForEach(0 ..< numberOfSpacers, id: \.self) { _ in
             Spacer()
         }
@@ -21,7 +19,8 @@ public struct Spacers: View {
     
     /// A stack of Spacers.
     /// Just specify the amount of Spacers you want.
-    public init(_ numberOfSpacers: Int) {
+    ///  Doesn't accept negative values.
+    public init(_ numberOfSpacers: UInt) {
         self.numberOfSpacers = numberOfSpacers
     }
 }
