@@ -46,6 +46,7 @@ struct DismissView_Previews: PreviewProvider {
                 DismissButton(size: 30, color: .gray.opacity(0.75)) {
                     print("Dismiss")
                 }
+                .padding()
             }
             Spacer()
         }
