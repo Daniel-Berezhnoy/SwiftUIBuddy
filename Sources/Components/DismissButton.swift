@@ -26,7 +26,6 @@ public struct DismissButton: View {
                     .foregroundColor(color)
             }
         }
-        .padding()
     }
     
     /// This button is great for dismissing things like Sheets, Popovers or Cards!
