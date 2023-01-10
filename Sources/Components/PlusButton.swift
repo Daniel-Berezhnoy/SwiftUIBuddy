@@ -34,10 +34,11 @@ public struct PlusButton: View {
     }
     
     /// A round-shaped Plus Button.
-    /// Specify size, color and put the action on the closure
-    public init(size: Double, color: Color, action: @escaping () -> Void) {
-        self.size = size
+    /// Specify the color and put your action inside the closure.
+    /// You can also pass in the size of the button (default is 55).
+    public init(color: Color, size: Double = 55, action: @escaping () -> Void) {
         self.color = color
+        self.size = size
         self.action = action
     }
 }
@@ -45,7 +46,7 @@ public struct PlusButton: View {
 @available(iOS 15.0, *)
 struct PlusButton_Previews: PreviewProvider {
     static var previews: some View {
-        PlusButton(size: 100, color: .cyan) {
+        PlusButton(color: .cyan, size: 100) {
             print("Plus Button is tapped")
         }
     }

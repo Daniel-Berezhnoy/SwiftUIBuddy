@@ -29,8 +29,12 @@ public struct DismissButton: View {
     }
     
     /// This button is great for dismissing things like Sheets, Popovers or Cards!
-    /// Just specify the size and put your dismiss action inside the closure
-    public init(size: Double, color: Color, action: @escaping () -> Void) {
+    /// Just put your dismiss action inside the closure.
+    /// You can also specify the size and pass in the custom color.
+    public init(size: Double = 25,
+                color: Color = .gray.opacity(0.8),
+                action: @escaping () -> Void) {
+        
         self.size = size
         self.color = color
         self.action = action

@@ -66,6 +66,7 @@ public struct CapsuleProgressView: View {
                 color: Color,
                 capsuleWidth: CGFloat = 32,
                 capsuleHeight: CGFloat = 8) {
+        
         self.totalStages = totalStages
         self.currentStage = currentStage
         self.color = color
