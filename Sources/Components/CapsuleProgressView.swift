@@ -76,7 +76,7 @@ public struct CapsuleProgressView: View {
 }
 
 @available (iOS 15.0, *)
-struct SwiftUIView_Previews: PreviewProvider {
+struct CapsuleProgressView_Previews: PreviewProvider {
     static var previews: some View {
         CapsuleProgressView(totalStages: 5, currentStage: 4, color: .green)
     }
