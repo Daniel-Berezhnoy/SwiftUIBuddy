@@ -7,20 +7,57 @@
 
 import SwiftUI
 
-#warning("Create this button")
 @available(iOS 15.0, *)
 public struct DestructiveButton: View {
     
+    let title: String
+    let font: Font
+    let height: Double
+    let action: () -> Void
+    
     public var body: some View {
-        Text("Create Destructive Button in Here!")
+        Button {
+            action()
+        } label: {
+            ZStack {
+                border
+                text
+            }
+        }
+        .padding(.horizontal, 25)
     }
     
-    public init() {}
+    var border: some View {
+        Rectangle()
+            .frame(height: height)
+            .foregroundColor(.background)
+            .overlay(RoundedRectangle(cornerRadius: 10)
+                .stroke(lineWidth: 2)
+                .foregroundColor(.red))
+    }
+    
+    var text: some View {
+        Text(title)
+            .font(.system(size: 18, weight: .semibold, design: .rounded))
+            .fontWeight(.semibold)
+            .foregroundColor(.red)
+    }
+    
+    public init(title: String,
+                font: Font = Font.system(size: 18, weight: .semibold, design: .rounded),
+                height: Double = 55,
+                action: @escaping () -> Void) {
+        
+        self.title = title
+        self.font = font
+        self.height = height
+        self.action = action
+    }
 }
 
 @available(iOS 15.0, *)
 struct DestructiveButton_Previews: PreviewProvider {
     static var previews: some View {
-        DestructiveButton()
+        DestructiveButton(title: "Delete Account") {}
     }
 }
