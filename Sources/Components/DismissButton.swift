@@ -18,13 +18,11 @@ public struct DismissButton: View {
         Button {
             action()
         } label: {
-            ZStack {
-                Image(systemName: "xmark.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: size)
-                    .foregroundColor(color)
-            }
+            Image(systemName: "xmark.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: size)
+                .foregroundColor(color)
         }
     }
     
@@ -44,15 +42,6 @@ public struct DismissButton: View {
 @available(iOS 15.0, *)
 struct DismissView_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
-            HStack {
-                Spacer()
-                DismissButton(size: 30, color: .gray.opacity(0.75)) {
-                    print("Dismiss")
-                }
-                .padding()
-            }
-            Spacer()
-        }
+        DismissButton(size: 30, color: .gray.opacity(0.75)) {}
     }
 }

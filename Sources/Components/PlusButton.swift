@@ -19,18 +19,25 @@ public struct PlusButton: View {
             action()
         } label: {
             ZStack {
-                Circle()
-                    .frame(width: size)
-                    .foregroundStyle(color)
-                
-                Image(systemName: "plus")
-                    .resizable()
-                    .scaledToFit()
-                    .font(.body.weight(.semibold))
-                    .foregroundColor(.white)
-                    .frame(width: size / 2.75)
+                circle
+                plus
             }
         }
+    }
+    
+    var circle: some View {
+        Circle()
+            .frame(width: size)
+            .foregroundStyle(color)
+    }
+    
+    var plus: some View {
+        Image(systemName: "plus")
+            .resizable()
+            .scaledToFit()
+            .font(.body.weight(.semibold))
+            .foregroundColor(.white)
+            .frame(width: size / 2.75)
     }
     
     /// A round-shaped Plus Button.
@@ -46,7 +53,7 @@ public struct PlusButton: View {
 @available(iOS 15.0, *)
 struct PlusButton_Previews: PreviewProvider {
     static var previews: some View {
-        PlusButton(color: .cyan, size: 100) {
+        PlusButton(color: .cyan, size: 60) {
             print("Plus Button is tapped")
         }
     }

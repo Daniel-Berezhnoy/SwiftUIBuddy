@@ -21,17 +21,24 @@ public struct StandardButton: View {
             action()
         } label: {
             ZStack {
-                Rectangle()
-                    .frame(height: height, alignment: .center)
-                    .cornerRadius(10)
-                    .foregroundColor(color)
-                
-                Text(title)
-                    .font(font)
-                    .foregroundColor(.white)
+                background
+                text
             }
         }
         .padding(.horizontal, 25)
+    }
+    
+    var background: some View {
+        Rectangle()
+            .frame(height: height, alignment: .center)
+            .cornerRadius(10)
+            .foregroundColor(color)
+    }
+    
+    var text: some View {
+        Text(title)
+            .font(font)
+            .foregroundColor(.white)
     }
     
     /// Standard-Looking generic button. Just pass in title, color and action.
