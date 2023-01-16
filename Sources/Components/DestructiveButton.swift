@@ -36,8 +36,8 @@ public struct DestructiveButton: View {
                     .foregroundColor(.background)
                     .overlay(RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.pink))
-                
+                        .foregroundColor(.red))
+
             } else {
                 Rectangle()
                     .frame(height: height)
@@ -48,19 +48,12 @@ public struct DestructiveButton: View {
     }
     
     var text: some View {
-        ZStack {
-            if buttonStyle == .bordered {
-                Text(title)
-                    .font(.system(size: 18, weight: .semibold, design: .rounded))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.red)
-            } else {
-                Text(title)
-                    .font(.system(size: 18, weight: .semibold, design: .rounded))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-            }
-        }
+        Text(title)
+            .font(.system(size: 18, weight: .semibold, design: .rounded))
+            .foregroundColor(buttonStyle == .bordered ? .red : .white)
+            .fontWeight(.semibold)
+            .padding(.horizontal)
+            .lineLimit(1)
     }
     
     public enum DestructiveButtonStyle { case plain, bordered }
@@ -70,7 +63,7 @@ public struct DestructiveButton: View {
     /// You can also pass in custom Font, Height and ButtonStyle for more customization.
     public init(title: String,
                 style: DestructiveButtonStyle = .bordered,
-                font: Font = Font.system(size: 18, weight: .semibold, design: .rounded),
+                font: Font = .system(size: 18, weight: .semibold, design: .rounded),
                 height: Double = 55,
                 action: @escaping () -> Void) {
         

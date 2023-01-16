@@ -39,12 +39,14 @@ public struct StandardButton: View {
         Text(title)
             .font(font)
             .foregroundColor(.white)
+            .padding(.horizontal)
+            .lineLimit(1)
     }
     
     /// Standard-Looking generic button. Just pass in title, color and action.
     /// You can also pass in custom Font and Height for more customization.
     public init(title: String, color: Color,
-                font: Font = Font.system(size: 18, weight: .semibold, design: .rounded),
+                font: Font = .system(size: 18, weight: .semibold, design: .rounded),
                 height: CGFloat = 55,
                 action: @escaping () -> Void) {
         self.title = title

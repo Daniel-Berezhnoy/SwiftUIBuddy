@@ -26,7 +26,7 @@ public struct Spacers: View {
 }
 
 @available(iOS 15.0, *)
-struct MultiSpacer_Previews: PreviewProvider {
+struct Spacers_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             Spacer()

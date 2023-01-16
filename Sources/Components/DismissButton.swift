@@ -40,7 +40,7 @@ public struct DismissButton: View {
 }
 
 @available(iOS 15.0, *)
-struct DismissView_Previews: PreviewProvider {
+struct DismissButton_Previews: PreviewProvider {
     static var previews: some View {
         DismissButton(size: 30, color: .gray.opacity(0.75)) {}
     }
