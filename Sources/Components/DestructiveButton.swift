@@ -36,7 +36,7 @@ public struct DestructiveButton: View {
                     .foregroundColor(.background)
                     .overlay(RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.red))
+                        .foregroundColor(.pink))
                 
             } else {
                 Rectangle()
@@ -65,6 +65,9 @@ public struct DestructiveButton: View {
     
     public enum DestructiveButtonStyle { case plain, bordered }
     
+    /// Destructive Button is great for destructive actions like deletion, cancelation, etc.
+    /// To use, just pass in title and put your cancellation action inside the closure.
+    /// You can also pass in custom Font, Height and ButtonStyle for more customization.
     public init(title: String,
                 style: DestructiveButtonStyle = .bordered,
                 font: Font = Font.system(size: 18, weight: .semibold, design: .rounded),
