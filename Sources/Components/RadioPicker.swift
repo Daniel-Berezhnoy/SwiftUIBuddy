@@ -24,7 +24,7 @@ public struct RadioPicker: View {
         }
     }
     
-    /// Radio-Button Styled Picker for iOS.
+    /// Radio Button-Styled Picker for iOS.
     /// Pass in a [String] for all possible choices and a Binding<String> for selected choice.
     /// For more customization, pass in a highlightColor and custom Font.
     public init(choices: [String],
