@@ -39,7 +39,7 @@ struct LoginField: View {
     
     var dynamicBorder: some View {
         RoundedRectangle(cornerRadius: 10)
-            .stroke(highlighted ? .primary : .secondary, lineWidth: 0.75)
+            .stroke(focused ? Color.primary : .primary.opacity(0.6), lineWidth: 1)
     }
     
     var textLabel: some View {
@@ -93,8 +93,11 @@ struct LoginField: View {
 @available(iOS 15.0, *)
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        LoginField("Email", text: .constant("daniel@iosdev.email"))
-            .padding()
+        VStack(spacing: 25) {
+            LoginField("Email", text: .constant("daniel@iosdev.email"))
+            LoginField("Password", text: .constant("superpassword12345"), isPassword: true)
+        }
+        .padding(.horizontal, 20)
     }
 }
 
@@ -133,7 +136,7 @@ struct AdaptiveTextField: View {
     var loginField: some View {
         TextField(title, text: $text)
             .textInputAutocapitalization(autocapitalization)
-            .font(.system(size: 18, design: .rounded))
+            .font(.system(size: 18, weight: .light, design: .rounded))
             .disableAutocorrection(true)
             .padding(.trailing, 6)
             .padding(.leading)
@@ -147,7 +150,7 @@ struct AdaptiveTextField: View {
                 SecureField(title, text: $text)
             }
         }
-        .font(.system(size: 18, design: .rounded))
+        .font(.system(size: 18, weight: .light, design: .rounded))
         .textInputAutocapitalization(.never)
         .disableAutocorrection(true)
         .padding(.leading)
