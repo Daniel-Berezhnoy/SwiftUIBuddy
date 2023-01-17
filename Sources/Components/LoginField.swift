@@ -19,8 +19,57 @@ struct LoginField: View {
     let title: String
     
     public var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            dynamicBorder
+            
+            HStack {
+                textField
+                revealPasswordButton
+            }
+        }
     }
+    
+    var dynamicBorder: some View {
+        Rectangle()
+            .frame(height: 60)
+            .foregroundColor(.clear)
+            .overlay(RoundedRectangle(cornerRadius: 5).stroke(.primary, lineWidth: 0.75))
+            .overlay(TextFieldBorderOverlay(presented: highlighted, title: title),
+                     alignment: .topLeading)
+    }
+    
+    var textField: some View {
+        AdaptiveTextField(title: title,
+                          text: $text,
+                          isPassword: isPassword,
+                          passwordVisible: $passwordVisible,
+                          autocapitalization: autocapitalization)
+        .focused($focused)
+    }
+    
+    var revealPasswordButton: some View {
+        ZStack {
+            if passwordFieldActive {
+                Button {
+                    passwordVisible.toggle()
+                } label: {
+                    #warning("Change the image")
+                    Image(passwordVisible ? "see.icon" : "hide.icon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                        .opacity(0.6)
+                        .padding()
+                }
+            } else {
+                EmptyView()
+            }
+        }
+    }
+    
+    var highlighted: Bool { focused || !text.isEmpty }
+    
+    var passwordFieldActive: Bool { isPassword && highlighted && !text.isEmpty }
     
     public init(_ title: String,
          text: Binding<String>,
@@ -37,7 +86,8 @@ struct LoginField: View {
 @available(iOS 15.0, *)
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        LoginField("Hello", text: .constant("Hello"))
+        LoginField("User Name", text: .constant(""))
+            .padding()
     }
 }
 
