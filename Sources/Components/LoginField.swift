@@ -15,6 +15,7 @@ struct LoginField: View {
     @Binding var text: String
     
     let autocapitalization: TextInputAutocapitalization
+    let lineWidth: CGFloat
     let isPassword: Bool
     let title: String
     
@@ -39,7 +40,7 @@ struct LoginField: View {
     
     var dynamicBorder: some View {
         RoundedRectangle(cornerRadius: 10)
-            .stroke(focused ? Color.primary : .primary.opacity(0.6), lineWidth: 1)
+            .stroke(focused ? Color.primary : .primary.opacity(0.6), lineWidth: lineWidth)
     }
     
     var textLabel: some View {
@@ -81,10 +82,12 @@ struct LoginField: View {
     public init(_ title: String,
                 text: Binding<String>,
                 isPassword: Bool = false,
+                lineWidth: CGFloat = 1,
                 autocapitalization: TextInputAutocapitalization = .never) {
         
         _text = text
         self.title = title
+        self.lineWidth = lineWidth
         self.isPassword = isPassword
         self.autocapitalization = autocapitalization
     }
@@ -93,7 +96,8 @@ struct LoginField: View {
 @available(iOS 15.0, *)
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 25) {
+        VStack(spacing: 20) {
+            LoginField("Empty Field", text: .constant(""))
             LoginField("Email", text: .constant("daniel@iosdev.email"))
             LoginField("Password", text: .constant("superpassword12345"), isPassword: true)
         }
