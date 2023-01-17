@@ -93,12 +93,11 @@ struct LoginField: View {
 @available(iOS 15.0, *)
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        LoginField("User Name", text: .constant("daniel@iosdev.email"), isPassword: true)
+        LoginField("Email", text: .constant("daniel@iosdev.email"))
             .padding()
     }
 }
 
-#warning("⬇️ Change the Fonts ⬇️")
 @available(iOS 15.0, *)
 struct TextFieldLabel: View {
     
@@ -108,9 +107,10 @@ struct TextFieldLabel: View {
     var body: some View {
         if presented {
             Text(title)
-                .font(Font.custom("Montserrat", size: 13))
-                .padding(6)
-                .background(Color.background)
+                .font(.system(size: 13, design: .rounded))
+                .padding(.vertical, 6.5)
+                .padding(.horizontal, 4)
+                .background(.background)
                 .offset(x: 15, y: -15)
         }
     }
@@ -133,8 +133,8 @@ struct AdaptiveTextField: View {
     var loginField: some View {
         TextField(title, text: $text)
             .textInputAutocapitalization(autocapitalization)
+            .font(.system(size: 18, design: .rounded))
             .disableAutocorrection(true)
-            .font(Font.custom("Montserrat", size: 17))
             .padding(.trailing, 6)
             .padding(.leading)
     }
@@ -147,9 +147,9 @@ struct AdaptiveTextField: View {
                 SecureField(title, text: $text)
             }
         }
+        .font(.system(size: 18, design: .rounded))
         .textInputAutocapitalization(.never)
         .disableAutocorrection(true)
-        .font(Font.custom("Montserrat", size: 17))
         .padding(.leading)
     }
     
