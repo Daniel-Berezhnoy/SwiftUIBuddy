@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-struct LoginField: View {
+public struct LoginField: View {
     
     @State private var passwordVisible = false
     @FocusState private var focused: Bool
@@ -80,7 +80,7 @@ struct LoginField: View {
     
     var passwordFieldActive: Bool { isPassword && highlighted && fieldHasEntry}
     
-    /// A beautiful-looking TextField that is perfect for the Login Flow.
+    /// A beautiful TextField that is perfect for the Login Flow.
     /// It supports both Login and Password field, but you can also use it for any other type of form.
     /// Initialize it just like a standard TextField, by passing in a title and a Binding for the text.
     /// If you want to use the LoginField for handling a password, pass in "true" for the isPassword value.
