@@ -1,5 +1,5 @@
 //
-//  DynamicTextField.swift
+//  LoginField.swift
 //  
 //
 //  Created by Daniel Berezhnoy on 1/16/23.
@@ -8,24 +8,36 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-struct DynamicTextField: View {
+struct LoginField: View {
+    
+    @State private var passwordVisible = false
+    @FocusState private var focused: Bool
+    @Binding var text: String
+    
+    let autocapitalization: TextInputAutocapitalization
+    let isPassword: Bool
+    let title: String
     
     public var body: some View {
         Text("Hello, World!")
     }
     
-    public init() {}
+    public init(_ title: String,
+         text: Binding<String>,
+         isPassword: Bool = false,
+         autocapitalization: TextInputAutocapitalization = .never) {
+        
+        _text = text
+        self.title = title
+        self.isPassword = isPassword
+        self.autocapitalization = autocapitalization
+    }
 }
 
 @available(iOS 15.0, *)
-struct DynamicTextField_Previews: PreviewProvider {
+struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        DynamicTextField()
-//        AdaptiveTextField(title: "Hello",
-//                          text: .constant("Hi"),
-//                          isPassword: true,
-//                          passwordVisible: .constant(false),
-//                          autocapitalization: .never)
+        LoginField("Hello", text: .constant("Hello"))
     }
 }
 
@@ -57,7 +69,15 @@ struct AdaptiveTextField: View {
     let title: String
     
     var body: some View {
-        if isPassword { passwordField } else { loginField }
+        if !isPassword { loginField } else { passwordField }
+    }
+    
+    var loginField: some View {
+        TextField(title, text: $text)
+            .textInputAutocapitalization(autocapitalization)
+            .disableAutocorrection(true)
+            .font(Font.custom("Montserrat", size: 17))
+            .padding()
     }
     
     var passwordField: some View {
@@ -73,14 +93,6 @@ struct AdaptiveTextField: View {
         .font(Font.custom("Montserrat", size: 17))
         .padding(.leading)
         .padding(.vertical)
-    }
-    
-    var loginField: some View {
-        TextField(title, text: $text)
-            .textInputAutocapitalization(autocapitalization)
-            .disableAutocorrection(true)
-            .font(Font.custom("Montserrat", size: 17))
-            .padding()
     }
     
     init(title: String,
