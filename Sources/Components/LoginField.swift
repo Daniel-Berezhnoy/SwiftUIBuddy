@@ -53,13 +53,11 @@ struct LoginField: View {
                 Button {
                     passwordVisible.toggle()
                 } label: {
-                    #warning("Change the image")
-                    Image(passwordVisible ? "see.icon" : "hide.icon")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 25)
-                        .opacity(0.6)
-                        .padding()
+                    Image(systemName: passwordVisible ? "eye.fill" : "eye.slash.fill")
+                        .animation(.spring(), value: passwordVisible)
+                        .foregroundStyle(.gray)
+                        .padding(.trailing)
+                        .saturation(2)
                 }
             } else {
                 EmptyView()
@@ -71,6 +69,7 @@ struct LoginField: View {
     
     var passwordFieldActive: Bool { isPassword && highlighted && !text.isEmpty }
     
+    /// ADD THE DESCRIPTION HERE
     public init(_ title: String,
          text: Binding<String>,
          isPassword: Bool = false,
@@ -86,11 +85,12 @@ struct LoginField: View {
 @available(iOS 15.0, *)
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        LoginField("User Name", text: .constant(""))
+        LoginField("User Name", text: .constant("daniel@iosdev.email"), isPassword: true)
             .padding()
     }
 }
 
+#warning("⬇️ Change the Fonts ⬇️")
 @available(iOS 15.0, *)
 struct TextFieldBorderOverlay: View {
     
@@ -127,7 +127,8 @@ struct AdaptiveTextField: View {
             .textInputAutocapitalization(autocapitalization)
             .disableAutocorrection(true)
             .font(Font.custom("Montserrat", size: 17))
-            .padding()
+            .padding(.trailing, 6)
+            .padding(.leading)
     }
     
     var passwordField: some View {
@@ -142,7 +143,6 @@ struct AdaptiveTextField: View {
         .disableAutocorrection(true)
         .font(Font.custom("Montserrat", size: 17))
         .padding(.leading)
-        .padding(.vertical)
     }
     
     init(title: String,
