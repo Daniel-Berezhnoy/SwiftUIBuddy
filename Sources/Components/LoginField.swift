@@ -20,7 +20,7 @@ struct LoginField: View {
     
     public var body: some View {
         ZStack {
-            dynamicBorder
+            border
             
             HStack {
                 textField
@@ -29,13 +29,21 @@ struct LoginField: View {
         }
     }
     
-    var dynamicBorder: some View {
+    var border: some View {
         Rectangle()
             .frame(height: 60)
             .foregroundColor(.clear)
-            .overlay(RoundedRectangle(cornerRadius: 5).stroke(.primary, lineWidth: 0.75))
-            .overlay(TextFieldBorderOverlay(presented: highlighted, title: title),
-                     alignment: .topLeading)
+            .overlay(dynamicBorder)
+            .overlay(textLabel, alignment: .topLeading)
+    }
+    
+    var dynamicBorder: some View {
+        RoundedRectangle(cornerRadius: 10)
+            .stroke(highlighted ? .primary : .secondary, lineWidth: 0.75)
+    }
+    
+    var textLabel: some View {
+        TextFieldLabel(presented: highlighted, title: title)
     }
     
     var textField: some View {
@@ -92,7 +100,7 @@ struct Login_Previews: PreviewProvider {
 
 #warning("⬇️ Change the Fonts ⬇️")
 @available(iOS 15.0, *)
-struct TextFieldBorderOverlay: View {
+struct TextFieldLabel: View {
     
     var presented: Bool
     var title: String
