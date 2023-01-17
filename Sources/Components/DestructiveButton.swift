@@ -37,7 +37,7 @@ public struct DestructiveButton: View {
                     .overlay(RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
                         .foregroundColor(.red))
-
+                
             } else {
                 Rectangle()
                     .frame(height: height)

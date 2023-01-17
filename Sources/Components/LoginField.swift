@@ -79,9 +79,9 @@ struct LoginField: View {
     
     /// ADD THE DESCRIPTION HERE
     public init(_ title: String,
-         text: Binding<String>,
-         isPassword: Bool = false,
-         autocapitalization: TextInputAutocapitalization = .never) {
+                text: Binding<String>,
+                isPassword: Bool = false,
+                autocapitalization: TextInputAutocapitalization = .never) {
         
         _text = text
         self.title = title
