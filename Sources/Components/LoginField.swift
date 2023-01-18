@@ -47,7 +47,7 @@ public struct LoginField: View {
     var textLabel: some View {
         TextFieldLabel(presented: fieldHasEntry, title: title)
             .foregroundColor(tint)
-            .animation(textLabelAnimation, value: fieldHasEntry)
+            .animation(shortSpringAnimation, value: fieldHasEntry)
     }
     
     var textField: some View {
@@ -67,7 +67,7 @@ public struct LoginField: View {
                     passwordVisible.toggle()
                 } label: {
                     Image(systemName: passwordVisible ? "eye.fill" : "eye.slash.fill")
-                        .animation(.spring(), value: passwordVisible)
+                        .animation(shortSpringAnimation, value: passwordVisible)
                         .foregroundStyle(.gray)
                         .padding(.trailing)
                         .saturation(2)
@@ -78,7 +78,7 @@ public struct LoginField: View {
         }
     }
     
-    var textLabelAnimation: Animation {
+    var shortSpringAnimation: Animation {
         .interactiveSpring(response: 0.1, dampingFraction: 1, blendDuration: 0.5)
     }
     
@@ -86,7 +86,7 @@ public struct LoginField: View {
     
     var passwordFieldIsActive: Bool { isPassword && fieldHasEntry }
     
-    /// A beautiful TextField that is perfect for the Login Flow.
+    /// A beautiful TextField that is perfect for your app's Login Flow.
     /// It supports both Login and Password fields, but you can also use it for any other type of form.
     /// Initialize it just like a standard TextField, by passing in a title and a Binding for the text.
     /// To us for a password, pass in "true" for the isPassword value.
@@ -95,7 +95,7 @@ public struct LoginField: View {
                 text: Binding<String>,
                 isPassword: Bool = false,
                 tint: Color = .primary,
-                lineWidth: CGFloat = 1,
+                lineWidth: CGFloat = 1.2,
                 autocapitalization: TextInputAutocapitalization = .never) {
         
         _text = text
