@@ -130,12 +130,12 @@ struct TextFieldLabel: View {
             
             
                 .onAppear {
-                    presented.toggle()
+//                    presented.toggle()
                     withAnimation { presented.toggle() }
                 }
             
                 .onDisappear {
-                    presented.toggle()
+//                    presented.toggle()
                     withAnimation { presented.toggle() }
                 }
             
