@@ -81,9 +81,9 @@ public struct LoginField: View {
     var passwordFieldActive: Bool { isPassword && highlighted && fieldHasEntry}
     
     /// A beautiful TextField that is perfect for the Login Flow.
-    /// It supports both Login and Password field, but you can also use it for any other type of form.
+    /// It supports both Login and Password fields, but you can also use it for any other type of form.
     /// Initialize it just like a standard TextField, by passing in a title and a Binding for the text.
-    /// If you want to use the LoginField for handling a password, pass in "true" for the isPassword value.
+    /// To us for a password, pass in "true" for the isPassword value.
     /// For more customization, specify lineWidth and autocapitalization.
     public init(_ title: String,
                 text: Binding<String>,
