@@ -110,7 +110,7 @@ public struct LoginField: View {
 @available(iOS 15.0, *)
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 30) {
+        VStack(spacing: 25) {
             LoginField("Empty Field", text: .constant(""))
             LoginField("Email", text: .constant("daniel@iosdev.email"))
             LoginField("Password", text: .constant("superpassword12345"), isPassword: true)
