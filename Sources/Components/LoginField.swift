@@ -45,7 +45,10 @@ public struct LoginField: View {
     }
     
     var textLabel: some View {
-        TextFieldLabel(presented: fieldHasEntry, title: title).foregroundColor(tint)
+        TextFieldLabel(presented: fieldHasEntry, title: title)
+            .foregroundColor(tint)
+        
+            .animation(.spring(), value: fieldHasEntry)
     }
     
     var textField: some View {
@@ -127,11 +130,6 @@ struct TextFieldLabel: View {
                 .padding(.horizontal, 5)
                 .background(.background)
                 .offset(x: 15, y: -15)
-            
-            
-                .animation(.spring(), value: presented)
-
-            
         }
     }
 }
