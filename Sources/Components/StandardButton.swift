@@ -25,7 +25,6 @@ public struct StandardButton: View {
                 text
             }
         }
-        .padding(.horizontal, 25)
     }
     
     var background: some View {
@@ -49,6 +48,7 @@ public struct StandardButton: View {
                 font: Font = .system(size: 18, weight: .semibold, design: .rounded),
                 height: CGFloat = 55,
                 action: @escaping () -> Void) {
+        
         self.title = title
         self.color = color
         self.font = font
@@ -60,8 +60,11 @@ public struct StandardButton: View {
 @available(iOS 15.0, *)
 struct StandardButton_Previews: PreviewProvider {
     static var previews: some View {
-        StandardButton(title: "Just a Button", color: .blue) {}
-        StandardButton(title: "Thin Button", color: .red.opacity(0.9), height: 40) {}
-        StandardButton(title: "Custom Font", color: .black, font: .title2.weight(.black)) {}
+        VStack(spacing: 20) {
+            StandardButton(title: "Just a Button", color: .blue) {}
+            StandardButton(title: "Thin Button", color: .red.opacity(0.9), height: 40) {}
+            StandardButton(title: "Custom Font", color: .black, font: .title2.weight(.black)) {}
+        }
+        .padding(.horizontal, 25)
     }
 }

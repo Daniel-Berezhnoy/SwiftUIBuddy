@@ -9,20 +9,17 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 public struct Spacers: View {
+    
     var numberOfSpacers: UInt
     
     public var body: some View {
-        ForEach(0 ..< numberOfSpacers, id: \.self) { _ in
+        ForEach(0 ..< numberOfSpacers, id: \.self) { spacer in
             Spacer()
         }
     }
     
-    /// A stack of Spacers.
-    /// Just specify the amount of Spacers you want.
-    /// Great for creating custom View Layouts.
-    public init(_ numberOfSpacers: UInt) {
-        self.numberOfSpacers = numberOfSpacers
-    }
+    /// A stack of Spacers. Just specify the amount of Spacers you want. Great for creating custom View Layouts.
+    public init(_ numberOfSpacers: UInt) { self.numberOfSpacers = numberOfSpacers }
 }
 
 @available(iOS 15.0, *)

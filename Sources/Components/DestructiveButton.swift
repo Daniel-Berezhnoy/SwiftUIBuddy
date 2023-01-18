@@ -25,7 +25,6 @@ public struct DestructiveButton: View {
                 text
             }
         }
-        .padding(.horizontal, 25)
     }
     
     var background: some View {
@@ -78,7 +77,10 @@ public struct DestructiveButton: View {
 @available(iOS 15.0, *)
 struct DestructiveButton_Previews: PreviewProvider {
     static var previews: some View {
-        DestructiveButton(title: "Delete Account") {}
-        DestructiveButton(title: "Remove Connection", style: .plain) {}
+        VStack(spacing: 20) {
+            DestructiveButton(title: "Delete Account") {}
+            DestructiveButton(title: "Remove Connection", style: .plain) {}
+        }
+        .padding(.horizontal, 25)
     }
 }
