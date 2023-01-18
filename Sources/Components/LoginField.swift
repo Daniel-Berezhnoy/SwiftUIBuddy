@@ -18,9 +18,7 @@ public struct LoginField: View {
     let lineWidth: CGFloat
     let isPassword: Bool
     let title: String
-
-    #warning("Make this customizable")
-    let tint: Color = .primary
+    let tint: Color
     
     public var body: some View {
         ZStack {
@@ -89,14 +87,16 @@ public struct LoginField: View {
     /// It supports both Login and Password fields, but you can also use it for any other type of form.
     /// Initialize it just like a standard TextField, by passing in a title and a Binding for the text.
     /// To us for a password, pass in "true" for the isPassword value.
-    /// For more customization, specify lineWidth and autocapitalization.
+    /// For more customization, specify the Tint Color, Border Line Width and Autocapitalization Mode.
     public init(_ title: String,
                 text: Binding<String>,
                 isPassword: Bool = false,
+                tint: Color = .primary,
                 lineWidth: CGFloat = 1,
                 autocapitalization: TextInputAutocapitalization = .never) {
         
         _text = text
+        self.tint = tint
         self.title = title
         self.lineWidth = lineWidth
         self.isPassword = isPassword
@@ -107,7 +107,7 @@ public struct LoginField: View {
 @available(iOS 15.0, *)
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 30) {
             LoginField("Empty Field", text: .constant(""))
             LoginField("Email", text: .constant("daniel@iosdev.email"))
             LoginField("Password", text: .constant("superpassword12345"), isPassword: true)
