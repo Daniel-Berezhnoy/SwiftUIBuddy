@@ -116,7 +116,7 @@ struct Login_Previews: PreviewProvider {
 @available(iOS 15.0, *)
 struct TextFieldLabel: View {
     
-    @State var presented: Bool
+    let presented: Bool
     let title: String
     
     var body: some View {
@@ -129,16 +129,8 @@ struct TextFieldLabel: View {
                 .offset(x: 15, y: -15)
             
             
-                .onAppear {
-//                    presented.toggle()
-                    withAnimation { presented.toggle() }
-                }
-            
-                .onDisappear {
-//                    presented.toggle()
-                    withAnimation { presented.toggle() }
-                }
-            
+                .animation(.spring(), value: presented)
+
             
         }
     }
