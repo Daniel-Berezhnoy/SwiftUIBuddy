@@ -106,7 +106,7 @@ struct Login_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
             LoginField("Empty Field", text: .constant(""))
-            LoginField("Email", text: .constant("daniel@iosdev.email"))
+            LoginField("Email", text: .constant("daniel@iosdev.emal"))
             LoginField("Password", text: .constant("superpassword12345"), isPassword: true)
         }
         .padding(.horizontal, 20)
@@ -116,8 +116,8 @@ struct Login_Previews: PreviewProvider {
 @available(iOS 15.0, *)
 struct TextFieldLabel: View {
     
-    var presented: Bool
-    var title: String
+    @State var presented: Bool
+    let title: String
     
     var body: some View {
         if presented {
@@ -127,6 +127,19 @@ struct TextFieldLabel: View {
                 .padding(.horizontal, 5)
                 .background(.background)
                 .offset(x: 15, y: -15)
+            
+            
+                .onAppear {
+                    presented.toggle()
+                    withAnimation { presented.toggle() }
+                }
+            
+                .onDisappear {
+                    presented.toggle()
+                    withAnimation { presented.toggle() }
+                }
+            
+            
         }
     }
 }
