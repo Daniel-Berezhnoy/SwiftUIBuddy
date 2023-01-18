@@ -18,6 +18,9 @@ public struct LoginField: View {
     let lineWidth: CGFloat
     let isPassword: Bool
     let title: String
+
+    #warning("Make this customizable")
+    let tint: Color = .primary
     
     public var body: some View {
         ZStack {
@@ -40,11 +43,12 @@ public struct LoginField: View {
     
     var dynamicBorder: some View {
         RoundedRectangle(cornerRadius: 10)
-            .stroke(focused ? Color.primary : .primary.opacity(0.6), lineWidth: lineWidth)
+            .stroke(focused ? tint : tint.opacity(0.6), lineWidth: lineWidth)
     }
     
     var textLabel: some View {
         TextFieldLabel(presented: highlighted, title: title)
+            .foregroundColor(tint)
     }
     
     var textField: some View {
@@ -54,7 +58,7 @@ public struct LoginField: View {
                           passwordVisible: $passwordVisible,
                           autocapitalization: autocapitalization)
         .focused($focused)
-        .tint(.primary.opacity(0.6))
+        .tint(tint.opacity(0.6))
     }
     
     var revealPasswordButton: some View {
