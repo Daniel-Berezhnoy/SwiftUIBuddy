@@ -45,8 +45,7 @@ public struct LoginField: View {
     }
     
     var textLabel: some View {
-        TextFieldLabel(presented: highlighted, title: title)
-            .foregroundColor(tint)
+        TextFieldLabel(presented: fieldHasEntry, title: title).foregroundColor(tint)
     }
     
     var textField: some View {
@@ -61,7 +60,7 @@ public struct LoginField: View {
     
     var revealPasswordButton: some View {
         ZStack {
-            if passwordFieldActive {
+            if passwordFieldIsActive {
                 Button {
                     passwordVisible.toggle()
                 } label: {
@@ -79,9 +78,10 @@ public struct LoginField: View {
     
     var fieldHasEntry: Bool { !text.isEmpty }
     
-    var highlighted: Bool { focused || fieldHasEntry }
+//    var highlighted: Bool { focused || fieldHasEntry }
     
-    var passwordFieldActive: Bool { isPassword && highlighted && fieldHasEntry}
+//    var passwordFieldActive: Bool { isPassword && highlighted && fieldHasEntry }
+    var passwordFieldIsActive: Bool { isPassword && fieldHasEntry }
     
     /// A beautiful TextField that is perfect for the Login Flow.
     /// It supports both Login and Password fields, but you can also use it for any other type of form.

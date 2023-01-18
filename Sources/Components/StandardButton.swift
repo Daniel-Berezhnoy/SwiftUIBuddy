@@ -60,7 +60,7 @@ public struct StandardButton: View {
 @available(iOS 15.0, *)
 struct StandardButton_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 30) {
             StandardButton(title: "Just a Button", color: .blue) {}
             StandardButton(title: "Thin Button", color: .red.opacity(0.9), height: 40) {}
             StandardButton(title: "Custom Font", color: .black, font: .title2.weight(.black)) {}
