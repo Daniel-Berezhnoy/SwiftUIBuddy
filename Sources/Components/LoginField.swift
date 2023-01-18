@@ -47,8 +47,7 @@ public struct LoginField: View {
     var textLabel: some View {
         TextFieldLabel(presented: fieldHasEntry, title: title)
             .foregroundColor(tint)
-        
-            .animation(.spring(), value: fieldHasEntry)
+            .animation(textLabelAnimation, value: fieldHasEntry)
     }
     
     var textField: some View {
@@ -77,6 +76,10 @@ public struct LoginField: View {
                 EmptyView()
             }
         }
+    }
+    
+    var textLabelAnimation: Animation {
+        .interactiveSpring(response: 0.1, dampingFraction: 1, blendDuration: 0.5)
     }
     
     var fieldHasEntry: Bool { !text.isEmpty }
@@ -109,7 +112,7 @@ struct Login_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
             LoginField("Empty Field", text: .constant(""))
-            LoginField("Email", text: .constant("daniel@iosdev.emal"))
+            LoginField("Email", text: .constant("daniel@iosdev.email"))
             LoginField("Password", text: .constant("superpassword12345"), isPassword: true)
         }
         .padding(.horizontal, 20)
