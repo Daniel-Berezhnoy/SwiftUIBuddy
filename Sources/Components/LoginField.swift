@@ -54,6 +54,7 @@ public struct LoginField: View {
                           passwordVisible: $passwordVisible,
                           autocapitalization: autocapitalization)
         .focused($focused)
+        .tint(.primary.opacity(0.7))
     }
     
     var revealPasswordButton: some View {
@@ -122,7 +123,7 @@ struct TextFieldLabel: View {
             Text(title)
                 .font(.system(size: 13, design: .rounded))
                 .padding(.vertical, 6.5)
-                .padding(.horizontal, 4)
+                .padding(.horizontal, 5)
                 .background(.background)
                 .offset(x: 15, y: -15)
         }
