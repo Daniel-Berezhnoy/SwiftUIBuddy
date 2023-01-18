@@ -78,9 +78,6 @@ public struct LoginField: View {
     
     var fieldHasEntry: Bool { !text.isEmpty }
     
-//    var highlighted: Bool { focused || fieldHasEntry }
-    
-//    var passwordFieldActive: Bool { isPassword && highlighted && fieldHasEntry }
     var passwordFieldIsActive: Bool { isPassword && fieldHasEntry }
     
     /// A beautiful TextField that is perfect for the Login Flow.
