@@ -54,7 +54,7 @@ public struct LoginField: View {
                           passwordVisible: $passwordVisible,
                           autocapitalization: autocapitalization)
         .focused($focused)
-        .tint(.primary.opacity(0.7))
+        .tint(.primary.opacity(0.6))
     }
     
     var revealPasswordButton: some View {
