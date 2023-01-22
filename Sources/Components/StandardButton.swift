@@ -44,14 +44,15 @@ public struct StandardButton: View {
     
     /// Standard-Looking generic button. Just pass in title, color and action.
     /// You can also pass in custom Font and Height for more customization.
-    public init(title: String, color: Color,
+    public init(title: String,
+                color: Color = .blue,
                 font: Font = .system(size: 18, weight: .semibold, design: .rounded),
                 height: CGFloat = 55,
                 action: @escaping () -> Void) {
         
+        self.font = font
         self.title = title
         self.color = color
-        self.font = font
         self.height = height
         self.action = action
     }
@@ -61,7 +62,7 @@ public struct StandardButton: View {
 struct StandardButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
-            StandardButton(title: "Just a Button", color: .blue) {}
+            StandardButton(title: "Just a Button") {}
             StandardButton(title: "Thin Button", color: .red.opacity(0.9), height: 40) {}
             StandardButton(title: "Custom Font", color: .black, font: .title2.weight(.black)) {}
         }

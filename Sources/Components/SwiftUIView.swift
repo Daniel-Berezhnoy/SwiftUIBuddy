@@ -7,12 +7,20 @@
 
 import SwiftUI
 
-#warning("Working Here")
 @available(iOS 15.0, *)
 public struct SwiftUIView: View {
     
+    @State private var progress = 0.0
+    
     public var body: some View {
-        Text("Hello, World!")
+        VStack(spacing: 40) {
+            ProgressView(value: progress, total: 100)
+            
+            StandardButton(title: "Add Progress", color: .blue) {
+                withAnimation(.spring()) { progress += 5 }
+            }
+        }
+        .padding(30)
     }
 }
 
