@@ -10,6 +10,12 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct DollarTextField: View {
     
+    let size: CGFloat
+    let placeholder: String
+    @Binding var amount: Double?
+    var alignment: TextAlignment = .center
+    var dollarKeyboardType: UIKeyboardType = .decimalPad
+    
     public var body: some View {
         Text("Hello, World!")
     }
