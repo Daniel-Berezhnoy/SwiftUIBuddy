@@ -28,20 +28,11 @@ public struct DollarTextField: View {
             .font(font)
     }
     
-    public init(_ placeholder: String,
-                amount: Binding <Double>,
-                font: Font = .system(size: 50, weight: .semibold, design: .rounded),
-                alignment: TextAlignment = .center) {
-        
-        _amount = amount
-        self.font = font
-        self.alignment = alignment
-        self.placeholder = placeholder
-        
-        self.size = 50
-        self.design = .default
-    }
+    typealias Placeholder = String
     
+    /// DollarTextField is a TextField specifically styled for handling input for currency values in USD.
+    /// You initialize it with a String Placeholder value and a Binding to a Double for the Amount.
+    /// For more customization, you can pass in any Size, Font Design and Alignment that you wish.
     public init(_ placeholder: String,
                 amount: Binding <Double>,
                 size: CGFloat = 50,
@@ -56,26 +47,26 @@ public struct DollarTextField: View {
         self.placeholder = placeholder
     }
     
-    typealias Placeholder = String
+    /// DollarTextField is a TextField specifically styled for handling input for currency values in USD.
+    /// You initialize it with a String Placeholder value and a Binding to a Double for the Amount.
+    /// For more customization, you can pass in your Font of choice and specify the Alignment.
+    public init(_ placeholder: String,
+                amount: Binding <Double>,
+                font: Font = .system(size: 50, weight: .semibold, design: .rounded),
+                alignment: TextAlignment = .center) {
+        
+        _amount = amount
+        self.font = font
+        self.alignment = alignment
+        self.placeholder = placeholder
+        self.design = .default
+        self.size = 50
+    }
 }
 
 @available(iOS 15.0, *)
 struct DollarTextField_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 30) {
-//            DollarTextField("4.50", amount: .constant(5))
-//            DollarTextField("3", amount: .constant(500), size: 16)
-            
-            DollarTextField("33.30",
-                            amount: .constant(5),
-                            size: 60,
-                            design: .rounded,
-                            alignment: .center)
-            
-            DollarTextField("22.20",
-                            amount: .constant(5),
-                            font: .system(size: 30, weight: .light, design: .monospaced),
-                            alignment: .center)
-        }
+        DollarTextField("0", amount: .constant(5))
     }
 }
