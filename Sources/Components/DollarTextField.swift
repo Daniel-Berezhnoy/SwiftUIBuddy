@@ -31,10 +31,11 @@ public struct DollarTextField: View {
     typealias Placeholder = String
     
     /// DollarTextField is a TextField styled for handling USD currency values.
+    /// Please specify the amount to use this View. If you want ti show the placeholder by default, set the value to nil.
     /// You initialize it with a String Placeholder value and a Binding to a Double for the Amount.
     /// For more customization, you can pass in any Size, Font Design and Alignment that you wish.
     public init(_ placeholder: String,
-                amount: Binding <Double?>,
+                amount: Binding <Double?> = .constant(nil),
                 size: CGFloat = 50,
                 design: Font.Design = .rounded,
                 alignment: TextAlignment = .center) {
@@ -42,16 +43,17 @@ public struct DollarTextField: View {
         _amount = amount
         self.size = size
         self.design = design
-        self.font = .system(size: size, weight: .semibold, design: design)
         self.alignment = alignment
         self.placeholder = placeholder
+        self.font = .system(size: size, weight: .semibold, design: design)
     }
     
     /// DollarTextField is a TextField styled for handling USD currency values.
+    /// Please specify the amount to use this View. If you want ti show the placeholder by default, set the value to nil.
     /// You initialize it with a String Placeholder value and a Binding to a Double for the Amount.
     /// For more customization, you can pass in your Font of choice and specify the Alignment.
     public init(_ placeholder: String,
-                amount: Binding <Double?>,
+                amount: Binding <Double?> = .constant(nil),
                 font: Font = .system(size: 50, weight: .semibold, design: .rounded),
                 alignment: TextAlignment = .center) {
         
