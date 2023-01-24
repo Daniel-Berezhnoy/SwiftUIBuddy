@@ -11,16 +11,17 @@ import SwiftUI
 public struct DollarTextField: View {
     
     @Binding var amount: Double?
+    let placeholder: Double
     
     let font: Font
     let size: CGFloat
     let design: Font.Design
-    
     let alignment: TextAlignment
-    let placeholder: Placeholder
     
     public var body: some View {
-        TextField("$\(placeholder)", value: $amount, format: .currency(code: "USD"))
+        TextField("$\(placeholder, specifier: "%.2f")",
+                  value: $amount,
+                  format: .currency(code: "USD"))
             .multilineTextAlignment(alignment)
             .keyboardType(.decimalPad)
             .minimumScaleFactor(0.9)
@@ -28,13 +29,11 @@ public struct DollarTextField: View {
             .font(font)
     }
     
-    typealias Placeholder = String
-    
     /// DollarTextField is a TextField styled for handling USD currency values.
+    /// You initialize it with a Double Placeholder value and a Binding to a Double for the Amount.
     /// Please specify the amount to use this View. If you want ti show the placeholder by default, set the value to nil.
-    /// You initialize it with a String Placeholder value and a Binding to a Double for the Amount.
     /// For more customization, you can pass in any Size, Font Design and Alignment that you wish.
-    public init(_ placeholder: String,
+    public init(_ placeholder: Double,
                 amount: Binding <Double?> = .constant(nil),
                 size: CGFloat = 50,
                 design: Font.Design = .rounded,
@@ -49,10 +48,10 @@ public struct DollarTextField: View {
     }
     
     /// DollarTextField is a TextField styled for handling USD currency values.
+    /// You initialize it with a Double Placeholder value and a Binding to a Double for the Amount.
     /// Please specify the amount to use this View. If you want ti show the placeholder by default, set the value to nil.
-    /// You initialize it with a String Placeholder value and a Binding to a Double for the Amount.
     /// For more customization, you can pass in your Font of choice and specify the Alignment.
-    public init(_ placeholder: String,
+    public init(_ placeholder: Double,
                 amount: Binding <Double?> = .constant(nil),
                 font: Font = .system(size: 50, weight: .semibold, design: .rounded),
                 alignment: TextAlignment = .center) {
@@ -69,6 +68,6 @@ public struct DollarTextField: View {
 @available(iOS 15.0, *)
 struct DollarTextField_Previews: PreviewProvider {
     static var previews: some View {
-        DollarTextField("5.50", amount: .constant(nil))
+        DollarTextField(3)
     }
 }
