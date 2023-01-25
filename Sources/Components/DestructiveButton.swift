@@ -28,31 +28,25 @@ public struct DestructiveButton: View {
     }
     
     var background: some View {
-        ZStack {
-            if buttonStyle == .bordered {
-                Rectangle()
-                    .frame(height: height)
-                    .foregroundColor(.background)
-                    .overlay(RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(.red))
-                
-            } else {
-                Rectangle()
-                    .frame(height: height)
-                    .foregroundColor(.red)
-                    .cornerRadius(10)
-            }
-        }
+        Rectangle()
+            .frame(height: height)
+            .foregroundColor(buttonStyle == .plain ? .red : .background)
+            .cornerRadius(10)
+            .overlay(redBorder)
+    }
+    
+    var redBorder: some View {
+        RoundedRectangle(cornerRadius: 10)
+            .stroke(lineWidth: 2)
+            .foregroundColor(.red)
     }
     
     var text: some View {
         Text(title)
-            .font(.system(size: 18, weight: .semibold, design: .rounded))
-            .foregroundColor(buttonStyle == .bordered ? .red : .white)
-            .fontWeight(.semibold)
-            .padding(.horizontal)
+            .font(font)
             .lineLimit(1)
+            .foregroundColor(buttonStyle == .plain ? .white : .red)
+            .padding(.horizontal)
     }
     
     public enum DestructiveButtonStyle {
@@ -63,7 +57,7 @@ public struct DestructiveButton: View {
     /// To use, just pass in title and put your cancellation action inside the closure.
     /// You can also pass in custom Font, Height and ButtonStyle for more customization.
     public init(title: String,
-                style: DestructiveButtonStyle = .bordered,
+                style: DestructiveButtonStyle = .plain,
                 font: Font = .system(size: 18, weight: .semibold, design: .rounded),
                 height: Double = 55,
                 action: @escaping () -> Void) {
@@ -79,9 +73,9 @@ public struct DestructiveButton: View {
 @available(iOS 15.0, *)
 struct DestructiveButton_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 20) {
-            DestructiveButton(title: "Delete Account") {}
-            DestructiveButton(title: "Remove Connection", style: .plain) {}
+        VStack(spacing: 30) {
+            DestructiveButton(title: "Delete Account", style: .bordered) {}
+            DestructiveButton(title: "Remove Connection") {}
         }
         .padding(.horizontal, 25)
     }
