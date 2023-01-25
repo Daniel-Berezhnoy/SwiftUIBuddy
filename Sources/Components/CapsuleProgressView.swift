@@ -5,7 +5,6 @@
 //  Created by Daniel Berezhnoy on 1/9/23.
 //
 
-#error("Go through the project and check the code for consistency")
 import SwiftUI
 
 @available (iOS 15.0, *)
@@ -26,7 +25,7 @@ public struct CapsuleProgressView: View {
     
     var baseLayer: some View {
         HStack(spacing: 3) {
-            ForEach(0 ..< totalStages - 1, id: \.self) { capsule in
+            ForEach(0 ..< onlyPositive(totalStages - 1), id: \.self) { capsule in
                 CapsuleBar(filled: false,
                            color: color,
                            capsuleWidth: capsuleWidth,
@@ -46,7 +45,7 @@ public struct CapsuleProgressView: View {
                 }
                 
             } else {
-                ForEach(0 ..< totalStages - 1, id: \.self) { capsule in
+                ForEach(0 ..< onlyPositive(totalStages - 1), id: \.self) { capsule in
                     CapsuleBar(filled: true,
                                color: color,
                                capsuleWidth: capsuleWidth,
@@ -56,10 +55,12 @@ public struct CapsuleProgressView: View {
         }
     }
     
+    func onlyPositive(_ value: Int) -> Int { value < 0 ? 0 : value }
+    
     /// Progress View consisting of Capsule Bars.
     /// Perfect for showing user the progress they have done for the task
     /// (e.g. how many screens are left to swipe through to complete onboarding).
-    /// Pass in the total amount of stages, the current stage and the color of the bar.
+    /// Pass in the total amount of stages, the current stage and the color of the highlighted bars.
     /// For more customization, pass in the custom width and height for the bar.
     public init(totalStages: Int,
                 currentStage: Int,
@@ -97,6 +98,3 @@ public struct CapsuleBar: View {
             .frame(width: capsuleWidth, height: capsuleHeight)
     }
 }
-
-@available(iOS 15.0, *)
-func onlyPositive(_ value: Int) -> Int { value < 0 ? 0 : value }
