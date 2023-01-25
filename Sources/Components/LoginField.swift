@@ -20,6 +20,8 @@ public struct LoginField: View {
     let title: String
     let tint: Color
     
+    let someValue = true
+    
     public var body: some View {
         ZStack {
             border
@@ -45,9 +47,16 @@ public struct LoginField: View {
     }
     
     var textLabel: some View {
-        TextFieldLabel(presented: fieldHasEntry, title: title)
-            .foregroundColor(tint)
-            .animation(shortSpringAnimation, value: fieldHasEntry)
+        ZStack {
+            if someValue {
+                TextFieldLabel(presented: fieldHasEntry, title: title)
+                    .foregroundColor(tint)
+                    .animation(shortSpringAnimation, value: fieldHasEntry)
+                
+            } else {
+                EmptyView()
+            }
+        }
     }
     
     var textField: some View {
@@ -110,7 +119,7 @@ public struct LoginField: View {
 @available(iOS 15.0, *)
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 25) {
+        VStack(spacing: 30) {
             LoginField("Empty Field", text: .constant(""))
             LoginField("Email", text: .constant("daniel@iosdev.email"))
             LoginField("Password", text: .constant("superpassword12345"), isPassword: true)
@@ -148,13 +157,13 @@ struct AdaptiveTextField: View {
     let title: String
     
     var body: some View {
-        if !isPassword { loginField } else { passwordField }
+        if isPassword { passwordField } else { loginField }
     }
     
     var loginField: some View {
         TextField(title, text: $text)
             .textInputAutocapitalization(autocapitalization)
-            .font(.system(size: 18, weight: .light, design: .rounded))
+            .font(.system(size: 19, weight: .light, design: .rounded))
             .disableAutocorrection(true)
             .padding(.trailing, 6)
             .padding(.leading)
@@ -168,7 +177,7 @@ struct AdaptiveTextField: View {
                 SecureField(title, text: $text)
             }
         }
-        .font(.system(size: 18, weight: .light, design: .rounded))
+        .font(.system(size: 19, weight: .light, design: .rounded))
         .textInputAutocapitalization(.never)
         .disableAutocorrection(true)
         .padding(.leading)

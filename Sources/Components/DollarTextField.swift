@@ -68,6 +68,6 @@ public struct DollarTextField: View {
 @available(iOS 15.0, *)
 struct DollarTextField_Previews: PreviewProvider {
     static var previews: some View {
-        DollarTextField(3)
+        DollarTextField(9.40, size: 75)
     }
 }
