@@ -42,7 +42,12 @@ public struct LoginField: View {
     
     var dynamicBorder: some View {
         RoundedRectangle(cornerRadius: 10)
-            .stroke(tint.opacity(focused ? 1 : 0.8), lineWidth: getBorderWidth(default: 1.1))
+            .stroke(tint.opacity(focused ? 1 : 0.8), lineWidth: dynamicBorderWidth)
+    }
+    
+    var dynamicBorderWidth: CGFloat {
+        let highlightedWidth = (borderWidth + borderWidth.getPercentage(45))
+        return focused ? highlightedWidth : borderWidth
     }
     
     var dynamicTitleOverlay: some View {
@@ -99,15 +104,6 @@ public struct LoginField: View {
     
     var passwordFieldHasEntry: Bool { fieldHasEntry && fieldType == .password }
     
-    func getBorderWidth(default standardWidth: CGFloat) -> CGFloat {
-        let highlightedWidth = (standardWidth + getPercentage(45, of: standardWidth))
-        return focused ? highlightedWidth : standardWidth
-    }
-    
-    func getPercentage(_ percent: Double, of initialValue: Double) -> Double {
-        initialValue * percent / 100.0
-    }
-    
     public enum LoginFieldType {
         case login, password
     }
@@ -143,8 +139,7 @@ public struct LoginField: View {
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
-            LoginField("Empty Field", text: .constant("Some text"), tint: .red)
-            LoginField("Email", text: .constant("daniel@iosdev.email"), tint: .green)
+            LoginField("Email", text: .constant("daniel@iosdev.email"))
             LoginField("Password", text: .constant("superpassword12345"), fieldType: .password)
         }
         .padding(.horizontal, 20)
