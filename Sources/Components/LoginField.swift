@@ -42,7 +42,7 @@ public struct LoginField: View {
     
     var dynamicBorder: some View {
         RoundedRectangle(cornerRadius: 10)
-            .stroke(focused ? tint : tint.opacity(0.6), lineWidth: borderWidth)
+            .stroke(focused ? tint : tint.opacity(0.55), lineWidth: borderWidth)
     }
     
     var dynamicTitleOverlay: some View {
@@ -70,7 +70,7 @@ public struct LoginField: View {
                           passwordVisible: $passwordVisible,
                           autocapitalization: autocapitalization)
         .focused($focused)
-        .tint(tint.opacity(0.6))
+        .tint(tint == .primary ? .blue : tint.opacity(0.75))
     }
     
     var revealPasswordButton: some View {
@@ -107,12 +107,11 @@ public struct LoginField: View {
         case automatic, always, never
     }
     
-    #warning("Update ⬇️")
     /// A beautiful TextField that is perfect for your app's Login Flow.
     /// It supports both Login and Password Fields, but you can use it for any other field.
-    /// Initialize it just like a standard TextField, by passing in a title and a Binding for the text.
-    /// To use for a password, pass in "true" for the isPassword value. For more customization,
-    /// specify the values for the Title Overlay, Border Width, Autocapitalization Mode and Tint Color.
+    /// Initialize it just like a standard TextField, by passing in a Title and a Binding for the Text.
+    /// To use for a password, specify .password for the fieldType. For more customization,
+    /// specify the values for the Title Overlay Mode, Border Width, Autocapitalization Mode and Tint Color.
     public init(_ title: String,
                 text: Binding<String>,
                 fieldType: LoginFieldType = .login,
@@ -135,7 +134,7 @@ public struct LoginField: View {
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
-            LoginField("Empty Field", text: .constant(""))
+            LoginField("Empty Field", text: .constant("etg"), tint: .red)
             LoginField("Email", text: .constant("daniel@iosdev.email"))
             LoginField("Password", text: .constant("superpassword12345"), fieldType: .password)
         }
