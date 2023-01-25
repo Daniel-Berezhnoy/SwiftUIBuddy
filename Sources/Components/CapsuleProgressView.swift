@@ -10,12 +10,11 @@ import SwiftUI
 @available (iOS 15.0, *)
 public struct CapsuleProgressView: View {
     
+    let color: Color
     let totalStages: Int
     let currentStage: Int
-    
     let capsuleWidth: CGFloat
     let capsuleHeight: CGFloat
-    let color: Color
     
     public var body: some View {
         ZStack(alignment: .leading) {

@@ -10,8 +10,8 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct DestructiveButton: View {
     
-    let title: String
     let font: Font
+    let title: String
     let height: Double
     let action: () -> Void
     var buttonStyle: DestructiveButtonStyle

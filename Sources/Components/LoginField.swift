@@ -10,17 +10,16 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct LoginField: View {
     
-    @State private var passwordVisible = false
-    @FocusState private var focused: Bool
     @Binding var text: String
+    @FocusState private var focused: Bool
+    @State private var passwordVisible = false
     
-    let autocapitalization: TextInputAutocapitalization
-    let lineWidth: CGFloat
-    let isPassword: Bool
-    let title: String
     let tint: Color
-    
-    let someValue = true
+    let title: String
+    let isPassword: Bool
+    let borderWidth: CGFloat
+    let showingTitleOverlay: Bool
+    let autocapitalization: TextInputAutocapitalization
     
     public var body: some View {
         ZStack {
@@ -38,18 +37,18 @@ public struct LoginField: View {
             .frame(height: 60)
             .foregroundColor(.clear)
             .overlay(dynamicBorder)
-            .overlay(textLabel, alignment: .topLeading)
+            .overlay(titleLabel, alignment: .topLeading)
     }
     
     var dynamicBorder: some View {
         RoundedRectangle(cornerRadius: 10)
-            .stroke(focused ? tint : tint.opacity(0.6), lineWidth: lineWidth)
+            .stroke(focused ? tint : tint.opacity(0.6), lineWidth: borderWidth)
     }
     
-    var textLabel: some View {
+    var titleLabel: some View {
         ZStack {
-            if someValue {
-                TextFieldLabel(presented: fieldHasEntry, title: title)
+            if showingTitleOverlay {
+                TitleLabel(presented: fieldHasEntry, title: title)
                     .foregroundColor(tint)
                     .animation(shortSpringAnimation, value: fieldHasEntry)
                 
@@ -98,20 +97,22 @@ public struct LoginField: View {
     /// A beautiful TextField that is perfect for your app's Login Flow.
     /// It supports both Login and Password fields, but you can also use it for any other type of form.
     /// Initialize it just like a standard TextField, by passing in a title and a Binding for the text.
-    /// To us for a password, pass in "true" for the isPassword value.
-    /// For more customization, specify the Tint Color, Border Line Width and Autocapitalization Mode.
+    /// To use for a password, pass in "true" for the isPassword value. For more customization,
+    /// specify the values for the Title Overlay, Border Width, Autocapitalization Mode and Tint Color.
     public init(_ title: String,
                 text: Binding<String>,
                 isPassword: Bool = false,
-                tint: Color = .primary,
-                lineWidth: CGFloat = 1.2,
-                autocapitalization: TextInputAutocapitalization = .never) {
+                showTitleOverlay: Bool = true,
+                borderWidth: CGFloat = 1.2,
+                autocapitalization: TextInputAutocapitalization = .never,
+                tint: Color = .primary) {
         
         _text = text
         self.tint = tint
         self.title = title
-        self.lineWidth = lineWidth
         self.isPassword = isPassword
+        self.borderWidth = borderWidth
+        self.showingTitleOverlay = showTitleOverlay
         self.autocapitalization = autocapitalization
     }
 }
@@ -129,7 +130,7 @@ struct Login_Previews: PreviewProvider {
 }
 
 @available(iOS 15.0, *)
-struct TextFieldLabel: View {
+struct TitleLabel: View {
     
     let presented: Bool
     let title: String
