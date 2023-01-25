@@ -5,6 +5,7 @@
 //  Created by Daniel Berezhnoy on 1/9/23.
 //
 
+#error("Go through the project and check the code for consistency")
 import SwiftUI
 
 @available (iOS 15.0, *)
