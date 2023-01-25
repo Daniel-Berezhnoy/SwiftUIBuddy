@@ -35,7 +35,9 @@ public struct LoadingSpinner: View {
     }
     
     /// A loading spinner. Change the tint color for customization.
-    public init(tint: Color = .secondary) { self.color = tint }
+    public init(tint: Color = .secondary) {
+        self.color = tint
+    }
 }
 
 @available(iOS 15.0, *)

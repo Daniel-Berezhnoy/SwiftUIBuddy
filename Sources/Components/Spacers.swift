@@ -19,7 +19,9 @@ public struct Spacers: View {
     }
     
     /// A stack of Spacers. Just specify the amount of Spacers you want. Great for creating custom View Layouts.
-    public init(_ numberOfSpacers: UInt) { self.numberOfSpacers = numberOfSpacers }
+    public init(_ numberOfSpacers: UInt) {
+        self.numberOfSpacers = numberOfSpacers
+    }
 }
 
 @available(iOS 15.0, *)

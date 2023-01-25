@@ -16,8 +16,8 @@ public struct LoginField: View {
     
     let tint: Color
     let title: String
-    let isPassword: Bool
     let borderWidth: CGFloat
+    let fieldType: LoginFieldType
     let titleOverlayMode: TitleOverlayMode
     let autocapitalization: TextInputAutocapitalization
     
@@ -48,12 +48,12 @@ public struct LoginField: View {
     var dynamicTitleOverlay: some View {
         ZStack {
             if titleOverlayMode == .automatic {
-                TitleLabel(presented: fieldHasEntry, title: title)
+                TitleLabel(title, presented: fieldHasEntry)
                     .foregroundColor(tint)
                     .animation(shortSpringAnimation, value: fieldHasEntry)
                 
             } else if titleOverlayMode == .always {
-                TitleLabel(presented: true, title: title)
+                TitleLabel(title, presented: true)
                     .foregroundColor(tint)
                     .animation(shortSpringAnimation, value: fieldHasEntry)
                 
@@ -66,7 +66,7 @@ public struct LoginField: View {
     var textField: some View {
         AdaptiveTextField(title: title,
                           text: $text,
-                          isPassword: isPassword,
+                          isPassword: fieldType == .password,
                           passwordVisible: $passwordVisible,
                           autocapitalization: autocapitalization)
         .focused($focused)
@@ -75,7 +75,7 @@ public struct LoginField: View {
     
     var revealPasswordButton: some View {
         ZStack {
-            if passwordFieldIsActive {
+            if passwordFieldHasEntry {
                 Button {
                     passwordVisible.toggle()
                 } label: {
@@ -97,20 +97,25 @@ public struct LoginField: View {
     
     var fieldHasEntry: Bool { !text.isEmpty }
     
-    var passwordFieldIsActive: Bool { isPassword && fieldHasEntry }
+    var passwordFieldHasEntry: Bool { fieldHasEntry && fieldType == .password }
+    
+    public enum LoginFieldType {
+        case login, password
+    }
     
     public enum TitleOverlayMode {
         case automatic, always, never
     }
     
+    #warning("Update ⬇️")
     /// A beautiful TextField that is perfect for your app's Login Flow.
-    /// It supports both Login and Password fields, but you can also use it for any other type of form.
+    /// It supports both Login and Password Fields, but you can use it for any other field.
     /// Initialize it just like a standard TextField, by passing in a title and a Binding for the text.
     /// To use for a password, pass in "true" for the isPassword value. For more customization,
     /// specify the values for the Title Overlay, Border Width, Autocapitalization Mode and Tint Color.
     public init(_ title: String,
                 text: Binding<String>,
-                isPassword: Bool = false,
+                fieldType: LoginFieldType = .login,
                 titleOverlayMode: TitleOverlayMode = .automatic,
                 borderWidth: CGFloat = 1.2,
                 autocapitalization: TextInputAutocapitalization = .never,
@@ -119,7 +124,7 @@ public struct LoginField: View {
         _text = text
         self.tint = tint
         self.title = title
-        self.isPassword = isPassword
+        self.fieldType = fieldType
         self.borderWidth = borderWidth
         self.titleOverlayMode = titleOverlayMode
         self.autocapitalization = autocapitalization
@@ -132,7 +137,7 @@ struct Login_Previews: PreviewProvider {
         VStack(spacing: 30) {
             LoginField("Empty Field", text: .constant(""))
             LoginField("Email", text: .constant("daniel@iosdev.email"))
-            LoginField("Password", text: .constant("superpassword12345"), isPassword: true)
+            LoginField("Password", text: .constant("superpassword12345"), fieldType: .password)
         }
         .padding(.horizontal, 20)
     }
@@ -141,8 +146,8 @@ struct Login_Previews: PreviewProvider {
 @available(iOS 15.0, *)
 struct TitleLabel: View {
     
-    let presented: Bool
     let title: String
+    let presented: Bool
     
     var body: some View {
         if presented {
@@ -153,6 +158,11 @@ struct TitleLabel: View {
                 .background(.background)
                 .offset(x: 15, y: -15)
         }
+    }
+    
+    init(_ title: String, presented: Bool) {
+        self.title = title
+        self.presented = presented
     }
 }
 
@@ -167,13 +177,17 @@ struct AdaptiveTextField: View {
     let title: String
     
     var body: some View {
-        if isPassword { passwordField } else { loginField }
+        if isPassword {
+            passwordField
+        } else {
+            loginField
+        }
     }
     
     var loginField: some View {
         TextField(title, text: $text)
-            .textInputAutocapitalization(autocapitalization)
             .font(.system(size: 19, weight: .light, design: .rounded))
+            .textInputAutocapitalization(autocapitalization)
             .disableAutocorrection(true)
             .padding(.trailing, 6)
             .padding(.leading)
@@ -187,7 +201,7 @@ struct AdaptiveTextField: View {
                 SecureField(title, text: $text)
             }
         }
-        .font(.system(size: 17, weight: .light, design: .rounded))
+        .font(.system(size: passwordVisible ? 19 : 17, weight: .light, design: .rounded))
         .textInputAutocapitalization(.never)
         .disableAutocorrection(true)
         .padding(.leading)
