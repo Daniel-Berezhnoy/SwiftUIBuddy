@@ -18,12 +18,14 @@ public struct DismissButton: View {
         Button {
             action()
         } label: {
-            Image(systemName: "xmark.circle.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: size)
-                .foregroundColor(color)
+            image
         }
+    }
+    
+    var image: some View {
+        Image(systemName: "xmark.circle.fill")
+            .foregroundColor(color)
+            .font(.system(size: size, weight: .regular))
     }
     
     /// This button is great for dismissing things like Sheets, Popovers or Cards!
@@ -42,6 +44,7 @@ public struct DismissButton: View {
 @available(iOS 15.0, *)
 struct DismissButton_Previews: PreviewProvider {
     static var previews: some View {
-        DismissButton(size: 30, color: .gray.opacity(0.75)) {}
+        DismissButton(size: 100) {}
+        DismissButton(color: .cyan) {}
     }
 }
