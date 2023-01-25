@@ -55,7 +55,9 @@ public struct DestructiveButton: View {
             .lineLimit(1)
     }
     
-    public enum DestructiveButtonStyle { case plain, bordered }
+    public enum DestructiveButtonStyle {
+        case plain, bordered
+    }
     
     /// Destructive Button is great for destructive actions like deletion, cancelation, etc.
     /// To use, just pass in title and put your cancellation action inside the closure.

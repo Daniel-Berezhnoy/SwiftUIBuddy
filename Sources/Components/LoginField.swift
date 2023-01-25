@@ -18,7 +18,7 @@ public struct LoginField: View {
     let title: String
     let isPassword: Bool
     let borderWidth: CGFloat
-    let showingTitleOverlay: Bool
+    let titleOverlayMode: TitleOverlayMode
     let autocapitalization: TextInputAutocapitalization
     
     public var body: some View {
@@ -37,7 +37,7 @@ public struct LoginField: View {
             .frame(height: 60)
             .foregroundColor(.clear)
             .overlay(dynamicBorder)
-            .overlay(titleLabel, alignment: .topLeading)
+            .overlay(dynamicTitleOverlay, alignment: .topLeading)
     }
     
     var dynamicBorder: some View {
@@ -45,10 +45,15 @@ public struct LoginField: View {
             .stroke(focused ? tint : tint.opacity(0.6), lineWidth: borderWidth)
     }
     
-    var titleLabel: some View {
+    var dynamicTitleOverlay: some View {
         ZStack {
-            if showingTitleOverlay {
+            if titleOverlayMode == .automatic {
                 TitleLabel(presented: fieldHasEntry, title: title)
+                    .foregroundColor(tint)
+                    .animation(shortSpringAnimation, value: fieldHasEntry)
+                
+            } else if titleOverlayMode == .always {
+                TitleLabel(presented: true, title: title)
                     .foregroundColor(tint)
                     .animation(shortSpringAnimation, value: fieldHasEntry)
                 
@@ -94,6 +99,10 @@ public struct LoginField: View {
     
     var passwordFieldIsActive: Bool { isPassword && fieldHasEntry }
     
+    public enum TitleOverlayMode {
+        case automatic, always, never
+    }
+    
     /// A beautiful TextField that is perfect for your app's Login Flow.
     /// It supports both Login and Password fields, but you can also use it for any other type of form.
     /// Initialize it just like a standard TextField, by passing in a title and a Binding for the text.
@@ -102,7 +111,7 @@ public struct LoginField: View {
     public init(_ title: String,
                 text: Binding<String>,
                 isPassword: Bool = false,
-                showTitleOverlay: Bool = true,
+                titleOverlayMode: TitleOverlayMode = .automatic,
                 borderWidth: CGFloat = 1.2,
                 autocapitalization: TextInputAutocapitalization = .never,
                 tint: Color = .primary) {
@@ -112,7 +121,7 @@ public struct LoginField: View {
         self.title = title
         self.isPassword = isPassword
         self.borderWidth = borderWidth
-        self.showingTitleOverlay = showTitleOverlay
+        self.titleOverlayMode = titleOverlayMode
         self.autocapitalization = autocapitalization
     }
 }
@@ -178,7 +187,7 @@ struct AdaptiveTextField: View {
                 SecureField(title, text: $text)
             }
         }
-        .font(.system(size: 19, weight: .light, design: .rounded))
+        .font(.system(size: 17, weight: .light, design: .rounded))
         .textInputAutocapitalization(.never)
         .disableAutocorrection(true)
         .padding(.leading)
