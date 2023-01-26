@@ -16,6 +16,8 @@ public struct DestructiveButton: View {
     let action: () -> Void
     let buttonStyle: DestructiveButtonStyle
     
+    let cornerRadius: CGFloat
+    
     public var body: some View {
         Button {
             action()
@@ -31,12 +33,12 @@ public struct DestructiveButton: View {
         Rectangle()
             .frame(height: height)
             .foregroundColor(buttonStyle == .plain ? .red : .background)
-            .cornerRadius(10)
+            .cornerRadius(cornerRadius)
             .overlay(redBorder)
     }
     
     var redBorder: some View {
-        RoundedRectangle(cornerRadius: 10)
+        RoundedRectangle(cornerRadius: cornerRadius)
             .stroke(lineWidth: 2)
             .foregroundColor(.red)
     }
@@ -58,15 +60,17 @@ public struct DestructiveButton: View {
     /// You can also pass in custom Font, Height and ButtonStyle for more customization.
     public init(title: String,
                 style: DestructiveButtonStyle = .plain,
+                cornerRadius: CGFloat = 10,
                 font: Font = .system(size: 18, weight: .semibold, design: .rounded),
                 height: Double = 55,
                 action: @escaping () -> Void) {
         
-        self.title = title
-        self.buttonStyle = style
         self.font = font
+        self.title = title
         self.height = height
         self.action = action
+        self.buttonStyle = style
+        self.cornerRadius = cornerRadius
     }
 }
 
