@@ -3,8 +3,10 @@
 
 import PackageDescription
 
-let package = Package(
-    name: "SwiftUIBuddy",
-    products: [.library(name: "SwiftUIBuddy", targets: ["SwiftUIBuddy"])],
-    targets: [.target(name: "SwiftUIBuddy", path: "Sources") /*, .testTarget(name: "SwiftUIBuddyTests", dependencies: ["SwiftUIBuddy"])*/ ]
+ let package = Package(
+     name: "SwiftUIBuddy",
+     products: [.library(name: "SwiftUIBuddy", targets: ["SwiftUIBuddy"])],
+     dependencies: [],
+     targets: [.target(name: "SwiftUIBuddy", dependencies: [], path: "Sources"),
+               .testTarget(name: "SwiftUIBuddyTests", dependencies: ["SwiftUIBuddy"])]
 )
