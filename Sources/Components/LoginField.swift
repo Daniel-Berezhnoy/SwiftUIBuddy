@@ -17,6 +17,7 @@ public struct LoginField: View {
     let tint: Color
     let title: String
     let borderWidth: CGFloat
+    let cornerRadius: CGFloat
     let fieldType: LoginFieldType
     let titleOverlayMode: TitleOverlayMode
     let autocapitalization: TextInputAutocapitalization
@@ -41,7 +42,7 @@ public struct LoginField: View {
     }
     
     var dynamicBorder: some View {
-        RoundedRectangle(cornerRadius: 10)
+        RoundedRectangle(cornerRadius: cornerRadius)
             .stroke(tint.opacity(focused ? 1 : 0.8), lineWidth: dynamicBorderWidth)
     }
     
@@ -113,24 +114,26 @@ public struct LoginField: View {
     
     /// A beautiful TextField that is perfect for your app's Login Flow.
     /// It supports both Login and Password Fields, but you can use it for any other field.
-    /// Initialize it just like a standard TextField, by passing in a Title and a Binding for the Text.
-    /// To use for a password, specify .password for the fieldType. For more customization,
-    /// specify the values for the Title Overlay Mode, Border Width, Autocapitalization Mode and Tint Color.
+    /// You initialize it just like a standard TextField, by passing in a Title and a Binding for the Text.
+    /// To use for a password, specify .password for the fieldType. For more customization, specify values
+    /// for the Title Overlay Mode, Corner Radius, Border Width, Tint Color and Autocapitalization Mode.
     public init(_ title: String,
                 text: Binding<String>,
                 fieldType: LoginFieldType = .login,
                 titleOverlayMode: TitleOverlayMode = .automatic,
+                cornerRadius: CGFloat = 10,
                 borderWidth: CGFloat = 1.2,
-                autocapitalization: TextInputAutocapitalization = .never,
-                tint: Color = .primary) {
+                tint: Color = .primary,
+                autocapitalize: TextInputAutocapitalization = .never) {
         
         _text = text
         self.tint = tint
         self.title = title
         self.fieldType = fieldType
         self.borderWidth = borderWidth
+        self.cornerRadius = cornerRadius
         self.titleOverlayMode = titleOverlayMode
-        self.autocapitalization = autocapitalization
+        self.autocapitalization = autocapitalize
     }
 }
 

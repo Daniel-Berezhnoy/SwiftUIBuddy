@@ -14,9 +14,8 @@ public struct DestructiveButton: View {
     let title: String
     let height: Double
     let action: () -> Void
-    let buttonStyle: DestructiveButtonStyle
-    
     let cornerRadius: CGFloat
+    let buttonStyle: DestructiveButtonStyle
     
     public var body: some View {
         Button {
@@ -57,7 +56,7 @@ public struct DestructiveButton: View {
     
     /// Destructive Button is great for destructive actions like deletion, cancelation, etc.
     /// To use, just pass in title and put your cancellation action inside the closure.
-    /// You can also pass in custom Font, Height and ButtonStyle for more customization.
+    /// You can also pass in Button Style, Corner Radius, Custom Font and Height for more customization.
     public init(title: String,
                 style: DestructiveButtonStyle = .plain,
                 cornerRadius: CGFloat = 10,
