@@ -8,4 +8,6 @@ import PackageDescription
      products: [.library(name: "SwiftUIBuddy", targets: ["SwiftUIBuddy"])],
      dependencies: [],
      targets: [.target(name: "SwiftUIBuddy", path: "Sources")]
+     
+     
 )
