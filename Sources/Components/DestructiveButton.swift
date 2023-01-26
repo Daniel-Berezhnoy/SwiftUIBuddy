@@ -14,7 +14,7 @@ public struct DestructiveButton: View {
     let title: String
     let height: Double
     let action: () -> Void
-    var buttonStyle: DestructiveButtonStyle
+    let buttonStyle: DestructiveButtonStyle
     
     public var body: some View {
         Button {

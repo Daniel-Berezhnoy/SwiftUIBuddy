@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#warning("Add the README, GH Description and all that good stuff")
 @available (iOS 15.0, *)
 public struct CapsuleProgressView: View {
     

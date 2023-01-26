@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct Spacers: View {
     
-    var numberOfSpacers: UInt
+    let numberOfSpacers: UInt
     
     public var body: some View {
         ForEach(0 ..< numberOfSpacers, id: \.self) { spacer in
