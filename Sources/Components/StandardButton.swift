@@ -10,9 +10,9 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct StandardButton: View {
     
-    let title: String
-    let color: Color
     let font: Font
+    let color: Color
+    let title: String
     let height: CGFloat
     let action: () -> Void
     
@@ -29,22 +29,23 @@ public struct StandardButton: View {
     
     var background: some View {
         Rectangle()
-            .frame(height: height, alignment: .center)
-            .cornerRadius(10)
+            .frame(height: height)
             .foregroundColor(color)
+            .cornerRadius(10)
     }
     
     var text: some View {
         Text(title)
             .font(font)
+            .lineLimit(1)
             .foregroundColor(.white)
             .padding(.horizontal)
-            .lineLimit(1)
     }
     
-    /// Standard-Looking generic button. Just pass in title, color and action.
-    /// You can also pass in custom Font and Height for more customization.
-    public init(title: String,
+    /// A simple Button that can be used anywhere throughout the app.
+    /// You initialize it just like the standard SwiftUI Button, by passing in the title and action.
+    /// For more customization, pass in custom Color, Font and Height.
+    public init(_ title: String,
                 color: Color = .blue,
                 font: Font = .system(size: 18, weight: .semibold, design: .rounded),
                 height: CGFloat = 55,
@@ -62,9 +63,9 @@ public struct StandardButton: View {
 struct StandardButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
-            StandardButton(title: "Just a Button") {}
-            StandardButton(title: "Thin Button", color: .red.opacity(0.9), height: 40) {}
-            StandardButton(title: "Custom Font", color: .black, font: .title2.weight(.black)) {}
+            StandardButton("Thin Button", color: .red.opacity(0.9), height: 40) {}
+            StandardButton("Default Button") {}
+            StandardButton("Custom Font", color: .purple, font: .title2.weight(.black)) {}
         }
         .padding(.horizontal, 25)
     }
