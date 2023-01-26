@@ -7,7 +7,5 @@ import PackageDescription
      name: "SwiftUIBuddy",
      products: [.library(name: "SwiftUIBuddy", targets: ["SwiftUIBuddy"])],
      dependencies: [],
-     targets: [.target(name: "SwiftUIBuddy", path: "Sources")]
-     
-     
+     targets: [.target(name: "SwiftUIBuddy", dependencies: [], path: "Sources")]
 )
