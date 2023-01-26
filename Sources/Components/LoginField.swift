@@ -88,7 +88,6 @@ public struct LoginField: View {
                         .animation(shortSpringAnimation, value: passwordVisible)
                         .foregroundStyle(.gray)
                         .padding(.trailing)
-                        .saturation(2)
                 }
             } else {
                 EmptyView()
