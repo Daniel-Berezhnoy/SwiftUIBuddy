@@ -85,9 +85,9 @@ struct RadioCell: View {
     var selected: Bool { withAnimation { title == selectedValue } }
     
     init(_ title: String, selectedValue: Binding<String>, color: Color, font: Font) {
-        self.title = title
-        _selectedValue = selectedValue
-        self.color = color
         self.font = font
+        self.title = title
+        self.color = color
+        _selectedValue = selectedValue
     }
 }

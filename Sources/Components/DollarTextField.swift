@@ -55,11 +55,11 @@ public struct DollarTextField: View {
                 alignment: TextAlignment = .center) {
         
         _amount = amount
+        self.size = 50
         self.font = font
+        self.design = .default
         self.alignment = alignment
         self.placeholder = placeholder
-        self.design = .default
-        self.size = 50
     }
 }
 
