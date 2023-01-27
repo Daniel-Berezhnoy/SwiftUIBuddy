@@ -49,8 +49,7 @@ public struct StandardButton: View {
     public init(_ title: String,
                 color: Color = .blue,
                 cornerRadius: CGFloat = 10,
-//                font: Font = .system(size: 18, weight: .semibold, design: .rounded),
-                font: Font = ,
+                font: Font = .buttonStyle,
                 height: CGFloat = 55,
                 action: @escaping () -> Void) {
         

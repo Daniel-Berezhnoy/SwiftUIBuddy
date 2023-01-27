@@ -60,7 +60,7 @@ public struct DestructiveButton: View {
     public init(title: String,
                 style: DestructiveButtonStyle = .plain,
                 cornerRadius: CGFloat = 10,
-                font: Font = .system(size: 18, weight: .semibold, design: .rounded),
+                font: Font = .buttonStyle,
                 height: Double = 55,
                 action: @escaping () -> Void) {
         
