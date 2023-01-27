@@ -31,7 +31,7 @@ public struct CapsuleProgressBar: View {
     }
     
     var baseLayer: some View {
-        HStack(spacing: 3) {
+        HStack(spacing: capsuleWidth / 10) {
             ForEach(0 ..< (totalStages - 1).onlyPositive(), id: \.self) { capsule in
                 CapsuleBar(filled: false,
                            color: color,
@@ -42,7 +42,7 @@ public struct CapsuleProgressBar: View {
     }
     
     var topLayer: some View {
-        HStack(spacing: 3) {
+        HStack(spacing: capsuleWidth / 10) {
             ForEach(progressRange, id: \.self) { capsule in
                 CapsuleBar(filled: true,
                            color: color,
@@ -61,8 +61,9 @@ public struct CapsuleProgressBar: View {
     
     var progressRangeIsValid: Bool { currentStage <= totalStages }
     
-    #warning("Actually make this animation nice")
-    var fillAnimation: Animation { .default }
+    var fillAnimation: Animation {
+        .linear
+    }
     
     /// Progress View consisting of Capsule Bars.
     /// Perfect for showing user the progress they have done for the task
@@ -87,6 +88,9 @@ public struct CapsuleProgressBar: View {
 struct CapsuleProgressBar_Previews: PreviewProvider {
     static var previews: some View {
         CapsuleProgressBar(totalStages: 5, currentStage: 4)
+        
+        CapsuleProgressBar(totalStages: 5, currentStage: 4,
+                           capsuleWidth: 90, capsuleHeight: 30)
     }
 }
 
