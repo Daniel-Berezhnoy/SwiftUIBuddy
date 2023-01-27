@@ -8,13 +8,11 @@
 import SwiftUI
 
 
-// TODO:
+// TODOs:
 
-// 1) Test all of the descriptions through the Test App")
+// 1) Test all of the descriptions through the Test App
 
-// 2) Add the README, GH Description and all that good stuff")
-
-#warning("These ⬆️")
+// 2) Add the README, GitHub Description and all that good stuff
 
 @available (iOS 15.0, *)
 public struct CapsuleProgressBar: View {
@@ -34,7 +32,7 @@ public struct CapsuleProgressBar: View {
     
     var baseLayer: some View {
         HStack(spacing: 3) {
-            ForEach(0 ..< onlyPositive(totalStages - 1), id: \.self) { capsule in
+            ForEach(0 ..< (totalStages - 1).onlyPositive(), id: \.self) { capsule in
                 CapsuleBar(filled: false,
                            color: color,
                            capsuleWidth: capsuleWidth,
@@ -56,18 +54,15 @@ public struct CapsuleProgressBar: View {
     }
     
     var progressRange: Range<Int> {
-        let actualProgress = 0 ..< onlyPositive(currentStage - 1)
-        let fullProgress = 0 ..< onlyPositive(totalStages - 1)
+        let actualProgress = 0 ..< (currentStage - 1).onlyPositive()
+        let fullProgress = 0 ..< (totalStages - 1).onlyPositive()
         return progressRangeIsValid ? actualProgress : fullProgress
     }
     
     var progressRangeIsValid: Bool { currentStage <= totalStages }
     
-    var fillAnimation: Animation {
-        .spring()
-    }
-    
-    func onlyPositive(_ value: Int) -> Int { value < 0 ? 0 : value }
+    #warning("Actually make this animation nice")
+    var fillAnimation: Animation { .default }
     
     /// Progress View consisting of Capsule Bars.
     /// Perfect for showing user the progress they have done for the task
@@ -91,7 +86,7 @@ public struct CapsuleProgressBar: View {
 @available (iOS 15.0, *)
 struct CapsuleProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleProgressBar(totalStages: 5, currentStage: 3)
+        CapsuleProgressBar(totalStages: 5, currentStage: 4)
     }
 }
 

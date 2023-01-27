@@ -5,7 +5,7 @@
 //  Created by Daniel Berezhnoy on 1/25/23.
 //
 
-import SwiftUI
+import Foundation
 
 @available(iOS 15.0, *)
 extension CGFloat {
