@@ -32,7 +32,6 @@ public struct CapsuleProgressBar: View {
         }
     }
     
-    #error("Change this architecture so that I switch on filled")
     var baseLayer: some View {
         HStack(spacing: 3) {
             ForEach(0 ..< onlyPositive(totalStages - 1), id: \.self) { capsule in
@@ -46,24 +45,22 @@ public struct CapsuleProgressBar: View {
     
     var topLayer: some View {
         HStack(spacing: 3) {
-            if currentStage <= totalStages {
-                ForEach(0 ..< onlyPositive(currentStage - 1), id: \.self) { capsule in
-                    CapsuleBar(filled: true,
-                               color: color,
-                               capsuleWidth: capsuleWidth,
-                               capsuleHeight: capsuleHeight)
-                }
-                
-            } else {
-                ForEach(0 ..< onlyPositive(totalStages - 1), id: \.self) { capsule in
-                    CapsuleBar(filled: true,
-                               color: color,
-                               capsuleWidth: capsuleWidth,
-                               capsuleHeight: capsuleHeight)
-                }
+            ForEach(progressRange, id: \.self) { capsule in
+                CapsuleBar(filled: true,
+                           color: color,
+                           capsuleWidth: capsuleWidth,
+                           capsuleHeight: capsuleHeight)
             }
         }
     }
+    
+    var progressRange: Range<Int> {
+        let actualProgress = 0 ..< onlyPositive(currentStage - 1)
+        let fullProgress = 0 ..< onlyPositive(totalStages - 1)
+        return progressRangeIsValid ? actualProgress : fullProgress
+    }
+    
+    var progressRangeIsValid: Bool { currentStage <= totalStages }
     
     func onlyPositive(_ value: Int) -> Int { value < 0 ? 0 : value }
     
@@ -89,7 +86,7 @@ public struct CapsuleProgressBar: View {
 @available (iOS 15.0, *)
 struct CapsuleProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleProgressBar(totalStages: 5, currentStage: 5)
+        CapsuleProgressBar(totalStages: 5, currentStage: 4)
     }
 }
 
