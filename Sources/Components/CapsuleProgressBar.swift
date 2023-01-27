@@ -52,6 +52,7 @@ public struct CapsuleProgressBar: View {
                            capsuleHeight: capsuleHeight)
             }
         }
+        .animation(fillAnimation, value: progressRange)
     }
     
     var progressRange: Range<Int> {
@@ -61,6 +62,10 @@ public struct CapsuleProgressBar: View {
     }
     
     var progressRangeIsValid: Bool { currentStage <= totalStages }
+    
+    var fillAnimation: Animation {
+        .spring()
+    }
     
     func onlyPositive(_ value: Int) -> Int { value < 0 ? 0 : value }
     
@@ -86,7 +91,7 @@ public struct CapsuleProgressBar: View {
 @available (iOS 15.0, *)
 struct CapsuleProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleProgressBar(totalStages: 5, currentStage: 4)
+        CapsuleProgressBar(totalStages: 5, currentStage: 3)
     }
 }
 
