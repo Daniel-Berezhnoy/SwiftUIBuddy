@@ -37,7 +37,7 @@ public struct PlusButton: View {
             .foregroundColor(.white)
     }
     
-    /// A round-shaped Plus Button. Specify the color and put your action inside the closure. You can also pass in custom size.
+    /// A Circle-Shaped Plus Button. Specify the color and put your action inside the closure. You can also pass in custom size.
     public init(color: Color = .blue, size: Double = 55, action: @escaping () -> Void) {
         self.size = size
         self.color = color
