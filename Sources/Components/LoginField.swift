@@ -112,10 +112,10 @@ public struct LoginField: View {
         case automatic, always, never
     }
     
-    /// A beautiful TextField that is perfect for your app's Login Flow.
+    /// A beautiful TextField designed for your app's Login Flow.
     /// It supports both Login and Password Fields, but you can use it for any other field.
     /// You initialize it just like a SwiftUI TextField, by passing in a Title and a Binding for the Text.
-    /// To use for a password, specify .password for the fieldType. For more customization, specify values
+    /// To use for a password, specify ".password" for the Field Type. For more customization, specify values
     /// for the Title Overlay Mode, Corner Radius, Border Width, Tint Color and Autocapitalization Mode.
     public init(_ title: String,
                 text: Binding<String>,
