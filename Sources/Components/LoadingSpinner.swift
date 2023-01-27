@@ -34,7 +34,7 @@ public struct LoadingSpinner: View {
             .tint(color)
     }
     
-    /// A loading spinner. Change the tint color for customization.
+    /// A loading spinner. Change the tint color for more customization.
     public init(tint: Color = .secondary) {
         self.color = tint
     }
@@ -44,6 +44,5 @@ public struct LoadingSpinner: View {
 struct LoadingSpinner_Previews: PreviewProvider {
     static var previews: some View {
         LoadingSpinner()
-        LoadingSpinner(tint: .blue)
     }
 }
