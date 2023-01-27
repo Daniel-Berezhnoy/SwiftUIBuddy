@@ -20,6 +20,7 @@ public struct DismissButton: View {
         } label: {
             image
         }
+        .accessibilityLabel("Dismiss Button")
     }
     
     var image: some View {
@@ -28,11 +29,11 @@ public struct DismissButton: View {
             .font(.system(size: size))
     }
     
-    /// This button is great for dismissing things like Sheets, Popovers or Cards!
-    /// Just put your dismiss action inside the closure.
-    /// You can also specify the size and pass in the custom color.
+    /// This button is great for dismissing things like Sheets, Popovers or Cards.
+    /// To initialize, just put your dismiss action inside the closure.
+    /// You can also specify the Size and Color of the button.
     public init(size: Double = 25,
-                color: Color = .gray.opacity(0.8),
+                color: Color = .gray.opacity(0.75),
                 action: @escaping () -> Void) {
         
         self.size = size
