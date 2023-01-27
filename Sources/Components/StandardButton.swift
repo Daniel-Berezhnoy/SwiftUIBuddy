@@ -43,7 +43,7 @@ public struct StandardButton: View {
             .padding(.horizontal)
     }
     
-    /// A simple Button that can be used anywhere throughout the app.
+    /// A Simple Button that can be used anywhere throughout the app.
     /// You initialize it just like the standard SwiftUI Button, by passing in the title and action.
     /// For more customization, pass in Custom Color, Corner Radius, Font and Height.
     public init(_ title: String,
