@@ -30,7 +30,7 @@ public struct DollarTextField: View {
     }
     
     /// DollarTextField is a TextField styled for handling USD currency values.
-    /// You initialize it with a Placeholder Value (Optional Double) and a Binding to a Double for the Amount.
+    /// You initialize it with a Placeholder Value (Double) and a Binding to the Amount (Double?).
     /// For more customization, you can pass in any Size, Font Design and Alignment that you wish.
     public init(_ placeholder: Double,
                 amount: Binding <Double?> = .constant(nil),
@@ -47,7 +47,7 @@ public struct DollarTextField: View {
     }
     
     /// DollarTextField is a TextField styled for handling USD currency values.
-    /// You initialize it with a Double Placeholder value and a Binding to a Double for the Amount.
+    /// You initialize it with a Placeholder Value (Double) and a Binding to the Amount (Double?).
     /// For more customization, you can pass in your Font of choice and specify the Alignment.
     public init(_ placeholder: Double,
                 amount: Binding <Double?> = .constant(nil),
