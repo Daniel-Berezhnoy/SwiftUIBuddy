@@ -20,13 +20,13 @@ public struct DismissButton: View {
         } label: {
             image
         }
-//        .accessibilityLabel("Dismiss Button")
     }
     
     var image: some View {
         Image(systemName: "xmark.circle.fill")
             .foregroundColor(color)
             .font(.system(size: size))
+            .accessibilityLabel("Dismiss")
     }
     
     /// This button is great for dismissing things like Sheets, Popovers or Cards.
