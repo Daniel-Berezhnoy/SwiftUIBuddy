@@ -51,7 +51,7 @@ public struct DollarTextField: View {
     /// For more customization, you can pass in your Font of choice and specify the Alignment.
     public init(_ placeholder: Double,
                 amount: Binding <Double?> = .constant(nil),
-                font: Font = .system(size: 40, weight: .semibold, design: .rounded),
+                font: Font = .largeRounded,
                 alignment: TextAlignment = .center) {
         
         _amount = amount

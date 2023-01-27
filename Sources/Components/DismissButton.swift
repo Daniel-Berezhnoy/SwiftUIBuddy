@@ -25,7 +25,7 @@ public struct DismissButton: View {
     var image: some View {
         Image(systemName: "xmark.circle.fill")
             .foregroundColor(color)
-            .font(.system(size: size, weight: .regular))
+            .font(.system(size: size))
     }
     
     /// This button is great for dismissing things like Sheets, Popovers or Cards!
@@ -45,6 +45,6 @@ public struct DismissButton: View {
 struct DismissButton_Previews: PreviewProvider {
     static var previews: some View {
         DismissButton(size: 100) {}
-        DismissButton(color: .cyan) {}
+        DismissButton(color: .purple) {}
     }
 }
