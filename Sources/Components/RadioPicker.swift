@@ -25,8 +25,8 @@ public struct RadioPicker: View {
         }
     }
     
-    /// Radio Button-Styled Picker for iOS. To initialize, pass in an aArray of Strings for all possible choices and a
-    /// Binding to a String for the Selected Choice. For more customization, pass in a highlightColor and custom Font.
+    /// Radio Picker for iOS. To initialize, pass in an Array of Strings for all possible choices and a
+    /// Binding to a String for the Selected Choice. For more customization, pass in a Highlight Color and Custom Font.
     public init(choices: [String],
                 selectedChoice: Binding<String>,
                 highlightColor: Color = .blue,
