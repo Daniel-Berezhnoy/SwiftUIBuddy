@@ -63,17 +63,17 @@ public struct CapsuleProgressView: View {
     /// Progress View consisting of Capsule Bars.
     /// Perfect for showing user the progress they have done for the task
     /// (e.g. how many screens are left to swipe through to complete onboarding).
-    /// Pass in the total amount of stages, the current stage and the color of the highlighted bars.
-    /// For more customization, pass in the custom width and height for the bar.
+    /// Pass in the Total Amount of Stages and the Current Stage of the progress.
+    /// For more customization, pass in the Color as well as custom Width and Height for the bar.
     public init(totalStages: Int,
                 currentStage: Int,
-                color: Color,
+                color: Color = .green,
                 capsuleWidth: CGFloat = 32,
                 capsuleHeight: CGFloat = 8) {
         
+        self.color = color
         self.totalStages = totalStages
         self.currentStage = currentStage
-        self.color = color
         self.capsuleWidth = capsuleWidth
         self.capsuleHeight = capsuleHeight
     }
@@ -82,7 +82,7 @@ public struct CapsuleProgressView: View {
 @available (iOS 15.0, *)
 struct CapsuleProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleProgressView(totalStages: 5, currentStage: 4, color: .green)
+        CapsuleProgressView(totalStages: 5, currentStage: 4)
     }
 }
 
