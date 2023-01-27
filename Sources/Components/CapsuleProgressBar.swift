@@ -20,6 +20,7 @@ public struct CapsuleProgressBar: View {
     let color: Color
     let totalStages: Int
     let currentStage: Int
+    let animation: Animation
     let capsuleWidth: CGFloat
     let capsuleHeight: CGFloat
     
@@ -50,7 +51,7 @@ public struct CapsuleProgressBar: View {
                            capsuleHeight: capsuleHeight)
             }
         }
-        .animation(fillAnimation, value: progressRange)
+        .animation(animation, value: progressRange)
     }
     
     var progressRange: Range<Int> {
@@ -61,10 +62,6 @@ public struct CapsuleProgressBar: View {
     
     var progressRangeIsValid: Bool { currentStage <= totalStages }
     
-    var fillAnimation: Animation {
-        .linear
-    }
-    
     /// Progress View consisting of Capsule Bars.
     /// Perfect for showing user the progress they have done for the task
     /// (e.g. how many screens are left to swipe through to complete onboarding).
@@ -73,10 +70,12 @@ public struct CapsuleProgressBar: View {
     public init(totalStages: Int,
                 currentStage: Int,
                 color: Color = .green,
+                animation: Animation = .default,
                 capsuleWidth: CGFloat = 32,
                 capsuleHeight: CGFloat = 8) {
         
         self.color = color
+        self.animation = animation
         self.totalStages = totalStages
         self.currentStage = currentStage
         self.capsuleWidth = capsuleWidth
@@ -88,9 +87,6 @@ public struct CapsuleProgressBar: View {
 struct CapsuleProgressBar_Previews: PreviewProvider {
     static var previews: some View {
         CapsuleProgressBar(totalStages: 5, currentStage: 4)
-        
-        CapsuleProgressBar(totalStages: 5, currentStage: 4,
-                           capsuleWidth: 90, capsuleHeight: 30)
     }
 }
 
