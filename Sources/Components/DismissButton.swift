@@ -20,7 +20,7 @@ public struct DismissButton: View {
         } label: {
             image
         }
-        .accessibilityLabel("Dismiss Button")
+//        .accessibilityLabel("Dismiss Button")
     }
     
     var image: some View {
