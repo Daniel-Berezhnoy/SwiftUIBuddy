@@ -32,6 +32,7 @@ public struct CapsuleProgressBar: View {
         }
     }
     
+    #error("Change this architecture so that I switch on filled")
     var baseLayer: some View {
         HStack(spacing: 3) {
             ForEach(0 ..< onlyPositive(totalStages - 1), id: \.self) { capsule in
@@ -95,7 +96,8 @@ struct CapsuleProgressBar_Previews: PreviewProvider {
 @available(iOS 15.0, *)
 public struct CapsuleBar: View {
     
-    let filled: Bool
+    @State var filled: Bool
+    
     let color: Color
     let capsuleWidth: CGFloat
     let capsuleHeight: CGFloat
