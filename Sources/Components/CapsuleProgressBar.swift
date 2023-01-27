@@ -62,11 +62,16 @@ public struct CapsuleProgressBar: View {
     
     var progressRangeIsValid: Bool { currentStage <= totalStages }
     
+    
+    // Perfect for showing user the progress they have done for the task
+    // (e.g. how many screens are left to swipe through to complete onboarding).
+    
+    
+    
+    
     /// Progress View consisting of Capsule Bars.
-    /// Perfect for showing user the progress they have done for the task
-    /// (e.g. how many screens are left to swipe through to complete onboarding).
-    /// Pass in the Current Stage of the progress as well as Total Amount of Stages .
-    /// For more customization, pass in the Color as well as custom Width and Height for each bar.
+    /// To initialize, pass in the Current Stage of the progress and Total Amount of Stages .
+    /// For more customization, you can pass in the Color, Animation as well as Width and Height for each bar.
     public init(currentStage: Int,
                 totalStages: Int,
                 color: Color = .green,
