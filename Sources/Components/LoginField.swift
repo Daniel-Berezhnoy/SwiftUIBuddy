@@ -138,7 +138,7 @@ public struct LoginField: View {
 }
 
 @available(iOS 15.0, *)
-struct Login_Previews: PreviewProvider {
+struct LoginField_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
             LoginField("Email", text: .constant("daniel@iosdev.email"))

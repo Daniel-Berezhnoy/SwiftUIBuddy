@@ -1,5 +1,5 @@
 //
-//  CapsuleProgressView.swift
+//  CapsuleProgressBar.swift
 //  
 //
 //  Created by Daniel Berezhnoy on 1/9/23.
@@ -7,11 +7,17 @@
 
 import SwiftUI
 
-#warning("1) Test all of the descriptions through the Test App")
-#warning("2) Add the README, GH Description and all that good stuff")
+
+// TODO:
+
+// 1) Test all of the descriptions through the Test App")
+
+// 2) Add the README, GH Description and all that good stuff")
+
+#warning("These ⬆️")
 
 @available (iOS 15.0, *)
-public struct CapsuleProgressView: View {
+public struct CapsuleProgressBar: View {
     
     let color: Color
     let totalStages: Int
@@ -64,7 +70,7 @@ public struct CapsuleProgressView: View {
     /// Perfect for showing user the progress they have done for the task
     /// (e.g. how many screens are left to swipe through to complete onboarding).
     /// Pass in the Total Amount of Stages and the Current Stage of the progress.
-    /// For more customization, pass in the Color as well as custom Width and Height for the bar.
+    /// For more customization, pass in the Color as well as custom Width and Height for each bar.
     public init(totalStages: Int,
                 currentStage: Int,
                 color: Color = .green,
@@ -80,9 +86,9 @@ public struct CapsuleProgressView: View {
 }
 
 @available (iOS 15.0, *)
-struct CapsuleProgressView_Previews: PreviewProvider {
+struct CapsuleProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleProgressView(totalStages: 5, currentStage: 4)
+        CapsuleProgressBar(totalStages: 5, currentStage: 4)
     }
 }
 
