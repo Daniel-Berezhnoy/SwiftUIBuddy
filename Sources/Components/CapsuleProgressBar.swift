@@ -88,16 +88,15 @@ public struct CapsuleProgressBar: View {
 @available (iOS 15.0, *)
 struct CapsuleProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleProgressBar(totalStages: 5, currentStage: 4)
+        CapsuleProgressBar(totalStages: 5, currentStage: 5)
     }
 }
 
 @available(iOS 15.0, *)
 public struct CapsuleBar: View {
     
-    @State var filled: Bool
+    let filled: Bool
     let color: Color
-    
     let capsuleWidth: CGFloat
     let capsuleHeight: CGFloat
     
