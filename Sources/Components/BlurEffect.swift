@@ -14,8 +14,7 @@ struct BlurEffect: View {
     
     public var body: some View {
         ZStack {
-            testContent
-            .blur(radius: blurEnabled ? 5 : 0)
+            testContent.blur(radius: blurEnabled ? 5 : 0)
             
             showContentButton
         }
@@ -24,14 +23,14 @@ struct BlurEffect: View {
     var testContent: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(.blue)
+                .foregroundStyle(.orange)
                 .cornerRadius(20)
-            
+
             Text("The company confirmed on Friday that Twitter users accessing the social media platform on Android, iOS, and the web can now add content warnings to any photos or videos attached to their tweets.")
                 .padding()
                 .foregroundStyle(.white)
         }
-        .frame(width: 200, height: 300)
+        .frame(width: 300, height: 600)
     }
     
     var showContentButton: some View {
@@ -50,7 +49,7 @@ struct BlurEffect: View {
                 Label("Show Content", systemImage: "eye.slash.fill")
                     .fontWeight(.semibold)
             } else {
-                HStack {
+                VStack {
                     Image(systemName: "eye.slash.fill")
                         .resizable()
                         .scaledToFit()
