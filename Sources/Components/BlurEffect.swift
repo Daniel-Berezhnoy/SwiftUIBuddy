@@ -11,10 +11,16 @@ import SwiftUI
 struct BlurEffect: View {
     
     public var body: some View {
-        Rectangle()
-            .frame(width: 200, height: 300)
-            .foregroundStyle(.blue)
-            .cornerRadius(20)
+        ZStack {
+            Rectangle()
+                .frame(width: 200, height: 300)
+                .foregroundStyle(.blue)
+                .cornerRadius(20)
+            
+            Text("Do you see me?")
+                .foregroundStyle(.white)
+        }
+        .blur(radius: 10)
     }
     
     public init() {}
