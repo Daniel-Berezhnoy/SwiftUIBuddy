@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-
-// TODOs:
-
-// 1) Test all of the descriptions through the Test App
-
-// 2) Add the README, GitHub Description and all that good stuff
+#warning("Add the README, GitHub Description and all that good stuff")
 
 @available (iOS 15.0, *)
 public struct CapsuleProgressBar: View {
