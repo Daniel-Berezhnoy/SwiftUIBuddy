@@ -14,25 +14,6 @@ struct BlurFilter: View {
     
     public var body: some View {
         ZStack {
-            baseLayer
-            blurLayer
-        }
-        .frame(width: 200, height: 200)
-    }
-    
-    var baseLayer: some View {
-        //        Image(systemName: "eye")
-        //            .resizable()
-        //            .scaledToFit()
-        //            .padding()
-        
-        Rectangle()
-            .foregroundStyle(.orange)
-            .cornerRadius(30)
-    }
-    
-    var blurLayer: some View {
-        ZStack {
             if blurEnabled { BlurView(style: .regular) }
             button
         }
@@ -42,11 +23,11 @@ struct BlurFilter: View {
         Button {
             withAnimation { blurEnabled.toggle() }
         } label: {
-            buttonLabel
+            label
         }
     }
     
-    var buttonLabel: some View {
+    var label: some View {
         ZStack {
             if blurEnabled {
                 if #available(iOS 16.0, *) {
@@ -65,7 +46,8 @@ struct BlurFilter: View {
                 }
             }
         }
-        .foregroundStyle(.white)
+//        .foregroundStyle(.white)
+        .foregroundStyle(.primary)
         .padding()
     }
     
