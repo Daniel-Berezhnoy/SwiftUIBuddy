@@ -10,23 +10,61 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct BlurFilter: View {
     
+    @State private var blurEnabled = true
+    
     public var body: some View {
         ZStack {
-            GeometryReader { proxy in
-                let frame = proxy.frame(in: .global)
-                
-                Image(systemName: "swift")
-                    .resizable()
-                    .scaledToFit()
-                    .padding()
-                    .frame(width: frame.size.width, height: frame.size.height)
-            }
-            
-            GeometryReader { proxy in
-                BlurView(style: .dark)
+            baseLayer
+            blurLayer
+        }
+        .frame(width: 200, height: 200)
+    }
+    
+    var baseLayer: some View {
+        //        Image(systemName: "eye")
+        //            .resizable()
+        //            .scaledToFit()
+        //            .padding()
+        
+        Rectangle()
+            .foregroundStyle(.orange)
+            .cornerRadius(30)
+    }
+    
+    var blurLayer: some View {
+        ZStack {
+            if blurEnabled { BlurView(style: .regular) }
+            button
+        }
+    }
+    
+    var button: some View {
+        Button {
+            withAnimation { blurEnabled.toggle() }
+        } label: {
+            if blurEnabled { label }
+        }
+    }
+    
+    var label: some View {
+        ZStack {
+            if #available(iOS 16.0, *) {
+                Label("Show Content", systemImage: "eye.slash.fill")
+                    .fontWeight(.semibold)
+            } else {
+                HStack {
+                    Image(systemName: "eye.slash.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                    
+                    Text("Show Content")
+                        .fontWeight(.semibold)
+                }
             }
         }
-        .ignoresSafeArea()
+        .foregroundStyle(.white)
+        .padding()
     }
     
     public init() {}
