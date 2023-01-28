@@ -42,24 +42,26 @@ struct BlurFilter: View {
         Button {
             withAnimation { blurEnabled.toggle() }
         } label: {
-            if blurEnabled { label }
+            buttonLabel
         }
     }
     
-    var label: some View {
+    var buttonLabel: some View {
         ZStack {
-            if #available(iOS 16.0, *) {
-                Label("Show Content", systemImage: "eye.slash.fill")
-                    .fontWeight(.semibold)
-            } else {
-                HStack {
-                    Image(systemName: "eye.slash.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 25)
-                    
-                    Text("Show Content")
+            if blurEnabled {
+                if #available(iOS 16.0, *) {
+                    Label("Show Content", systemImage: "eye.slash.fill")
                         .fontWeight(.semibold)
+                } else {
+                    HStack {
+                        Image(systemName: "eye.slash.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25)
+                        
+                        Text("Show Content")
+                            .fontWeight(.semibold)
+                    }
                 }
             }
         }
