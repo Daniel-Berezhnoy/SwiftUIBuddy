@@ -36,35 +36,34 @@ struct BlurFilter: View {
             label
         }
         .disabled(blurEnabled == false)
-        
-        .buttonStyle(.bordered)
     }
     
     var label: some View {
         ZStack {
-//            if blurEnabled {
-//                Rectangle()
-//                    .frame(width: 200, height: 60)
-//                    .foregroundStyle(.background)
-//                    .cornerRadius(17)
-//                    .opacity(0.75)
-                
-                if #available(iOS 16.0, *) {
-                    Label("Show Content", systemImage: "eye.slash.fill")
+            
+            // Button Background
+            Rectangle()
+                .foregroundStyle(.background)
+                .cornerRadius(17)
+                .opacity(0.75)
+            
+            // Button Label
+            if #available(iOS 16.0, *) {
+                Label("Show Content", systemImage: "eye.slash.fill")
+                    .fontWeight(.semibold)
+            } else {
+                HStack {
+                    Image(systemName: "eye.slash.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25)
+                    
+                    Text("Show Content")
                         .fontWeight(.semibold)
-                } else {
-                    HStack {
-                        Image(systemName: "eye.slash.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25)
-
-                        Text("Show Content")
-                            .fontWeight(.semibold)
-                    }
                 }
-//            }
+            }
         }
+        .frame(width: 200, height: 60)
         .foregroundStyle(.foreground)
         .padding()
     }
@@ -94,7 +93,7 @@ struct BlurFilter_Previews: PreviewProvider {
                 .foregroundStyle(.cyan)
                 .opacity(0.5)
                 .cornerRadius(25)
-
+            
             Text("Hi there! 👋")
                 .font(.largeRounded)
         }
