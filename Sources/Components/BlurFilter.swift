@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-#warning("Figure out why it stretches on the y axis so much")
 @available(iOS 15.0, *)
-struct BlurFilter: View {
+public struct BlurFilter: View {
     
     @State private var blurEnabled = true { didSet { disableBlur(for: delay) } }
     let blurStyle: UIBlurEffect.Style
