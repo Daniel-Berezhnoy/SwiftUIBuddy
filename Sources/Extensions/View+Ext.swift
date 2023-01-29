@@ -9,7 +9,7 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 extension View {
-    func blurFilter() -> some View {
+    public func blurFilter() -> some View {
         ZStack {
             self
             BlurFilter()
