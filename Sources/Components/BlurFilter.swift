@@ -35,7 +35,7 @@ struct BlurFilter: View {
             if blurEnabled {
                 Rectangle()
                     .frame(width: 200, height: 60)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.background)
                     .opacity(0.2)
                     .cornerRadius(17)
                 
