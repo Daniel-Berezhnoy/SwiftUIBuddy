@@ -35,8 +35,8 @@ struct BlurFilter: View {
             if blurEnabled {
                 Rectangle()
                     .frame(width: 200, height: 60)
-                    .foregroundStyle(.gray)
-                    .opacity(0.3)
+                    .foregroundStyle(.background)
+//                    .opacity(0.3)
                     .cornerRadius(17)
                 
                 if #available(iOS 16.0, *) {
