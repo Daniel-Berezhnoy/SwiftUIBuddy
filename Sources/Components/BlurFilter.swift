@@ -10,12 +10,13 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct BlurFilter: View {
     
-    #warning("Make a property for this")
-    @State private var blurEnabled = true { didSet { disableBlur(for: 5) } }
+    @State private var blurEnabled = true { didSet { disableBlur(for: delay) } }
+    let blurStyle: UIBlurEffect.Style
+    let delay: Int
     
     public var body: some View {
         ZStack {
-            if blurEnabled { BlurView(style: .regular) }
+            if blurEnabled { BlurView(style: blurStyle) }
             button
         }
     }
@@ -63,7 +64,10 @@ struct BlurFilter: View {
         }
     }
     
-    public init() {}
+    public init(blurStyle: UIBlurEffect.Style = .regular, timer: Int = 5) {
+        self.blurStyle = blurStyle
+        self.delay = timer
+    }
 }
 
 @available(iOS 15.0, *)
