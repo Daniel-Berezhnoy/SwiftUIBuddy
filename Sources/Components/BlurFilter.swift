@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#warning("Figure out why it stretches on the y axis so much")
 @available(iOS 15.0, *)
 struct BlurFilter: View {
     
@@ -16,9 +17,16 @@ struct BlurFilter: View {
     
     public var body: some View {
         ZStack {
-            if blurEnabled { BlurView(style: blurStyle).cornerRadius(25) }
-            button
+            if blurEnabled {
+                blurBackground
+                button
+            }
         }
+        .ignoresSafeArea()
+    }
+    
+    var blurBackground: some View {
+        BlurView(style: blurStyle).cornerRadius(25)
     }
     
     var button: some View {
@@ -28,16 +36,18 @@ struct BlurFilter: View {
             label
         }
         .disabled(blurEnabled == false)
+        
+        .buttonStyle(.bordered)
     }
     
     var label: some View {
         ZStack {
-            if blurEnabled {
-                Rectangle()
-                    .frame(width: 200, height: 60)
-                    .foregroundStyle(.background)
-                    .cornerRadius(17)
-                    .opacity(0.75)
+//            if blurEnabled {
+//                Rectangle()
+//                    .frame(width: 200, height: 60)
+//                    .foregroundStyle(.background)
+//                    .cornerRadius(17)
+//                    .opacity(0.75)
                 
                 if #available(iOS 16.0, *) {
                     Label("Show Content", systemImage: "eye.slash.fill")
@@ -53,7 +63,7 @@ struct BlurFilter: View {
                             .fontWeight(.semibold)
                     }
                 }
-            }
+//            }
         }
         .foregroundStyle(.foreground)
         .padding()
@@ -84,12 +94,11 @@ struct BlurFilter_Previews: PreviewProvider {
                 .foregroundStyle(.cyan)
                 .opacity(0.5)
                 .cornerRadius(25)
-            
+
             Text("Hi there! 👋")
                 .font(.largeRounded)
-            
-            BlurFilter()
         }
+        .blurFilter()
     }
 }
 
