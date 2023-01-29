@@ -10,7 +10,8 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct BlurFilter: View {
     
-    @State private var blurEnabled = true
+    #warning("Make a property for this")
+    @State private var blurEnabled = true { didSet { disableBlur(for: 5) } }
     
     public var body: some View {
         ZStack {
@@ -21,10 +22,11 @@ struct BlurFilter: View {
     
     var button: some View {
         Button {
-            withAnimation { blurEnabled.toggle() }
+            withAnimation(.interactiveSpring()) { blurEnabled = false }
         } label: {
             label
         }
+        .disabled(blurEnabled == false)
     }
     
     var label: some View {
@@ -51,7 +53,24 @@ struct BlurFilter: View {
         .padding()
     }
     
+    func disableBlur(for seconds: Int) {
+        let delay = DispatchTimeInterval.seconds(seconds)
+        
+        if blurEnabled == false {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                withAnimation { blurEnabled = true }
+            }
+        }
+    }
+    
     public init() {}
+}
+
+@available(iOS 15.0, *)
+struct BlurFilter_Previews: PreviewProvider {
+    static var previews: some View {
+        BlurFilter()
+    }
 }
 
 @available(iOS 15.0, *)
@@ -63,11 +82,4 @@ struct BlurView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
-}
-
-@available(iOS 15.0, *)
-struct BlurFilter_Previews: PreviewProvider {
-    static var previews: some View {
-        BlurFilter()
-    }
 }
