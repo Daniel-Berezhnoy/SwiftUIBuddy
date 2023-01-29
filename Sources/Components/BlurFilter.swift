@@ -16,7 +16,7 @@ struct BlurFilter: View {
     
     public var body: some View {
         ZStack {
-            if blurEnabled { BlurView(style: blurStyle) }
+            if blurEnabled { BlurView(style: blurStyle).cornerRadius(25) }
             button
         }
     }
@@ -36,8 +36,8 @@ struct BlurFilter: View {
                 Rectangle()
                     .frame(width: 200, height: 60)
                     .foregroundStyle(.background)
-                    .opacity(0.75)
                     .cornerRadius(17)
+                    .opacity(0.75)
                 
                 if #available(iOS 16.0, *) {
                     Label("Show Content", systemImage: "eye.slash.fill")
