@@ -9,10 +9,10 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 extension View {
-    public func blurFilter() -> some View {
+    public func blurFilter(blurStyle: UIBlurEffect.Style = .regular, timer: Int = 5) -> some View {
         ZStack {
             self
-            BlurFilter()
+            BlurFilter(blurStyle: blurStyle, timer: timer)
         }
     }
 }

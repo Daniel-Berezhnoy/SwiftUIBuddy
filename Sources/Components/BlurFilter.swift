@@ -65,8 +65,8 @@ struct BlurFilter: View {
     }
     
     public init(blurStyle: UIBlurEffect.Style = .regular, timer: Int = 5) {
-        self.blurStyle = blurStyle
         self.delay = timer
+        self.blurStyle = blurStyle
     }
 }
 
