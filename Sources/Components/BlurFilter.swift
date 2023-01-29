@@ -78,7 +78,18 @@ struct BlurFilter: View {
 @available(iOS 15.0, *)
 struct BlurFilter_Previews: PreviewProvider {
     static var previews: some View {
-        BlurFilter()
+        ZStack {
+            Rectangle()
+                .frame(width: 300, height: 300)
+                .foregroundStyle(.cyan)
+                .opacity(0.5)
+                .cornerRadius(25)
+            
+            Text("Hi there! 👋")
+                .font(.largeRounded)
+            
+            BlurFilter()
+        }
     }
 }
 
