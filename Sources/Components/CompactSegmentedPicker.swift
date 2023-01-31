@@ -10,20 +10,14 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct CompactSegmentedPicker: View {
     
-    @State private var segmentSize: CGSize = .zero
-    @State private var itemTitleSizes: [CGSize] = []
-    
-    private let items: [String]
     @Binding var selection: Int
+    let items: [String]
     
     public var body: some View {
         ZStack {
-            GeometryReader { geometry in
-                Color.clear.onAppear { segmentSize = geometry.size }
-            }
-            .frame(maxWidth: .infinity, maxHeight: 1)
+            geometryReader
             
-            VStack(alignment: .center, spacing: 0) {
+            VStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 0) {
                     
                     HStack(spacing: xSpace) {
@@ -33,22 +27,36 @@ public struct CompactSegmentedPicker: View {
                     }
                     .padding(.bottom, 4)
                     
-                    // Bottom Line
-                    Rectangle()
-                        .foregroundColor(.green)
-                        .frame(width: selectedItemWidth, height: 2)
-                        .offset(x: selectedItemHorizontalOffset(), y: 0)
+                    dynamicLine
                 }
                 
-                Divider()
-                Divider()
+                divider
             }
         }
     }
     
-    var selectedItemWidth: CGFloat {
-        itemTitleSizes.count > selection ?
-        itemTitleSizes[selection].width : .zero
+    @State private var segmentSize: CGSize = .zero
+    @State private var itemTitleSizes: [CGSize] = []
+    
+    var geometryReader: some View {
+        GeometryReader { geometry in
+            Color.clear.onAppear { segmentSize = geometry.size }
+        }
+        .frame(maxWidth: .infinity, maxHeight: 1)
+    }
+    
+    var dynamicLine: some View {
+        Rectangle()
+            .foregroundColor(.green)
+            .frame(width: selectedItemWidth, height: 2)
+            .offset(x: calculateLineOffset)
+    }
+    
+    var divider: some View {
+        VStack(spacing: 0) {
+            Divider()
+            Divider()
+        }
     }
     
     var xSpace: CGFloat {
@@ -59,6 +67,22 @@ public struct CompactSegmentedPicker: View {
         let itemWidthSum: CGFloat = itemTitleSizes.map { $0.width }.reduce(0, +).rounded()
         let space = (segmentSize.width - itemWidthSum) / CGFloat(items.count + 1)
         return max(space, 0)
+    }
+    
+    var selectedItemWidth: CGFloat {
+        itemTitleSizes.count > selection ? itemTitleSizes[selection].width : .zero
+    }
+    
+    var calculateLineOffset: CGFloat {
+        guard selectedItemWidth != .zero, selection != 0 else { return 0 }
+        
+        let result = itemTitleSizes
+            .enumerated()
+            .filter { $0.offset < selection }
+            .map { $0.element.width }
+            .reduce(0, +)
+        
+        return result + xSpace * CGFloat(selection)
     }
     
     func segmentLabel(for index: Int) -> some View {
@@ -87,18 +111,7 @@ public struct CompactSegmentedPicker: View {
         self.selection = index
     }
     
-    func selectedItemHorizontalOffset() -> CGFloat {
-        guard selectedItemWidth != .zero, selection != 0 else { return 0 }
-        
-        let result = itemTitleSizes
-            .enumerated()
-            .filter { $0.offset < selection }
-            .map { $0.element.width }
-            .reduce(0, +)
-        
-        return result + xSpace * CGFloat(selection)
-    }
-    
+    /// ADD DESCRIPTION
     public init(items: [String], selection: Binding<Int>) {
         self.items = items
         _selection = selection
