@@ -110,19 +110,19 @@ public struct CompactSegmentedPicker: View {
 @available(iOS 15.0, *)
 struct CompactSegmentedPicker_Previews: PreviewProvider {
     static var previews: some View {
-        CompactSegmentedPicker(items: ["Number 1", "Numero 2", "# 3"], selection: .constant(2))
+        CompactSegmentedPicker(items: ["Number 1", "Numero 2", "# 3"], selection: .constant(1))
     }
 }
 
-@available(iOS 15.0, *)
-struct SizePreferenceKey: PreferenceKey {
-    public typealias Value = CGSize
-    public static var defaultValue: Value = .zero
-
-    public static func reduce(value: inout Value, nextValue: () -> Value) {
-        value = nextValue()
-    }
-}
+//@available(iOS 15.0, *)
+//struct SizePreferenceKey: PreferenceKey {
+//    public typealias Value = CGSize
+//    public static var defaultValue: Value = .zero
+//
+//    public static func reduce(value: inout Value, nextValue: () -> Value) {
+//        value = nextValue()
+//    }
+//}
 
 @available(iOS 15.0, *)
 struct BackgroundGeometryReader: View {
