@@ -100,10 +100,9 @@ public struct CompactSegmentedPicker: View {
     }
     
     public init(items: [String], selection: Binding<Int>) {
-        self._selection = selection
         self.items = items
-        self._itemTitleSizes = State(initialValue: [CGSize](repeating: .zero,
-                                                            count: items.count))
+        _selection = selection
+        _itemTitleSizes = State(initialValue: [CGSize](repeating: .zero, count: items.count))
     }
 }
 
@@ -111,32 +110,5 @@ public struct CompactSegmentedPicker: View {
 struct CompactSegmentedPicker_Previews: PreviewProvider {
     static var previews: some View {
         CompactSegmentedPicker(items: ["Number 1", "Numero 2", "# 3"], selection: .constant(1))
-    }
-}
-
-//@available(iOS 15.0, *)
-//struct SizePreferenceKey: PreferenceKey {
-//    public typealias Value = CGSize
-//    public static var defaultValue: Value = .zero
-//
-//    public static func reduce(value: inout Value, nextValue: () -> Value) {
-//        value = nextValue()
-//    }
-//}
-
-@available(iOS 15.0, *)
-struct BackgroundGeometryReader: View {
-    public var body: some View {
-        GeometryReader { geoProxy in
-            Color.clear.preference(key: SizePreferenceKey.self, value: geoProxy.size)
-        }
-    }
-    public init() {}
-}
-
-@available(iOS 15.0, *)
-public extension View {
-    func eraseToAnyView() -> AnyView {
-        AnyView(self)
     }
 }
