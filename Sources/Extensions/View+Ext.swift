@@ -25,6 +25,11 @@ extension View {
             }
             
 //            BlurFilter(blurStyle: blurStyle, timer: timer)
+            
+            Rectangle()
+                .opacity(0.5)
+                .frame(width: viewWidth, height: viewHeight)
+            
         }
 //        .frame(width: viewWidth, height: viewHeight)
     }
