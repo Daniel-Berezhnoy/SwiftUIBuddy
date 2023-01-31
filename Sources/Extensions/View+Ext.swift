@@ -15,7 +15,7 @@ extension View {
         var viewWidth = 0.00
         var viewHeight = 0.00
         
-        return VStack {
+        return ZStack {
             self.readSize { size in
                 viewWidth = size.width
                 viewHeight = size.height
@@ -24,18 +24,9 @@ extension View {
                 print("View Height: \(viewHeight) \n")
             }
             
-            
-            self
-            
-//            BlurFilter(blurStyle: blurStyle, timer: timer)
-            
-//            Rectangle()
-//                .opacity(0.75)
-//                .frame(width: viewWidth, height: viewHeight)
-//                .frame(width: 300, height: 300)
-            
+            BlurFilter(blurStyle: blurStyle, timer: timer)
         }
-//        .frame(width: viewWidth, height: viewHeight)
+        .frame(width: viewWidth, height: viewHeight)
     }
 
     func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
