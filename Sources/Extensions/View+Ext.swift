@@ -15,7 +15,7 @@ extension View {
         var viewWidth = 0.00
         var viewHeight = 0.00
         
-        return ZStack {
+        return VStack {
             self.readSize { size in
                 viewWidth = size.width
                 viewHeight = size.height
@@ -24,11 +24,15 @@ extension View {
                 print("View Height: \(viewHeight) \n")
             }
             
+            
+            self
+            
 //            BlurFilter(blurStyle: blurStyle, timer: timer)
             
-            Rectangle()
-                .opacity(0.5)
-                .frame(width: viewWidth, height: viewHeight)
+//            Rectangle()
+//                .opacity(0.75)
+//                .frame(width: viewWidth, height: viewHeight)
+//                .frame(width: 300, height: 300)
             
         }
 //        .frame(width: viewWidth, height: viewHeight)
