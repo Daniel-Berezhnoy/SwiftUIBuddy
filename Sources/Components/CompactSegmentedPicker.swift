@@ -18,18 +18,7 @@ public struct CompactSegmentedPicker: View {
             geometryReader
             
             VStack(spacing: 0) {
-                VStack(alignment: .leading, spacing: 0) {
-                    
-                    HStack(spacing: xSpace) {
-                        ForEach(0 ..< items.count, id: \.self) { index in
-                            segmentLabel(for: index)
-                        }
-                    }
-                    .padding(.bottom, 4)
-                    
-                    dynamicLine
-                }
-                
+                picker
                 divider
             }
         }
@@ -45,11 +34,22 @@ public struct CompactSegmentedPicker: View {
         .frame(maxWidth: .infinity, maxHeight: 1)
     }
     
-    var dynamicLine: some View {
-        Rectangle()
-            .foregroundColor(.green)
-            .frame(width: selectedItemWidth, height: 2)
-            .offset(x: calculateLineOffset)
+    var picker: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            
+            // Title
+            HStack(spacing: xSpace) {
+                ForEach(0 ..< items.count, id: \.self) { index in
+                    segmentLabel(for: index)
+                }
+            }
+            
+            // Line
+            Rectangle()
+                .foregroundColor(.green)
+                .frame(width: selectedItemWidth, height: 2)
+                .offset(x: calculateLineOffset)
+        }
     }
     
     var divider: some View {
