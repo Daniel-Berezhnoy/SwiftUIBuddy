@@ -45,6 +45,11 @@ struct RadioPicker_Previews: PreviewProvider {
         RadioPicker(choices: ["Male", "Female", "Non-Binary"],
                     selectedChoice: .constant("Male"))
         .padding(.horizontal, 25)
+        
+        Picker("Hi", selection: .constant(["Male", "Female", "Non-Binary"])) {
+            
+        }
+        .pickerStyle(.inline)
     }
 }
 
