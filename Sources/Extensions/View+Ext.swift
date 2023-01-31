@@ -19,15 +19,14 @@ extension View {
             self.readSize { size in
                 viewWidth = size.width
                 viewHeight = size.height
-                    
+                
                 print("View Width: \(viewWidth)")
                 print("View Height: \(viewHeight) \n")
             }
             
-            BlurFilter(blurStyle: blurStyle, timer: timer)
-               
+//            BlurFilter(blurStyle: blurStyle, timer: timer)
         }
-        .frame(width: viewWidth, height: viewHeight)
+//        .frame(width: viewWidth, height: viewHeight)
     }
 
     func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
