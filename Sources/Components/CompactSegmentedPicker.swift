@@ -105,11 +105,12 @@ public struct CompactSegmentedPicker: View {
         selectedIndex = index
     }
     
-    /// ADD DESCRIPTION
+    /// Customizable Segmented Picker. To initialize, pass in an Array of Strings for all possible choices and a
+    /// Binding to an Int for the Selected Index. For more customization, pass in Tint Color and Custom Font.
     public init(choices: [String],
                 selectedIndex: Binding<Int>,
                 tint: Color = .primary,
-                font: Font = .system(size: 15, design: .rounded)) {
+                font: Font = .system(size: 15)) {
         
         self.font = font
         self.color = tint
@@ -137,6 +138,7 @@ struct CompactSegmentedPicker_Previews: PreviewProvider {
                 default: Color.clear
             }
         }
-        .frame(height: 300)
+        .ignoresSafeArea(edges: .bottom)
+        .padding(.top)
     }
 }
