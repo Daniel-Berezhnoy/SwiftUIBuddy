@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#warning("Working in this View")
 @available(iOS 15.0, *)
 public struct CompactSegmentedPicker: View {
     
@@ -121,7 +122,19 @@ public struct CompactSegmentedPicker: View {
 
 @available(iOS 15.0, *)
 struct CompactSegmentedPicker_Previews: PreviewProvider {
+    @State static private var selectedPage = 0
+    
     static var previews: some View {
-        CompactSegmentedPicker(items: ["Number 1", "Numero 2", "# 3"], selection: .constant(1))
+//        VStack(spacing: 0) {
+            CompactSegmentedPicker(items: ["Blue", "Green", "Red"], selection: $selectedPage)
+            
+//            switch selectedPage {
+//                case 0: Color.blue
+//                case 1: Color.green
+//                case 2: Color.red
+//                default: Color.clear
+//            }
+//        }
+//        .frame(height: 300)
     }
 }
