@@ -71,7 +71,7 @@ public struct CompactSegmentedPicker: View {
     }
     
     var selectedItemWidth: CGFloat {
-        labelSizes.count > selectedIndex ? labelSizes[selectedIndex].width : .zero
+        labelSizes.count > selectedIndex ? labelSizes[selectedIndex.onlyPositive()].width : .zero
     }
     
     var calculateLineOffset: CGFloat {
@@ -83,12 +83,12 @@ public struct CompactSegmentedPicker: View {
             .map { $0.element.width }
             .reduce(0, +)
         
-        return result + itemSpace * CGFloat(selectedIndex)
+        return result + itemSpace * CGFloat(selectedIndex.onlyPositive())
     }
     
     func createLabel(for index: Int) -> some View {
         guard index < choices.count else { return EmptyView().eraseToAnyView() }
-        let selected = selectedIndex == index
+        let selected = selectedIndex.onlyPositive() == index
         
         return Text(choices[index])
             .font(font)
@@ -109,7 +109,7 @@ public struct CompactSegmentedPicker: View {
     public init(choices: [String],
                 selectedIndex: Binding<Int>,
                 tint: Color = .primary,
-                font: Font = .system(size: 15)) {
+                font: Font = .system(size: 15, design: .rounded)) {
         
         self.font = font
         self.color = tint
@@ -121,21 +121,19 @@ public struct CompactSegmentedPicker: View {
 
 @available(iOS 15.0, *)
 struct CompactSegmentedPicker_Previews: PreviewProvider {
-    @State static private var selectedPage = 1
+    @State static private var selectedPage = 0
     
     static var previews: some View {
         VStack(spacing: 0) {
-            CompactSegmentedPicker(choices: ["Blue", "Green", "Red"], selectedIndex: $selectedPage)
-            selectedColor
-        }
-    }
-    
-    static var selectedColor: some View {
-        ZStack {
+            CompactSegmentedPicker(choices: ["Cyan", "Purple", "Orange", "Mint", "Indigo"],
+                                   selectedIndex: $selectedPage)
+            
             switch selectedPage {
-                case 0: Color.blue
-                case 1: Color.green
-                case 2: Color.red
+                case 0: Color.cyan
+                case 1: Color.purple
+                case 2: Color.orange
+                case 3: Color.mint
+                case 4: Color.indigo
                 default: Color.clear
             }
         }
