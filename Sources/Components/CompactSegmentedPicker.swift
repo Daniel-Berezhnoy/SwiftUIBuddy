@@ -11,7 +11,10 @@ import SwiftUI
 public struct CompactSegmentedPicker: View {
     
     @Binding var selectedIndex: Int
+    
     let choices: [String]
+    let color: Color
+    let font: Font
     
     public var body: some View {
         ZStack {
@@ -46,7 +49,7 @@ public struct CompactSegmentedPicker: View {
             
             // Line
             Rectangle()
-                .foregroundColor(.green)
+                .foregroundColor(color)
                 .frame(width: selectedItemWidth, height: 2)
                 .offset(x: calculateLineOffset)
         }
@@ -54,6 +57,7 @@ public struct CompactSegmentedPicker: View {
     
     var divider: some View {
         VStack(spacing: 0) {
+            Divider()
             Divider()
             Divider()
         }
@@ -84,12 +88,12 @@ public struct CompactSegmentedPicker: View {
     
     func createLabel(for index: Int) -> some View {
         guard index < choices.count else { return EmptyView().eraseToAnyView() }
-        let isSelected = selectedIndex == index
+        let selected = selectedIndex == index
         
         return Text(choices[index])
-            .font(Font.custom("Montserrat", size: 14))
-            .fontWeight(isSelected ? .semibold: .medium)
-            .foregroundColor(isSelected ? .green : .primary)
+            .font(font)
+            .fontWeight(selected ? .semibold: .regular)
+            .foregroundColor(selected ? color : .secondary)
             .background(BackgroundGeometryReader())
             .onPreferenceChange(SizePreferenceKey.self) { labelSizes[index] = $0 }
             .onTapGesture { withAnimation(.linear(duration: 0.15)) { changeSelection(to: index) } }
@@ -102,7 +106,13 @@ public struct CompactSegmentedPicker: View {
     }
     
     /// ADD DESCRIPTION
-    public init(choices: [String], selectedIndex: Binding<Int>) {
+    public init(choices: [String],
+                selectedIndex: Binding<Int>,
+                tint: Color = .primary,
+                font: Font = .system(size: 15)) {
+        
+        self.font = font
+        self.color = tint
         self.choices = choices
         _selectedIndex = selectedIndex
         _labelSizes = State(initialValue: [CGSize](repeating: .zero, count: choices.count))
@@ -111,10 +121,10 @@ public struct CompactSegmentedPicker: View {
 
 @available(iOS 15.0, *)
 struct CompactSegmentedPicker_Previews: PreviewProvider {
-    @State static private var selectedPage = 0
+    @State static private var selectedPage = 1
     
     static var previews: some View {
-        VStack {
+        VStack(spacing: 0) {
             CompactSegmentedPicker(choices: ["Blue", "Green", "Red"], selectedIndex: $selectedPage)
             selectedColor
         }

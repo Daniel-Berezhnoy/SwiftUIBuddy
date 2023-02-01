@@ -26,15 +26,15 @@ public struct RadioPicker: View {
     }
     
     /// Radio Picker for iOS. To initialize, pass in an Array of Strings for all possible choices and a
-    /// Binding to a String for the Selected Choice. For more customization, pass in a Highlight Color and Custom Font.
+    /// Binding to a String for the Selected Choice. For more customization, pass in Tint Color and Custom Font.
     public init(choices: [String],
                 selectedChoice: Binding<String>,
-                highlightColor: Color = .blue,
+                tint: Color = .blue,
                 font: Font = .system(size: 16, weight: .light)) {
         
         self.font = font
         self.choices = choices
-        self.color = highlightColor
+        self.color = tint
         _selectedChoice = selectedChoice
     }
 }
