@@ -18,6 +18,7 @@ public struct Spacers: View {
         }
     }
     
+    
     /// A stack of Multiple Spacers. Just specify the amount of Spacers in a stack. Great for creating custom View Layouts.
     public init(_ numberOfSpacers: UInt) {
         self.numberOfSpacers = numberOfSpacers
