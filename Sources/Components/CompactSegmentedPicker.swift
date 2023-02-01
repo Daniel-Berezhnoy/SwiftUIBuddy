@@ -24,12 +24,12 @@ public struct CompactSegmentedPicker: View {
         }
     }
     
-    @State private var segmentSize: CGSize = .zero
-    @State private var itemTitleSizes: [CGSize] = []
+    @State private var labelSize: CGSize = .zero
+    @State private var labelSizes: [CGSize] = []
     
     var geometryReader: some View {
         GeometryReader { geometry in
-            Color.clear.onAppear { segmentSize = geometry.size }
+            Color.clear.onAppear { labelSize = geometry.size }
         }
         .frame(maxWidth: .infinity, maxHeight: 1)
     }
@@ -60,20 +60,20 @@ public struct CompactSegmentedPicker: View {
     }
     
     var itemSpace: CGFloat {
-        guard !itemTitleSizes.isEmpty, !choices.isEmpty, segmentSize.width != 0 else { return 0 }
-        let itemWidthSum: CGFloat = itemTitleSizes.map { $0.width }.reduce(0, +).rounded()
-        let space = (segmentSize.width - itemWidthSum) / CGFloat(choices.count + 1)
+        guard !labelSizes.isEmpty, !choices.isEmpty, labelSize.width != 0 else { return 0 }
+        let itemWidthSum: CGFloat = labelSizes.map { $0.width }.reduce(0, +).rounded()
+        let space = (labelSize.width - itemWidthSum) / CGFloat(choices.count + 1)
         return max(space, 0)
     }
     
     var selectedItemWidth: CGFloat {
-        itemTitleSizes.count > selectedIndex ? itemTitleSizes[selectedIndex].width : .zero
+        labelSizes.count > selectedIndex ? labelSizes[selectedIndex].width : .zero
     }
     
     var calculateLineOffset: CGFloat {
         guard selectedItemWidth != .zero, selectedIndex != 0 else { return 0 }
         
-        let result = itemTitleSizes
+        let result = labelSizes
             .enumerated()
             .filter { $0.offset < selectedIndex }
             .map { $0.element.width }
@@ -91,7 +91,7 @@ public struct CompactSegmentedPicker: View {
             .fontWeight(isSelected ? .semibold: .medium)
             .foregroundColor(isSelected ? .green : .primary)
             .background(BackgroundGeometryReader())
-            .onPreferenceChange(SizePreferenceKey.self) { itemTitleSizes[index] = $0 }
+            .onPreferenceChange(SizePreferenceKey.self) { labelSizes[index] = $0 }
             .onTapGesture { withAnimation(.linear(duration: 0.15)) { changeSelection(to: index) } }
             .eraseToAnyView()
     }
@@ -105,7 +105,7 @@ public struct CompactSegmentedPicker: View {
     public init(choices: [String], selectedIndex: Binding<Int>) {
         self.choices = choices
         _selectedIndex = selectedIndex
-        _itemTitleSizes = State(initialValue: [CGSize](repeating: .zero, count: choices.count))
+        _labelSizes = State(initialValue: [CGSize](repeating: .zero, count: choices.count))
     }
 }
 
