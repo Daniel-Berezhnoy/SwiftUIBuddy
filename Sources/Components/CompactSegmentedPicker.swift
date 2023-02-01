@@ -83,8 +83,8 @@ public struct CompactSegmentedPicker: View {
     }
     
     func createLabel(for index: Int) -> some View {
-        guard index < self.choices.count else { return EmptyView().eraseToAnyView() }
-        let isSelected = self.selectedIndex == index
+        guard index < choices.count else { return EmptyView().eraseToAnyView() }
+        let isSelected = selectedIndex == index
         
         return Text(choices[index])
             .font(Font.custom("Montserrat", size: 14))
@@ -97,8 +97,8 @@ public struct CompactSegmentedPicker: View {
     }
     
     func changeSelection(to index: Int) {
-        guard index < self.choices.count else { return }
-        self.selectedIndex = index
+        guard index < choices.count else { return }
+        selectedIndex = index
     }
     
     /// ADD DESCRIPTION
