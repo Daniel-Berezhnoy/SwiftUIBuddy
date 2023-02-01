@@ -125,16 +125,21 @@ struct CompactSegmentedPicker_Previews: PreviewProvider {
     @State static private var selectedPage = 0
     
     static var previews: some View {
-//        VStack(spacing: 0) {
+        VStack {
             CompactSegmentedPicker(items: ["Blue", "Green", "Red"], selection: $selectedPage)
-            
-//            switch selectedPage {
-//                case 0: Color.blue
-//                case 1: Color.green
-//                case 2: Color.red
-//                default: Color.clear
-//            }
-//        }
-//        .frame(height: 300)
+            selectedColor
+        }
+    }
+    
+    static var selectedColor: some View {
+        ZStack {
+            switch selectedPage {
+                case 0: Color.blue
+                case 1: Color.green
+                case 2: Color.red
+                default: Color.clear
+            }
+        }
+        .frame(height: 300)
     }
 }
