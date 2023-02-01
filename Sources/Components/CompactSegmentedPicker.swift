@@ -10,8 +10,8 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct CompactSegmentedPicker: View {
     
-    @Binding var selection: Int
-    let items: [String]
+    @Binding var selectedIndex: Int
+    let choices: [String]
     
     public var body: some View {
         ZStack {
@@ -39,7 +39,7 @@ public struct CompactSegmentedPicker: View {
             
             // Title
             HStack(spacing: itemSpace) {
-                ForEach(0 ..< items.count, id: \.self) { index in
+                ForEach(0 ..< choices.count, id: \.self) { index in
                     createLabel(for: index)
                 }
             }
@@ -60,33 +60,33 @@ public struct CompactSegmentedPicker: View {
     }
     
     var itemSpace: CGFloat {
-        guard !itemTitleSizes.isEmpty, !items.isEmpty, segmentSize.width != 0 else { return 0 }
+        guard !itemTitleSizes.isEmpty, !choices.isEmpty, segmentSize.width != 0 else { return 0 }
         let itemWidthSum: CGFloat = itemTitleSizes.map { $0.width }.reduce(0, +).rounded()
-        let space = (segmentSize.width - itemWidthSum) / CGFloat(items.count + 1)
+        let space = (segmentSize.width - itemWidthSum) / CGFloat(choices.count + 1)
         return max(space, 0)
     }
     
     var selectedItemWidth: CGFloat {
-        itemTitleSizes.count > selection ? itemTitleSizes[selection].width : .zero
+        itemTitleSizes.count > selectedIndex ? itemTitleSizes[selectedIndex].width : .zero
     }
     
     var calculateLineOffset: CGFloat {
-        guard selectedItemWidth != .zero, selection != 0 else { return 0 }
+        guard selectedItemWidth != .zero, selectedIndex != 0 else { return 0 }
         
         let result = itemTitleSizes
             .enumerated()
-            .filter { $0.offset < selection }
+            .filter { $0.offset < selectedIndex }
             .map { $0.element.width }
             .reduce(0, +)
         
-        return result + itemSpace * CGFloat(selection)
+        return result + itemSpace * CGFloat(selectedIndex)
     }
     
     func createLabel(for index: Int) -> some View {
-        guard index < self.items.count else { return EmptyView().eraseToAnyView() }
-        let isSelected = self.selection == index
+        guard index < self.choices.count else { return EmptyView().eraseToAnyView() }
+        let isSelected = self.selectedIndex == index
         
-        return Text(items[index])
+        return Text(choices[index])
             .font(Font.custom("Montserrat", size: 14))
             .fontWeight(isSelected ? .semibold: .medium)
             .foregroundColor(isSelected ? .green : .primary)
@@ -97,15 +97,15 @@ public struct CompactSegmentedPicker: View {
     }
     
     func changeSelection(to index: Int) {
-        guard index < self.items.count else { return }
-        self.selection = index
+        guard index < self.choices.count else { return }
+        self.selectedIndex = index
     }
     
     /// ADD DESCRIPTION
-    public init(items: [String], selection: Binding<Int>) {
-        self.items = items
-        _selection = selection
-        _itemTitleSizes = State(initialValue: [CGSize](repeating: .zero, count: items.count))
+    public init(choices: [String], selectedIndex: Binding<Int>) {
+        self.choices = choices
+        _selectedIndex = selectedIndex
+        _itemTitleSizes = State(initialValue: [CGSize](repeating: .zero, count: choices.count))
     }
 }
 
@@ -115,7 +115,7 @@ struct CompactSegmentedPicker_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            CompactSegmentedPicker(items: ["Blue", "Green", "Red"], selection: $selectedPage)
+            CompactSegmentedPicker(choices: ["Blue", "Green", "Red"], selectedIndex: $selectedPage)
             selectedColor
         }
     }
