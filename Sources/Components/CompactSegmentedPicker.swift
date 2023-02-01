@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-#warning("Working in this View")
 @available(iOS 15.0, *)
 public struct CompactSegmentedPicker: View {
     
@@ -39,9 +38,9 @@ public struct CompactSegmentedPicker: View {
         VStack(alignment: .leading, spacing: 5) {
             
             // Title
-            HStack(spacing: xSpace) {
+            HStack(spacing: itemSpace) {
                 ForEach(0 ..< items.count, id: \.self) { index in
-                    segmentLabel(for: index)
+                    createLabel(for: index)
                 }
             }
             
@@ -60,11 +59,8 @@ public struct CompactSegmentedPicker: View {
         }
     }
     
-    var xSpace: CGFloat {
-        guard !itemTitleSizes.isEmpty,
-              !items.isEmpty,
-              segmentSize.width != 0 else { return 0 }
-        
+    var itemSpace: CGFloat {
+        guard !itemTitleSizes.isEmpty, !items.isEmpty, segmentSize.width != 0 else { return 0 }
         let itemWidthSum: CGFloat = itemTitleSizes.map { $0.width }.reduce(0, +).rounded()
         let space = (segmentSize.width - itemWidthSum) / CGFloat(items.count + 1)
         return max(space, 0)
@@ -83,14 +79,11 @@ public struct CompactSegmentedPicker: View {
             .map { $0.element.width }
             .reduce(0, +)
         
-        return result + xSpace * CGFloat(selection)
+        return result + itemSpace * CGFloat(selection)
     }
     
-    func segmentLabel(for index: Int) -> some View {
-        guard index < self.items.count else {
-            return EmptyView().eraseToAnyView()
-        }
-        
+    func createLabel(for index: Int) -> some View {
+        guard index < self.items.count else { return EmptyView().eraseToAnyView() }
         let isSelected = self.selection == index
         
         return Text(items[index])
@@ -99,15 +92,11 @@ public struct CompactSegmentedPicker: View {
             .foregroundColor(isSelected ? .green : .primary)
             .background(BackgroundGeometryReader())
             .onPreferenceChange(SizePreferenceKey.self) { itemTitleSizes[index] = $0 }
-            .onTapGesture {
-                withAnimation(.linear(duration: 0.15)) {
-                    onItemTap(index: index)
-                }
-            }
+            .onTapGesture { withAnimation(.linear(duration: 0.15)) { changeSelection(to: index) } }
             .eraseToAnyView()
     }
     
-    func onItemTap(index: Int) {
+    func changeSelection(to index: Int) {
         guard index < self.items.count else { return }
         self.selection = index
     }
