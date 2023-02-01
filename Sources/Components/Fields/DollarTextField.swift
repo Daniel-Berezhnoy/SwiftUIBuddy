@@ -22,6 +22,7 @@ public struct DollarTextField: View {
         TextField("$\(placeholder, specifier: "%.2f")",
                   value: $amount,
                   format: .currency(code: "USD"))
+        
             .multilineTextAlignment(alignment)
             .keyboardType(.decimalPad)
             .minimumScaleFactor(0.9)

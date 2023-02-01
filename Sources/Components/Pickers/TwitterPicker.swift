@@ -1,5 +1,5 @@
 //
-//  SimpleSegmentedPicker.swift
+//  TwitterPicker.swift
 //  
 //
 //  Created by Daniel Berezhnoy on 1/31/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-public struct SimpleSegmentedPicker: View {
+public struct TwitterPicker: View {
     
     @Binding var selectedIndex: Int
     
@@ -105,8 +105,9 @@ public struct SimpleSegmentedPicker: View {
         selectedIndex = index
     }
     
-    /// Customizable Segmented Picker. To initialize, pass in an Array of Strings for all possible choices and a
-    /// Binding to an Int for the Selected Index. For more customization, pass in Tint Color and Custom Font.
+    /// Segmented Picker that resembles Twitter's Homepage menu.
+    /// To initialize, pass in an Array of Strings for all possible choices and a Binding to an Int for the Selected Index.
+    /// For more customization, pass in Tint Color and Custom Font.
     public init(choices: [String],
                 selectedIndex: Binding<Int>,
                 tint: Color = .blue,
@@ -121,8 +122,8 @@ public struct SimpleSegmentedPicker: View {
 }
 
 @available(iOS 15.0, *)
-struct SimpleSegmentedPicker_Previews: PreviewProvider {
+struct TwitterPicker_Previews: PreviewProvider {
     static var previews: some View {
-        SimpleSegmentedPicker(choices: ["Ramen", "Miso", "Pho"], selectedIndex: .constant(0))
+        TwitterPicker(choices: ["Ramen", "Miso", "Pho"], selectedIndex: .constant(0))
     }
 }

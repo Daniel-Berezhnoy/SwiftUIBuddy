@@ -56,7 +56,7 @@ public struct DestructiveButton: View {
     
     /// Destructive Button is great for destructive actions like deletion, cancelation, etc.
     /// To use, just pass in title and put your cancellation action inside the closure.
-    /// You can also specify in Button Style, Corner Radius, Custom Font and Height for more customization.
+    /// You can also specify the Button Style, Corner Radius, Custom Font and Height for more customization.
     public init(title: String,
                 style: DestructiveButtonStyle = .plain,
                 cornerRadius: CGFloat = 10,

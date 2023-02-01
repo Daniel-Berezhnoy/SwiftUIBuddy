@@ -34,7 +34,7 @@ public struct LoadingSpinner: View {
             .tint(color)
     }
     
-    /// A loading spinner. Change the tint color for more customization.
+    /// A simple loading spinner. Change the tint color for more customization.
     public init(tint: Color = .secondary) {
         self.color = tint
     }
