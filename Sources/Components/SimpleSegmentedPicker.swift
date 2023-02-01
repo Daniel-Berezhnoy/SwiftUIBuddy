@@ -1,5 +1,5 @@
 //
-//  CompactSegmentedPicker.swift
+//  SimpleSegmentedPicker.swift
 //  
 //
 //  Created by Daniel Berezhnoy on 1/31/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-public struct CompactSegmentedPicker: View {
+public struct SimpleSegmentedPicker: View {
     
     @Binding var selectedIndex: Int
     
@@ -121,12 +121,12 @@ public struct CompactSegmentedPicker: View {
 }
 
 @available(iOS 15.0, *)
-struct CompactSegmentedPicker_Previews: PreviewProvider {
+struct SimpleSegmentedPicker_Previews: PreviewProvider {
     @State static private var selectedPage = 0
     
     static var previews: some View {
         VStack(spacing: 0) {
-            CompactSegmentedPicker(choices: ["Cyan", "Purple", "Orange", "Mint", "Indigo"],
+            SimpleSegmentedPicker(choices: ["Cyan", "Purple", "Orange", "Mint", "Indigo"],
                                    selectedIndex: $selectedPage)
             
             switch selectedPage {
