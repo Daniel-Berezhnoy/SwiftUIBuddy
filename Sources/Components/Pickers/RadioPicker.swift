@@ -33,8 +33,8 @@ public struct RadioPicker: View {
                 font: Font = .system(size: 16, weight: .light)) {
         
         self.font = font
-        self.choices = choices
         self.color = tint
+        self.choices = choices
         _selectedChoice = selectedChoice
     }
 }
