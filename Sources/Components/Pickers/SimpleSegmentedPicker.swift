@@ -109,7 +109,7 @@ public struct SimpleSegmentedPicker: View {
     /// Binding to an Int for the Selected Index. For more customization, pass in Tint Color and Custom Font.
     public init(choices: [String],
                 selectedIndex: Binding<Int>,
-                tint: Color = .primary,
+                tint: Color = .blue,
                 font: Font = .system(size: 15)) {
         
         self.font = font
@@ -122,23 +122,7 @@ public struct SimpleSegmentedPicker: View {
 
 @available(iOS 15.0, *)
 struct SimpleSegmentedPicker_Previews: PreviewProvider {
-    @State static private var selectedPage = 0
-    
     static var previews: some View {
-        VStack(spacing: 0) {
-            SimpleSegmentedPicker(choices: ["Cyan", "Purple", "Orange", "Mint", "Indigo"],
-                                   selectedIndex: $selectedPage)
-            
-            switch selectedPage {
-                case 0: Color.cyan
-                case 1: Color.purple
-                case 2: Color.orange
-                case 3: Color.mint
-                case 4: Color.indigo
-                default: Color.clear
-            }
-        }
-        .ignoresSafeArea(edges: .bottom)
-        .padding(.top)
+        SimpleSegmentedPicker(choices: ["Ramen", "Miso", "Pho"], selectedIndex: .constant(0))
     }
 }
