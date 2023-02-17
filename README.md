@@ -6,10 +6,12 @@
 ![StandardButton](Screenshots/Buttons/StandardButton.png)  
 **StandardButton**
 
+
+
 <!--Change into this ⬇️-->
-<!--<img src="Screenshots/Buttons/StandardButton.png" width="100" height="100">-->
-<img src = "Screenshots/Buttons/StandardButton.png" height = "100">
-**StandardButton**
+<img src = "Screenshots/Buttons/StandardButton.png", height = "90">
+
+
 
 ![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  
 **DestructiveButton**
