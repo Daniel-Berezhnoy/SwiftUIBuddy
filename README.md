@@ -31,7 +31,7 @@ These are the components included in the package:
 <img src = "Screenshots/Buttons/PlusButton.png" height = "85">
 
 **&nbsp;&nbsp;&nbsp;&nbsp; DismissButton**  
-<img src = "Screenshots/Buttons/DismissButton.png" height = "45">
+<img src = "Screenshots/Buttons/DismissButton.png" height = "55">
 
 <!--### Fields-->
 
