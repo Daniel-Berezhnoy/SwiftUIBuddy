@@ -22,7 +22,7 @@ These are the components included in the package:
 ### Buttons
 
 <!--![StandardButton](Screenshots/Buttons/StandardButton.png)  -->
-<img src = "Screenshots/Buttons/StandardButton.png" height = "80">
+<img src = "Screenshots/Buttons/StandardButton.png" height = "80"object-position: -64px 0;>
 &nbsp;&nbsp;&nbsp; StandardButton
 
 
