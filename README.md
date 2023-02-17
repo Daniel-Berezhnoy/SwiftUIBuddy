@@ -23,10 +23,7 @@ These are the components included in the package:
 
 <!--![StandardButton](Screenshots/Buttons/StandardButton.png)  -->
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
-
-*StandardButton*
-
-&nbsp;&nbsp;&nbsp;&nbsp;This will appear with six space characters in front of it
+&nbsp;&nbsp;&nbsp;&nbsp; StandardButton
 
 
 
