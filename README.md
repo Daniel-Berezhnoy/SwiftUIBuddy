@@ -8,7 +8,8 @@
 
 <!--Change into this ⬇️-->
 <!--<img src="Screenshots/Buttons/StandardButton.png" width="100" height="100">-->
-<!--**StandardButton**-->
+<img src="Screenshots/Buttons/StandardButton.png" width="100px" height="100">
+**StandardButton**
 
 ![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  
 **DestructiveButton**
