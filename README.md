@@ -3,9 +3,9 @@
 ## Components
 
 ### Buttons
-**StandardButton**
-![StandardButton](Screenshots/Buttons/StandardButton.png)  
-**StandardButton**
+<!--**StandardButton**-->
+<!--![StandardButton](Screenshots/Buttons/StandardButton.png)  -->
+<!--**StandardButton**-->
 
 
 
