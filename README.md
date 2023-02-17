@@ -28,7 +28,7 @@ These are the components included in the package:
 <img src = "Screenshots/Buttons/DestructiveButton.png" height = "151">
 
 **&nbsp;&nbsp;&nbsp;&nbsp; PlusButton**  
-<img src = "Screenshots/Buttons/PlusButton.png" height = "250">
+<img src = "Screenshots/Buttons/PlusButton.png" height = "150">
 
 <!--**DismissButton**-->
 <!--![DismissButton](Screenshots/Buttons/DismissButton.png)  -->
