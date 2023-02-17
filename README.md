@@ -9,7 +9,7 @@
 
 
 <!--Change into this ⬇️-->
-<img src = "Screenshots/Buttons/StandardButton.png", height = "90">
+<img src = "Screenshots/Buttons/StandardButton.png"; height = "90">
 
 
 
