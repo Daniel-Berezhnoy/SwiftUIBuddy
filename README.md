@@ -38,10 +38,10 @@ These are the components included in the package:
 ### Progress Views
 
 **&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar**  
-<img src = "Screenshots/Buttons/CapsuleProgressBar.png" height = "100">
+<img src = "Screenshots/Progress Views/CapsuleProgressBar.png" height = "100">
 
 <!--**&nbsp;&nbsp;&nbsp;&nbsp; LoadingSpinner**  -->
-<!--<img src = "Screenshots/Buttons/LoadingSpinner.png" height = "100">-->
+<!--<img src = "Screenshots/Progress Views/LoadingSpinner.png" height = "100">-->
 
 
 
