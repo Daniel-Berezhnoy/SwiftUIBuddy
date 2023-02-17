@@ -29,7 +29,7 @@ These are the components included in the package:
 <img src = "Screenshots/Buttons/PlusButton.png" height = "85">
 
 **&nbsp;&nbsp;&nbsp;&nbsp; DismissButton**  
-&nbsp;&nbsp; <img src = "Screenshots/Buttons/DismissButton.png" height = "50">  
+&nbsp;&nbsp; <img src = "Screenshots/Buttons/DismissButton.png" height = "50">
 
 ### Progress Views
 **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar**  
@@ -39,9 +39,7 @@ These are the components included in the package:
 <img src = "Screenshots/Progress Views/LoadingSpinner.png" height = "110">
 
 
-
 <!--### Fields-->
-<!---->
 <!--**&nbsp;&nbsp;&nbsp;&nbsp; LoginField**-->  
 <!--<img src = "Screenshots/Fields/LoginField.png" height = "100">-->
 <!---->
