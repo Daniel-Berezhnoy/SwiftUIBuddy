@@ -12,8 +12,8 @@
 ![PlusButton](Screenshots/Buttons/PlusButton.png)  
 **PlusButton**
 
-<!--![DismissButton](Screenshots/Buttons/DismissButton.png)  -->
-<!--**DismissButton**-->
+![DismissButton](Screenshots/Buttons/DismissButton.png)  
+**DismissButton**
 
 ### Fields
 Fields will be here
