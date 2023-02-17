@@ -11,9 +11,9 @@
 
 <!--Change this ⬆️ into this ⬇️-->
 <!--**StandardButton**-->
-StandardButton
+StandardButton  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
-StandardButton
+<!--StandardButton-->
 
 
 ![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  
