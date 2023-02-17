@@ -19,6 +19,7 @@ The minimum deployment target is iOS 15.0. This project is a work-in-progress, s
 
 These are the components included in the package:
 
+
 ### Buttons
 
 **&nbsp;&nbsp;&nbsp;&nbsp; StandardButton**  
@@ -32,6 +33,17 @@ These are the components included in the package:
 
 **&nbsp;&nbsp;&nbsp;&nbsp; DismissButton**  
 &nbsp;&nbsp; <img src = "Screenshots/Buttons/DismissButton.png" height = "50">
+
+
+### Progress Views
+
+**&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar**  
+<img src = "Screenshots/Buttons/CapsuleProgressBar.png" height = "100">
+
+<!--**&nbsp;&nbsp;&nbsp;&nbsp; LoadingSpinner**  -->
+<!--<img src = "Screenshots/Buttons/LoadingSpinner.png" height = "100">-->
+
+
 
 <!--### Fields-->
 <!---->
