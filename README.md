@@ -3,7 +3,7 @@
 ## Components
 
 ### Buttons
-![StandardButton](Screenshots/Buttons/StandardButton.png | width=100)  
+![StandardButton](Screenshots/Buttons/StandardButton.png | width=100px)  
 **StandardButton**
 
 ![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  
