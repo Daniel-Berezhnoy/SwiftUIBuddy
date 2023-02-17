@@ -3,14 +3,16 @@
 ## Components
 
 ### Buttons
+**StandardButton**
 ![StandardButton](Screenshots/Buttons/StandardButton.png)  
 **StandardButton**
 
 
 
-<!--Change into this ⬇️-->
+<!--Change this ⬆️ into this ⬇️-->
+**StandardButton**
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
-
+**StandardButton**
 
 
 ![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  
