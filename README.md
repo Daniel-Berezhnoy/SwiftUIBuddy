@@ -1,7 +1,7 @@
 # SwiftUIBuddy
 
 ## Description
-SwiftUIBuddy is a collection of beautiful, easy-to-use components for your SwiftUI App. It contains custom Buttons, Pickers, Progress Views, Text Fields, and so much more! The components are highly customizable and built using 100% SwiftUI.
+SwiftUIBuddy is a collection of beautiful, easy-to-use components for your SwiftUI App. It contains custom Buttons, Pickers, Progress Views, Text Fields, and so much more! The components are highly customizable and are built using 100% SwiftUI.
 
 ## Motivation
 The framework was designed with simplicity and functionality in mind. It strives to resemble Apple's design style and follow Human Interface Guidelines. For increased stability, SwiftUIBuddy does not depend on any 3rd party libraries or frameworks and is written only using native components provided by SwiftUI.
