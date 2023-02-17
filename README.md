@@ -21,11 +21,10 @@ These are the components included in the package:
 
 ### Buttons
 
-<!--![StandardButton](Screenshots/Buttons/StandardButton.png)  -->
 **&nbsp;&nbsp;&nbsp;&nbsp; StandardButton**  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
-**&nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton** 
+**&nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton**  
 <img src = "Screenshots/Buttons/DestructiveButton.png" height = "80">
 
 <!--![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  -->
