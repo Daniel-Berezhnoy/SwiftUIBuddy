@@ -30,13 +30,13 @@ These are the components included in the package:
 **&nbsp;&nbsp;&nbsp;&nbsp; PlusButton**  
 <img src = "Screenshots/Buttons/PlusButton.png" height = "85">
 
-<!--**DismissButton**-->
-<!--![DismissButton](Screenshots/Buttons/DismissButton.png)  -->
+**DismissButton**
+<img src = "Screenshots/Buttons/DismissButton.png" height = "100">
 
 <!--### Fields-->
 
-<!--**LoginField**-->
-<!--![LoginField](Screenshots/Fields/LoginField.png)  -->
+<!--**&nbsp;&nbsp;&nbsp;&nbsp; LoginField**-->
+<!--<img src = "Screenshots/Fields/LoginField.png" height = "100">-->
 
-<!--**DollarTextField**-->
-<!--![DollarTextField](Screenshots/Fields/DollarTextField.png)  -->
+<!--**&nbsp;&nbsp;&nbsp;&nbsp; DollarTextField**-->
+<!--<img src = "Screenshots/Fields/DollarTextField.png" height = "100">-->
