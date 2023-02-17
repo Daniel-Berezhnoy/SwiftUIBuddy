@@ -16,10 +16,10 @@
 **DismissButton**
 
 ### Fields
-![LoginField](Screenshots/Buttons/LoginField.png)  
+![LoginField](Screenshots/Fields/LoginField.png)  
 **LoginField**
 
-<!--![DollarTextField](Screenshots/Buttons/DollarTextField.png)  -->
+<!--![DollarTextField](Screenshots/Fields/DollarTextField.png)  -->
 <!--**DollarTextField**-->
 
 ## Description
