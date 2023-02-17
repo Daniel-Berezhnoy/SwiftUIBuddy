@@ -25,18 +25,22 @@ These are the components included in the package:
 **&nbsp;&nbsp;&nbsp;&nbsp; StandardButton**  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
+**&nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton** 
+<img src = "Screenshots/Buttons/DestructiveButton.png" height = "80">
+
 <!--![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  -->
-<!--**DestructiveButton**-->
-<!---->
-<!--![PlusButton](Screenshots/Buttons/PlusButton.png)  -->
+
+
 <!--**PlusButton**-->
-<!---->
-<!--![DismissButton](Screenshots/Buttons/DismissButton.png)  -->
+<!--![PlusButton](Screenshots/Buttons/PlusButton.png)  -->
+
 <!--**DismissButton**-->
-<!---->
+<!--![DismissButton](Screenshots/Buttons/DismissButton.png)  -->
+
 <!--### Fields-->
-<!--![LoginField](Screenshots/Fields/LoginField.png)  -->
+
 <!--**LoginField**-->
-<!---->
-<!--![DollarTextField](Screenshots/Fields/DollarTextField.png)  -->
+<!--![LoginField](Screenshots/Fields/LoginField.png)  -->
+
 <!--**DollarTextField**-->
+<!--![DollarTextField](Screenshots/Fields/DollarTextField.png)  -->
