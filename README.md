@@ -33,6 +33,7 @@ These are the components included in the package:
 
 ### Progress Views
 <img src = "Screenshots/Progress Views/CapsuleProgressBar.png" height = "50">  
+
 **&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar**
 
 <!--**&nbsp;&nbsp;&nbsp;&nbsp; LoadingSpinner**  -->
