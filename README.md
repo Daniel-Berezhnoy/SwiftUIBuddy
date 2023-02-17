@@ -1,7 +1,7 @@
 # SwiftUIBuddy
 
 ## Components
-### Buttons
+#### Buttons
 Buttons components here!
 ### Fields
 Fields will be here
