@@ -2,7 +2,7 @@
 
 ## Components
 #### Buttons
-![StandardButton](Screenshots/Buttons/StandardButton.PNG)
+![StandardButton](Screenshots/Buttons/StandardButton.png)
 Buttons components here!
 ### Fields
 Fields will be here
