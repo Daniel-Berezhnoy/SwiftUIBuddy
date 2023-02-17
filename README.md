@@ -10,8 +10,8 @@
 
 
 <!--Change this ⬆️ into this ⬇️-->
-**StandardButton**
-<img src = "Screenshots/Buttons/StandardButton.png" height = "80">
+<!--**StandardButton**-->
+<img src = "Screenshots/Buttons/StandardButton.png" height = "80">  
 **StandardButton**
 
 
