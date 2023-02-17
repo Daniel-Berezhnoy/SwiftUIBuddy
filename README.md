@@ -3,7 +3,7 @@
 ## Components
 
 ### Buttons
-![StandardButton](Screenshots/Buttons/StandardButton.png)
+![StandardButton](Screenshots/Buttons/StandardButton.png)  
 **StandardButton**
 
 ![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  
