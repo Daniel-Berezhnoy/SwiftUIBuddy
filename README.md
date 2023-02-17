@@ -25,9 +25,6 @@ These are the components included in the package:
 **&nbsp; &nbsp; StandardButton**  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
-
-
-
 <!--![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  -->
 <!--**DestructiveButton**-->
 <!---->
