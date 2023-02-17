@@ -18,17 +18,12 @@ The minimum deployment target is iOS 15.0. This project is a work-in-progress, s
 ## Components
 
 ### Buttons
-<!--**StandardButton**-->
+
+
+**StandardButton**
 <!--![StandardButton](Screenshots/Buttons/StandardButton.png)  -->
-<!--**StandardButton**-->
-
-
-
-<!--Change this ⬆️ into this ⬇️-->
-<!--**StandardButton**-->
-StandardButton  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
-<!--StandardButton-->
+
 
 
 ![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)  
