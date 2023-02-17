@@ -16,12 +16,9 @@ The framework was designed with simplicity and functionality in mind. It strives
 The minimum deployment target is iOS 15.0. This project is a work-in-progress, so expect it to grow, and feel free to contribute.
 
 ## Components
-
 These are the components included in the package:
 
-
 ### Buttons
-
 **&nbsp;&nbsp;&nbsp;&nbsp; StandardButton**  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
@@ -35,7 +32,6 @@ These are the components included in the package:
 &nbsp;&nbsp; <img src = "Screenshots/Buttons/DismissButton.png" height = "50">
 
 ### Progress Views
-
 **&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar**  
 <img src = "Screenshots/Progress Views/CapsuleProgressBar.png" height = "50">
 
