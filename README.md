@@ -4,7 +4,7 @@
 
 ### Buttons
 ![StandardButton](Screenshots/Buttons/StandardButton.png)
-![DestructiveButton](Screenshots/Buttons/DestructiveButton.png)
+![DestructiveButton](Screenshots/Buttons/DectructiveButton.png)
 Buttons components here!
 
 ### Fields
