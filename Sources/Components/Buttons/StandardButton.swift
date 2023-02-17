@@ -67,8 +67,8 @@ struct StandardButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
             StandardButton("Thin Button", color: .orange, cornerRadius: 40, height: 40) {}
-            StandardButton("Default Button") {}
-            StandardButton("Custom Font", color: .purple, font: .title2.weight(.black)) {}
+            StandardButton("Standard Button") {}
+            StandardButton("Custom Font Button", color: .purple, font: .title2.weight(.black)) {}
         }
         .padding(.horizontal, 25)
     }
