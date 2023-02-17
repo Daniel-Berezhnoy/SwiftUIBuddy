@@ -19,8 +19,8 @@
 ![LoginField](Screenshots/Fields/LoginField.png)  
 **LoginField**
 
-<!--![DollarTextField](Screenshots/Fields/DollarTextField.png)  -->
-<!--**DollarTextField**-->
+![DollarTextField](Screenshots/Fields/DollarTextField.png)  
+**DollarTextField**
 
 ## Description
 SwiftUIBuddy is a collection of beautiful, easy-to-use components for your SwiftUI App. It contains custom Buttons, Pickers, Progress Views, Text Fields, and so much more! The components are highly customizable and built using 100% SwiftUI.
