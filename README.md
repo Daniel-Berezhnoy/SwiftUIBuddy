@@ -32,6 +32,8 @@ These are the components included in the package:
 
 **&nbsp;&nbsp;&nbsp;&nbsp; DismissButton**  
 &nbsp; 
+
+
 <img src = "Screenshots/Buttons/DismissButton.png" height = "50">
 
 <!--### Fields-->
