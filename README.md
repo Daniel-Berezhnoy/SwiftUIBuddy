@@ -17,6 +17,8 @@ The minimum deployment target is iOS 15.0. This project is a work-in-progress, s
 
 ## Components
 
+These are the components included in the package:
+
 ### Buttons
 
 
