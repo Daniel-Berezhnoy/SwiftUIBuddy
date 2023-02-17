@@ -7,8 +7,8 @@ SwiftUIBuddy is a collection of beautiful, easy-to-use components for your Swift
 The library was designed with simplicity and functionality in mind. It strives to resemble Apple's design style and follow Human Interface Guidelines.
 
 ## How to Install
-1) go to Xcode -> File -> Add Packages
-2) paste https://github.com/Daniel-Berezhnoy/SwiftUIBuddy into the search bar
+1) Go to Xcode -> File -> Add Packages
+2) Paste https://github.com/Daniel-Berezhnoy/SwiftUIBuddy into the search bar
 3) Confirm and install the Package
 4) Import **SwiftUIBuddy** in the file(s) where you want to use it
 
