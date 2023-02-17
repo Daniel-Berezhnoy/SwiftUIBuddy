@@ -30,8 +30,8 @@ These are the components included in the package:
 **&nbsp;&nbsp;&nbsp;&nbsp; PlusButton**  
 <img src = "Screenshots/Buttons/PlusButton.png" height = "85">
 
-**DismissButton**  
-<img src = "Screenshots/Buttons/DismissButton.png" height = "100">
+**&nbsp;&nbsp;&nbsp;&nbsp; DismissButton**  
+<img src = "Screenshots/Buttons/DismissButton.png" height = "50">
 
 <!--### Fields-->
 
