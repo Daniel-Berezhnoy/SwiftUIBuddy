@@ -7,7 +7,7 @@
 **StandardButton**
 
 <!--Test-->
-<img src="Screenshots/Buttons/StandardButton.png">
+<img src="Screenshots/Buttons/StandardButton.png" width="100" height="100">
 
 
 
