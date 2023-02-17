@@ -1,5 +1,7 @@
 # SwiftUIBuddy
 
+![alt text](IMG_5843.JPG)
+
 SwiftUIBuddy is a collection of beautiful, easy-to-use components for your SwiftUI App. It contains custom Buttons, Pickers, Progress Views, Text Fields, and so much more! The components are highly customizable and built using 100% SwiftUI.
 
 The library was designed with simplicity and functionality in mind. It strives to resemble Apple's design style and follow Human Interface Guidelines.
