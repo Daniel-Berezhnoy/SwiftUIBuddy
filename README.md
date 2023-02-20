@@ -116,7 +116,6 @@ RadioPicker(choices: ["Male", "Female", "Non-Binary"], selectedChoice: $gender)
 ```swift
 Spacers(4)
 ```
------
 
 ## How to Install
 1) Go to Xcode -> File -> Add Packages
