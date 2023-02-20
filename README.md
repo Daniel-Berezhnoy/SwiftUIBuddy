@@ -138,9 +138,7 @@ The minimum deployment target is iOS 15.0. This project is a work-in-progress, s
 
 
 <details>
-<summary>
-### Buttons
-</summary>
+###<summary>Buttons</summary>
 
 **&nbsp;&nbsp;&nbsp;&nbsp; StandardButton**  
 
