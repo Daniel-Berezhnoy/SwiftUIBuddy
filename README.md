@@ -6,15 +6,6 @@ SwiftUIBuddy is a collection of beautiful, easy-to-use components for your Swift
 ## Motivation
 The framework was designed with simplicity and functionality in mind. It strives to resemble Apple's design style and follow Human Interface Guidelines. For increased stability, SwiftUIBuddy does not depend on any 3rd party libraries or frameworks and is written only using native components provided by SwiftUI.
 
-## How to Install
-1) Go to Xcode -> File -> Add Packages
-2) Paste https://github.com/Daniel-Berezhnoy/SwiftUIBuddy into the search bar
-3) Confirm and install the Package
-4) Import **SwiftUIBuddy** in the file(s) where you want to use it
-
-## Notes
-The minimum deployment target is iOS 15.0. This project is a work-in-progress, so expect it to grow, and feel free to contribute.
-
 ## Screenshots
 Here are the screenshots of the components currently included in the package:
 
@@ -56,3 +47,12 @@ Here are the screenshots of the components currently included in the package:
 &nbsp;&nbsp;&nbsp; Spacers  
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Alignment Tools/Spacer.png" height = "100">
 <img src = "Screenshots/Alignment Tools/Spacers.png" height = "100">
+
+## How to Install
+1) Go to Xcode -> File -> Add Packages
+2) Paste https://github.com/Daniel-Berezhnoy/SwiftUIBuddy into the search bar
+3) Confirm and install the Package
+4) Import **SwiftUIBuddy** in the file(s) where you want to use it
+
+## Notes
+The minimum deployment target is iOS 15.0. This project is a work-in-progress, so expect it to grow, and feel free to contribute.
