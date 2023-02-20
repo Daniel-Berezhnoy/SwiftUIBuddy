@@ -39,7 +39,7 @@ These are the components included in the package:
 &nbsp;<img src = "Screenshots/Progress Views/LoadingSpinner.png" height = "110">
 
 ### Fields
-**&nbsp;&nbsp;&nbsp;LoginField**  
+**&nbsp;&nbsp;&nbsp; LoginField**  
 <img src = "Screenshots/Fields/LoginField.png" height = "150">
 
 <!--**&nbsp;&nbsp;&nbsp;&nbsp; DollarTextField**  -->
