@@ -74,6 +74,7 @@ LoadingSpinner()
 
 ### Fields
 **&nbsp;&nbsp;&nbsp; LoginField**  
+<br />
 &nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "130">
 
 ```swift
