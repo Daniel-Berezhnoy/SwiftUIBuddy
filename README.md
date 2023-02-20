@@ -138,8 +138,10 @@ The minimum deployment target is iOS 15.0. This project is a work-in-progress, s
 
 
 <details>
-<summary>### Buttons</summary>
-<br>
+<summary>
+### Buttons
+</summary>
+
 **&nbsp;&nbsp;&nbsp;&nbsp; StandardButton**  
 
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
@@ -184,4 +186,5 @@ DismissButton {
 }
 ```
 -----
+
 </details>
