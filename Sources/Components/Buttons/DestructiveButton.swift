@@ -57,7 +57,7 @@ public struct DestructiveButton: View {
     /// Destructive Button is great for destructive actions like deletion, cancelation, etc.
     /// To use, just pass in title and put your cancellation action inside the closure.
     /// You can also specify the Button Style, Corner Radius, Custom Font and Height for more customization.
-    public init(title: String,
+    public init(_ title: String,
                 style: DestructiveButtonStyle = .plain,
                 cornerRadius: CGFloat = 10,
                 font: Font = .buttonStyle,
@@ -77,8 +77,8 @@ public struct DestructiveButton: View {
 struct DestructiveButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
-            DestructiveButton(title: "Delete Account", style: .bordered) {}
-            DestructiveButton(title: "Remove Connection") {}
+            DestructiveButton("Delete Account", style: .bordered) {}
+            DestructiveButton("Remove Connection") {}
         }
         .padding(.horizontal, 25)
     }
