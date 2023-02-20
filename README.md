@@ -14,15 +14,18 @@ How to use SwiftUIBuddy Components:
 **&nbsp;&nbsp;&nbsp;&nbsp; StandardButton**  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
-A Simple Button that can be used anywhere throughout the app.
-You initialize it just like the standard SwiftUI Button, by passing in the title and action.
-For more customization, pass in Custom Color, Corner Radius, Font and Height.
+
 
 ```swift
 StandardButton("Standard Button") {
     print("Button Tapped")
 }
 ```
+
+A Simple Button that can be used anywhere throughout the app.
+You initialize it just like the standard SwiftUI Button, by passing in the title and action.
+For more customization, pass in Custom Color, Corner Radius, Font and Height.
+
 -----
 
 **&nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton**  
