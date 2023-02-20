@@ -57,4 +57,6 @@ Screenshots of the components currently included in the package:
 ## Notes
 The minimum deployment target is iOS 15.0. This project is a work-in-progress, so expect it to grow, and feel free to contribute.
 
-```import SwiftUIBuddy```
+```swift
+import SwiftUIBuddy
+```
