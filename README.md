@@ -7,7 +7,6 @@ SwiftUIBuddy is a collection of beautiful, easy-to-use components for your Swift
 The framework was designed with simplicity and functionality in mind. It strives to resemble Apple's design style and follow Human Interface Guidelines. For increased stability, SwiftUIBuddy does not depend on any 3rd party libraries or frameworks and is written only using native components provided by SwiftUI.
 
 ## Screenshots
-Screenshots of the components currently included in the package:
 
 ### Buttons
 &nbsp;&nbsp;&nbsp;&nbsp; StandardButton  
