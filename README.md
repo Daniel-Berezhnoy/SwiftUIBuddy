@@ -40,10 +40,10 @@ These are the components included in the package:
 
 ### Fields
 **&nbsp;&nbsp;&nbsp; LoginField**  
-&nbsp;&nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "150">
+&nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "150">
 
 **&nbsp;&nbsp;&nbsp; DollarTextField**  
-&nbsp;&nbsp;&nbsp; <img src = "Screenshots/Fields/DollarTextField.png" height = "40">
+&nbsp;&nbsp; <img src = "Screenshots/Fields/DollarTextField.png" height = "40">
 
 ### Pickers
 **&nbsp;&nbsp;&nbsp; TwitterPicker**  
