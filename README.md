@@ -6,8 +6,8 @@ SwiftUIBuddy is a collection of beautiful, easy-to-use components for your Swift
 ## Motivation
 The framework was designed with simplicity and functionality in mind. It strives to resemble Apple's design style and follow Human Interface Guidelines. For increased stability, SwiftUIBuddy does not depend on any 3rd party libraries or frameworks and is written only using native components provided by SwiftUI.
 
-## Screenshots
-Screenshots of the components currently included in the package:
+## Components
+Here is how you declare the components and how they would look like:
 
 ### Buttons
 
@@ -15,8 +15,8 @@ Screenshots of the components currently included in the package:
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
 ```swift
-StandardButton("Update Profile") {
-    updateProfile()
+StandardButton("Standard Button") {
+    print("Button Tapped")
 }
 ```
 -----
@@ -34,8 +34,22 @@ DestructiveButton("Delete Account", style: .bordered) {
 &nbsp;&nbsp;&nbsp;&nbsp; PlusButton  
 <img src = "Screenshots/Buttons/PlusButton.png" height = "85">
 
+```swift
+PlusButton(color: .cyan) {
+    addNewFile()
+}
+```
+-----
+
 &nbsp;&nbsp;&nbsp;&nbsp; DismissButton  
 &nbsp;&nbsp; <img src = "Screenshots/Buttons/DismissButton.png" height = "50">
+
+```swift
+DismissButton {
+    showingSheet = false
+}
+```
+-----
 
 ### Progress Views
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar  
