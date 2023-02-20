@@ -72,8 +72,19 @@ LoadingSpinner()
 **&nbsp;&nbsp;&nbsp; LoginField**  
 &nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "130">
 
+```swift
+LoginField("Email", text: $email)
+LoginField("Password", text: $password, fieldType: .password)
+```
+-----
+
 **&nbsp;&nbsp;&nbsp; DollarTextField**  
 &nbsp;&nbsp; <img src = "Screenshots/Fields/DollarTextField.png" height = "40">
+
+```swift
+DollarTextField(9.40)
+```
+-----
 
 ### Pickers
 **&nbsp;&nbsp;&nbsp; TwitterPicker**  
