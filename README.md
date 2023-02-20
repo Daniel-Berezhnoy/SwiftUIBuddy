@@ -18,7 +18,7 @@ The minimum deployment target is iOS 15.0. This project is a work-in-progress, s
 ## Components
 Here are the screenshots of the components currently included in the package:
 
-#### Buttons
+### Buttons
 &nbsp;&nbsp;&nbsp;&nbsp; StandardButton  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
