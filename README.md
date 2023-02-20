@@ -95,6 +95,7 @@ DollarTextField(9.40, amount: $price)
 
 ### Pickers
 **&nbsp;&nbsp;&nbsp; TwitterPicker**  
+<br/>
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/TwitterPicker.png" height = "70">
 
 ```swift
@@ -103,6 +104,7 @@ TwitterPicker(choices: ["Ramen", "Miso", "Pho"], selectedIndex: $soup)
 -----
 
 **&nbsp;&nbsp;&nbsp; RadioPicker**  
+<br/>
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
 
 ```swift
@@ -112,6 +114,7 @@ RadioPicker(choices: ["Male", "Female", "Non-Binary"], selectedChoice: $gender)
 
 ### Alignment Tools
 **&nbsp;&nbsp;&nbsp; Spacers**  
+<br/>
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Alignment Tools/Spacer.png" height = "100">
 <img src = "Screenshots/Alignment Tools/Spacers.png" height = "100">
 
