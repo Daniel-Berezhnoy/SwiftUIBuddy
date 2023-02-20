@@ -22,7 +22,7 @@ These are the components included in the package:
 &nbsp;&nbsp;&nbsp;&nbsp; StandardButton  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
-**&nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton**  
+&nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton  
 <img src = "Screenshots/Buttons/DestructiveButton.png" height = "151">
 
 **&nbsp;&nbsp;&nbsp;&nbsp; PlusButton**  
