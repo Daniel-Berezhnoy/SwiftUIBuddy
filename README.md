@@ -60,3 +60,4 @@ The minimum deployment target is iOS 15.0. This project is a work-in-progress, s
 ```swift
 import SwiftUIBuddy
 ```
+in the file(s) where you want to use it
