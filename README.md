@@ -53,5 +53,5 @@ These are the components included in the package:
 <img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
 
 ### Alignment Tools
-**&nbsp;&nbsp;&nbsp; Spacers** 
+**&nbsp;&nbsp;&nbsp; Spacers**  
 <img src = "Screenshots/Alignment Tools/Spacers.png" height = "100">
