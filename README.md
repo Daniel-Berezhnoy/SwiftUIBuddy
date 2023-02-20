@@ -11,13 +11,14 @@ Screenshots of the components currently included in the package:
 
 ### Buttons
 
+&nbsp;&nbsp;&nbsp;&nbsp; StandardButton  
+
 ```swift
 StandardButton("Update Profile") {
     updateProfile()
 }
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp; StandardButton  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
 
 &nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton  
