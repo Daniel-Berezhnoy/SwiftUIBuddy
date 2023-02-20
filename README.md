@@ -138,7 +138,50 @@ The minimum deployment target is iOS 15.0. This project is a work-in-progress, s
 
 
 <details>
-<summary>How do I dropdown?</summary>
+<summary>### Buttons</summary>
 <br>
-This is how you dropdown.
+**&nbsp;&nbsp;&nbsp;&nbsp; StandardButton**  
+
+<img src = "Screenshots/Buttons/StandardButton.png" height = "80">
+
+```swift
+StandardButton("Standard Button") {
+    print("Button Tapped")
+}
+```
+-----
+
+**&nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton**  
+<img src = "Screenshots/Buttons/DestructiveButton.png" height = "151">
+
+```swift
+DestructiveButton("Delete Account", style: .bordered) {
+    deleteAccount()
+}
+
+DestructiveButton("Remove Connection") {
+    removeConnection()
+}
+```
+-----
+
+**&nbsp;&nbsp;&nbsp;&nbsp; PlusButton**  
+<img src = "Screenshots/Buttons/PlusButton.png" height = "85">
+
+```swift
+PlusButton(color: .cyan) {
+    addNewFile()
+}
+```
+-----
+
+**&nbsp;&nbsp;&nbsp;&nbsp; DismissButton**  
+&nbsp;&nbsp; <img src = "Screenshots/Buttons/DismissButton.png" height = "50">
+
+```swift
+DismissButton {
+    showingSheet = false
+}
+```
+-----
 </details>
