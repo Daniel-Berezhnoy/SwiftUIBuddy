@@ -50,4 +50,4 @@ These are the components included in the package:
 <img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
 
 **&nbsp;&nbsp;&nbsp; TwitterPicker**  
-<img src = "Screenshots/Pickers/TwitterPicker.png" height = "120">
+<img src = "Screenshots/Pickers/TwitterPicker.png" height = "50">
