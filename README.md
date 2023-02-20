@@ -46,8 +46,8 @@ These are the components included in the package:
 &nbsp;&nbsp; <img src = "Screenshots/Fields/DollarTextField.png" height = "40">
 
 ### Pickers
-**&nbsp;&nbsp;&nbsp; RadioPicker**  
-<img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
-
 **&nbsp;&nbsp;&nbsp; TwitterPicker**  
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/TwitterPicker.png" height = "70">
+
+**&nbsp;&nbsp;&nbsp; RadioPicker**  
+<img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
