@@ -25,7 +25,7 @@ StandardButton("Update Profile") {
 <img src = "Screenshots/Buttons/DestructiveButton.png" height = "151">
 
 ```swift
-DestructiveButton("Delete Account") {
+DestructiveButton("Delete Account", style: .bordered) {
     deleteAccount()
 }
 ```
