@@ -31,7 +31,7 @@ DestructiveButton("Delete Account", style: .bordered) {
 ```
 -----
 
-&nbsp;&nbsp;&nbsp;&nbsp; PlusButton  
+**&nbsp;&nbsp;&nbsp;&nbsp; PlusButton**  
 <img src = "Screenshots/Buttons/PlusButton.png" height = "85">
 
 ```swift
@@ -41,7 +41,7 @@ PlusButton(color: .cyan) {
 ```
 -----
 
-&nbsp;&nbsp;&nbsp;&nbsp; DismissButton  
+**&nbsp;&nbsp;&nbsp;&nbsp; DismissButton**  
 &nbsp;&nbsp; <img src = "Screenshots/Buttons/DismissButton.png" height = "50">
 
 ```swift
@@ -52,7 +52,7 @@ DismissButton {
 -----
 
 ### Progress Views
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar  
+**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar**  
 <img src = "Screenshots/Progress Views/CapsuleProgressBar.png" height = "50">
 
 ```swift
@@ -60,7 +60,7 @@ CapsuleProgressBar(currentStage: 4, totalStages: 5)
 ```
 -----
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LoadingSpinner  
+**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LoadingSpinner**  
 &nbsp;<img src = "Screenshots/Progress Views/LoadingSpinner.png" height = "110">
 
 ```swift
@@ -69,21 +69,21 @@ LoadingSpinner()
 -----
 
 ### Fields
-&nbsp;&nbsp;&nbsp; LoginField  
+**&nbsp;&nbsp;&nbsp; LoginField**  
 &nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "130">
 
-&nbsp;&nbsp;&nbsp; DollarTextField  
+**&nbsp;&nbsp;&nbsp; DollarTextField**  
 &nbsp;&nbsp; <img src = "Screenshots/Fields/DollarTextField.png" height = "40">
 
 ### Pickers
-&nbsp;&nbsp;&nbsp; TwitterPicker  
+**&nbsp;&nbsp;&nbsp; TwitterPicker**  
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/TwitterPicker.png" height = "70">
 
-&nbsp;&nbsp;&nbsp; RadioPicker  
+**&nbsp;&nbsp;&nbsp; RadioPicker**  
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
 
 ### Alignment Tools
-&nbsp;&nbsp;&nbsp; Spacers  
+**&nbsp;&nbsp;&nbsp; Spacers**  
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Alignment Tools/Spacer.png" height = "100">
 <img src = "Screenshots/Alignment Tools/Spacers.png" height = "100">
 
