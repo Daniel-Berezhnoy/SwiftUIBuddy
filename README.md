@@ -54,10 +54,9 @@ Screenshots of the components currently included in the package:
 3) Confirm and install the Package
 4) Import **SwiftUIBuddy** in the file(s) where you want to use it
 
-## Notes
-The minimum deployment target is iOS 15.0. This project is a work-in-progress, so expect it to grow, and feel free to contribute.
-
 ```swift
 import SwiftUIBuddy
 ```
-in the file(s) where you want to use it
+
+## Notes
+The minimum deployment target is iOS 15.0. This project is a work-in-progress, so expect it to grow, and feel free to contribute.
