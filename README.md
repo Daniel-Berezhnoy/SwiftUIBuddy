@@ -87,7 +87,7 @@ LoginField("Password", text: $password, fieldType: .password)
 &nbsp;&nbsp; <img src = "Screenshots/Fields/DollarTextField.png" height = "40">
 
 ```swift
-DollarTextField(9.40)
+DollarTextField(9.40, amount: $price)
 ```
 -----
 
@@ -113,10 +113,10 @@ RadioPicker(choices: ["Male", "Female", "Non-Binary"], selectedChoice: $gender)
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Alignment Tools/Spacer.png" height = "100">
 <img src = "Screenshots/Alignment Tools/Spacers.png" height = "100">
 
-<!--```swift-->
-<!--DollarTextField(9.40)-->
-<!--```-->
-<!--------->
+```swift
+Spacers(4)
+```
+-----
 
 ## How to Install
 1) Go to Xcode -> File -> Add Packages
