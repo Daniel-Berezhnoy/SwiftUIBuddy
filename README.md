@@ -38,9 +38,9 @@ These are the components included in the package:
 **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LoadingSpinner**  
 &nbsp;<img src = "Screenshots/Progress Views/LoadingSpinner.png" height = "110">
 
-<!--### Fields-->
-<!--**&nbsp;&nbsp;&nbsp;&nbsp; LoginField**-->  
-<!--<img src = "Screenshots/Fields/LoginField.png" height = "100">-->
-<!---->
-<!--**&nbsp;&nbsp;&nbsp;&nbsp; DollarTextField**  -->
-<!--<img src = "Screenshots/Fields/DollarTextField.png" height = "100">-->
+### Fields
+**&nbsp;&nbsp;&nbsp;&nbsp; LoginField**  
+<img src = "Screenshots/Fields/LoginField.png" height = "100">
+
+**&nbsp;&nbsp;&nbsp;&nbsp; DollarTextField**  
+<img src = "Screenshots/Fields/DollarTextField.png" height = "100">
