@@ -74,6 +74,7 @@ LoadingSpinner()
 
 ```swift
 LoginField("Email", text: $email)
+
 LoginField("Password", text: $password, fieldType: .password)
 ```
 -----
