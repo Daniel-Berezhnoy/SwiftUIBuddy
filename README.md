@@ -50,7 +50,7 @@ These are the components included in the package:
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/TwitterPicker.png" height = "70">
 
 **&nbsp;&nbsp;&nbsp; RadioPicker**  
-&nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
+&nbsp;&nbsp; <img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
 
 ### Alignment Tools
 **&nbsp;&nbsp;&nbsp; Spacers**  
