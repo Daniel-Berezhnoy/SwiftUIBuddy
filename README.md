@@ -42,5 +42,5 @@ These are the components included in the package:
 **&nbsp;&nbsp;&nbsp; LoginField**  
 <img src = "Screenshots/Fields/LoginField.png" height = "150">
 
-<!--**&nbsp;&nbsp;&nbsp;&nbsp; DollarTextField**  -->
-<!--<img src = "Screenshots/Fields/DollarTextField.png" height = "75">-->
+**&nbsp;&nbsp;&nbsp; DollarTextField**  
+<img src = "Screenshots/Fields/DollarTextField.png" height = "75">
