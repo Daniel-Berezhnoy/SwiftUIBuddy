@@ -12,7 +12,6 @@ Screenshots of the components currently included in the package:
 ### Buttons
 &nbsp;&nbsp;&nbsp;&nbsp; StandardButton  
 <img src = "Screenshots/Buttons/StandardButton.png" height = "80">
-
 ```swift
 StandardButton("Update Profile") {
     updateProfile()
