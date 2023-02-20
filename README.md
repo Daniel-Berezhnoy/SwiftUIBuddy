@@ -28,6 +28,10 @@ StandardButton("Standard Button") {
 DestructiveButton("Delete Account", style: .bordered) {
     deleteAccount()
 }
+
+DestructiveButton("Remove Connection") {
+    removeConnection()
+}
 ```
 -----
 
