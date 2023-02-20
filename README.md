@@ -55,8 +55,18 @@ DismissButton {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CapsuleProgressBar  
 <img src = "Screenshots/Progress Views/CapsuleProgressBar.png" height = "50">
 
+```swift
+CapsuleProgressBar(currentStage: 4, totalStages: 5)
+```
+-----
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LoadingSpinner  
 &nbsp;<img src = "Screenshots/Progress Views/LoadingSpinner.png" height = "110">
+
+```swift
+LoadingSpinner()
+```
+-----
 
 ### Fields
 &nbsp;&nbsp;&nbsp; LoginField  
