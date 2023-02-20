@@ -19,7 +19,7 @@ StandardButton("Update Profile") {
     updateProfile()
 }
 ```
------
+<!--------->
 
 **&nbsp;&nbsp;&nbsp;&nbsp; DestructiveButton**  
 <img src = "Screenshots/Buttons/DestructiveButton.png" height = "151">
@@ -29,7 +29,7 @@ DestructiveButton("Delete Account") {
     deleteAccount()
 }
 ```
------
+<!--------->
 
 &nbsp;&nbsp;&nbsp;&nbsp; PlusButton  
 <img src = "Screenshots/Buttons/PlusButton.png" height = "85">
