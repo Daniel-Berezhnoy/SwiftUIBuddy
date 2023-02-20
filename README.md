@@ -95,13 +95,28 @@ DollarTextField(9.40)
 **&nbsp;&nbsp;&nbsp; TwitterPicker**  
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/TwitterPicker.png" height = "70">
 
+```swift
+TwitterPicker(choices: ["Ramen", "Miso", "Pho"], selectedIndex: $soup)
+```
+-----
+
 **&nbsp;&nbsp;&nbsp; RadioPicker**  
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
+
+```swift
+RadioPicker(choices: ["Male", "Female", "Non-Binary"], selectedChoice: $gender)
+```
+-----
 
 ### Alignment Tools
 **&nbsp;&nbsp;&nbsp; Spacers**  
 &nbsp;&nbsp;&nbsp; <img src = "Screenshots/Alignment Tools/Spacer.png" height = "100">
 <img src = "Screenshots/Alignment Tools/Spacers.png" height = "100">
+
+<!--```swift-->
+<!--DollarTextField(9.40)-->
+<!--```-->
+<!--------->
 
 ## How to Install
 1) Go to Xcode -> File -> Add Packages
