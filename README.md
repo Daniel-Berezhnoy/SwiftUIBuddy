@@ -49,5 +49,5 @@ These are the components included in the package:
 **&nbsp;&nbsp;&nbsp; RadioPicker**  
 <img src = "Screenshots/Pickers/RadioPicker.png" height = "120">
 
-<!--**&nbsp;&nbsp;&nbsp; TwitterPicker**  -->
-<!--<img src = "Screenshots/Pickers/TwitterPicker.png" height = "100">-->
+**&nbsp;&nbsp;&nbsp; TwitterPicker**  
+<img src = "Screenshots/Pickers/TwitterPicker.png" height = "120">
