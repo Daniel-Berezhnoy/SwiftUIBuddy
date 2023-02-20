@@ -74,7 +74,8 @@ LoadingSpinner()
 
 ### Fields
 **&nbsp;&nbsp;&nbsp; LoginField**  
-<br/> &nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "130">
+<br/>
+&nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "130">
 
 ```swift
 LoginField("Email", text: $email)
@@ -84,6 +85,7 @@ LoginField("Password", text: $password, fieldType: .password)
 -----
 
 **&nbsp;&nbsp;&nbsp; DollarTextField**  
+<br/>
 &nbsp;&nbsp; <img src = "Screenshots/Fields/DollarTextField.png" height = "40">
 
 ```swift
