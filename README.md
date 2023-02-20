@@ -31,7 +31,7 @@ Screenshots of the components currently included in the package:
 
 ### Fields
 &nbsp;&nbsp;&nbsp; LoginField  
-&nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "130">
+&nbsp;&nbsp; <img src = "Screenshots/Fields/LoginField.png" height = "120">
 
 &nbsp;&nbsp;&nbsp; DollarTextField  
 &nbsp;&nbsp; <img src = "Screenshots/Fields/DollarTextField.png" height = "40">
