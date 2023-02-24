@@ -31,7 +31,7 @@ public struct DestructiveButton: View {
     var background: some View {
         Rectangle()
             .frame(height: height)
-            .foregroundColor(buttonStyle == .plain ? .red : .background)
+            .foregroundColor(buttonStyle == .prominent ? .red : .background)
             .cornerRadius(cornerRadius)
             .overlay(redBorder)
     }
@@ -46,19 +46,19 @@ public struct DestructiveButton: View {
         Text(title)
             .font(font)
             .lineLimit(1)
-            .foregroundColor(buttonStyle == .plain ? .white : .red)
+            .foregroundColor(buttonStyle == .prominent ? .white : .red)
             .padding(.horizontal)
     }
     
     public enum DestructiveButtonStyle {
-        case plain, bordered
+        case prominent, bordered
     }
     
     /// Destructive Button is great for destructive actions like deletion, cancelation, etc.
     /// To use, just pass in title and put your cancellation action inside the closure.
     /// You can also specify the Button Style, Corner Radius, Custom Font and Height for more customization.
     public init(_ title: String,
-                style: DestructiveButtonStyle = .plain,
+                style: DestructiveButtonStyle = .prominent,
                 cornerRadius: CGFloat = 10,
                 font: Font = .buttonStyle,
                 height: Double = 55,
