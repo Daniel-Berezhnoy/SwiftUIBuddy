@@ -112,11 +112,11 @@ RadioPicker(choices: ["Male", "Female", "Non-Binary"], selectedChoice: $gender)
 ```
 -----
 
-### Alignment Tools
+### Helper Tools
 **&nbsp;&nbsp;&nbsp; Spacers**  
 <br/>
-&nbsp;&nbsp;&nbsp; <img src = "Screenshots/Alignment Tools/Spacer.png" height = "100">
-<img src = "Screenshots/Alignment Tools/Spacers.png" height = "100">
+&nbsp;&nbsp;&nbsp; <img src = "Screenshots/Helper Tools/Spacer.png" height = "100">
+<img src = "Screenshots/Helper Tools/Spacers.png" height = "100">
 
 ```swift
 Spacers(4)
