@@ -123,6 +123,16 @@ Spacers(4)
 ```
 -----
 
+**&nbsp;&nbsp;&nbsp; Dividers**  
+<br/>
+&nbsp;&nbsp;&nbsp; <img src = "Screenshots/Helper Tools/Spacer.png" height = "100">
+<img src = "Screenshots/Helper Tools/Spacers.png" height = "100">
+
+```swift
+Dividers(6)
+```
+-----
+
 ## How to Install
 1) Go to Xcode -> File -> Add Packages
 2) Paste https://github.com/Daniel-Berezhnoy/SwiftUIBuddy into the search bar
